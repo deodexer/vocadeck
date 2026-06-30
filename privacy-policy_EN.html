@@ -8,9 +8,9 @@
     :root { --primary: #5B4FCF; --bg: #f9f9fb; --text: #1a1a2e; --muted: #6b7280; --border: #e5e7eb; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 0 16px 48px; }
-    header { background: var(--primary); color: #fff; padding: 32px 24px; margin: 0 -16px 40px; text-align: center; }
-    header h1 { font-size: 1.8rem; margin-bottom: 6px; }
-    header p { opacity: .85; font-size: .95rem; }
+    header { background: var(--primary); color: #fff; padding: 24px 24px 20px; margin: 0 -16px 40px; text-align: center; }
+    header h1 { font-size: 1.7rem; margin-bottom: 8px; word-break: break-word; hyphens: auto; line-height: 1.2; }
+    header p { opacity: .85; font-size: .85rem; line-height: 1.5; }
     main { max-width: 760px; margin: 0 auto; }
     h2 { font-size: 1.15rem; color: var(--primary); margin: 36px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
     p, li { font-size: .97rem; margin-bottom: 10px; }
@@ -29,7 +29,7 @@
 <body>
 <header>
   <h1>Privacy Policy</h1>
-  <p>Vocadeck · Last updated: June 26, 2026</p>
+  <p>Vocadeck<br>Last updated: June 26, 2026</p>
 </header>
 <main>
   <div class="lang-toggle">
@@ -49,8 +49,7 @@
     any personal data of its users. The app contains no advertising.
   </div>
   <h2>1. Who is responsible for data processing?</h2>
-  <p>Vocadeck is an application developed and maintained by an independent developer
-    (<strong>deodex-dev</strong>), reachable at:
+  <p>Vocadeck is an application developed and maintained by an independent developer, reachable at:
     <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a>.</p>
   <h2>2. Data collected</h2>
   <table>
@@ -83,7 +82,7 @@
   </div>
   <h2>5. Storage and security</h2>
   <p>Your data is stored <strong>locally on your device</strong> (SQLite database) and
-    <strong>in Google Firestore</strong> (Google servers in Europe or the United States).
+    <strong>in Google Firestore</strong> (Google servers in Paris, France — Europe).
     Data in transit is encrypted via TLS. Firebase Firestore security rules ensure no other
     user can access your cards.</p>
   <h2>6. Retention period</h2>
@@ -98,14 +97,14 @@
     <li><strong>Right to portability</strong> — your cards are in text format, exportable on request.</li>
     <li><strong>Right to object</strong> — sign out at any time.</li>
   </ul>
-  <p>To exercise these rights: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
+  <p>Most of these rights can be exercised directly in the app. For any additional request: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
   <h2>8. Minors</h2>
-  <p>Vocadeck does not target children under 13 and does not knowingly collect data about them.</p>
+  <p>Vocadeck is an educational app open to everyone, including children. It does not knowingly collect personal data from minors without parental consent.</p>
   <h2>9. Changes</h2>
   <p>Any significant changes will be communicated via an app update. The date at the top of this page indicates the current version.</p>
   <h2>10. Contact</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
 </main>
-<footer><p>Vocadeck · Privacy Policy · © 2026 deodex-dev</p></footer>
+<footer><p>Vocadeck · Privacy Policy · © 2026</p></footer>
 </body>
 </html>
