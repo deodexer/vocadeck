@@ -1,125 +1,96 @@
-# Vocadeck
+<div align="center">
+  <img src=".github/readme/logo.png" width="96" alt="Logo Vocadeck" />
 
-Application mobile Android de flashcards français ↔ anglais avec répétition espacée (SRS), synchronisation cloud et interface bilingue.
+  # Vocadeck
+
+  **Apprends du vocabulaire dans plus de 40 langues, à ton rythme.**
+
+  ![Version](https://img.shields.io/badge/version-2.64.0-5B4FCF?style=flat-square)
+  ![Plateforme](https://img.shields.io/badge/plateforme-Android-5B4FCF?style=flat-square)
+  ![Flutter](https://img.shields.io/badge/Flutter-Material%203-5B4FCF?style=flat-square)
+  ![Licence](https://img.shields.io/badge/licence-tous%20droits%20r%C3%A9serv%C3%A9s-5B4FCF?style=flat-square)
+</div>
 
 ---
+
+<div align="center">
+  <img src=".github/readme/mascotte-salut.png" width="140" alt="Plume, la mascotte de Vocadeck" />
+  <p><em>Plume, la mascotte de Vocadeck, te guide dès le premier lancement.</em></p>
+</div>
 
 ## Présentation
 
-Vocadeck est une application conçue pour apprendre le vocabulaire français-anglais à travers des **sessions de révision par flashcards**. Elle intègre l'algorithme de répétition espacée **SM-2** qui adapte automatiquement la fréquence de révision de chaque carte selon ta performance. L'idée : réviser uniquement ce que tu risques d'oublier, au bon moment, sans effort de planification.
+Vocadeck est une application de flashcards conçue pour apprendre du vocabulaire par **répétition espacée** — l'app décide pour toi quand réviser chaque mot, juste avant que tu risques de l'oublier. Le moteur de planification est **FSRS-4.5**, l'algorithme qu'Anki lui-même a adopté par défaut en 2023, avec un objectif de mémorisation réglable et des poids qui peuvent s'optimiser automatiquement sur ton propre historique de révisions.
 
-**Fonctionnalités principales :**
-- Création de cartes avec **traduction automatique** FR ↔ EN (API MyMemory)
-- Sessions de révision avec vote de difficulté (Difficile / Normal / Facile)
-- Algorithme SRS SM-2 — l'intervalle de révision évolue selon tes votes
-- Organisation par **catégories** avec couleurs personnalisées
-- **Synthèse vocale** intégrée (TTS) pour chaque mot
-- Synchronisation temps réel via **Firebase Firestore** (multi-appareils)
-- Compte invité anonyme ou connexion Google
-- Interface disponible en **français** et **anglais**
-- Mode sombre / clair
+Le contenu est rédigé en français/anglais puis rendu disponible hors-ligne dans plus de 40 langues grâce à un pipeline de traduction pré-cuite (qualité DeepL sur les langues courantes, complété par un moteur de traduction local) — aucune connexion n'est nécessaire pour réviser.
 
----
+## Fonctionnalités principales
+
+- 🧠 **Répétition espacée FSRS-4.5** — objectif de mémorisation réglable, étapes d'apprentissage courtes pour les nouvelles cartes, poids personnalisables via un optimiseur 100 % local
+- 📚 **~875 decks prêts à l'emploi**, classés par thème, pré-traduits pour un import instantané et hors-ligne
+- 🎮 **Mini-jeux de révision** — Scrabble, Trouve l'erreur, Trouve la bonne traduction, Associe les mots mélangés, Le pendu, Contre-la-montre…
+- 🗂️ **Sous-catégories** (jusqu'à 3 niveaux) et **cartes de révision libres** (hors traduction)
+- 🌍 **Traduction automatique** à la création de carte, avec repli hors-ligne sur les dictionnaires pré-cuits avant tout appel réseau
+- 🔊 **Synthèse vocale** pour chaque mot et **reconnaissance vocale** pour vérifier ta prononciation
+- 🖼️ **Images associées aux cartes** (recherche automatique d'illustration)
+- ☁️ **Synchronisation multi-appareils** via Firebase (compte invité anonyme ou connexion Google)
+- 🎨 **Thèmes Papyrus (clair) / Nocturne (sombre)**, plusieurs polices
+- 📱 **Widget écran d'accueil** Android, mise en page adaptée aux tablettes
+- 📤 **Import/export CSV** et **import Anki (.apkg)**
+- 🔒 Aucune publicité, aucune vente de données — voir la [politique de confidentialité](https://deodexer.github.io/vocadeck/privacy-policy_fr.html)
 
 ## Installation
 
-> L'application n'est pas encore publiée sur le Play Store.
-> Tu peux l'installer manuellement via le fichier `.apk`.
-
-1. Télécharge `app-release.apk` depuis la section [Releases](../../releases)
-2. Sur Android : *Paramètres → Sécurité → Autoriser les sources inconnues*
-3. Ouvre le fichier APK et installe
-
----
+> L'application n'est pas encore publiée sur le Play Store, et son code source n'est pas public.
+> Ce dépôt héberge uniquement les informations destinées au public : cette présentation et la [politique de confidentialité](https://deodexer.github.io/vocadeck/privacy-policy_fr.html).
 
 ## Guide d'utilisation
 
 ### Écran principal
 
-L'écran d'accueil liste toutes tes cartes, regroupées par **catégories** (blocs colorés).
+L'écran d'accueil liste tes cartes, regroupées par **catégories** (blocs colorés, dépliables en sous-catégories).
 
 | Geste | Action |
 |-------|--------|
 | Appui sur un bloc de catégorie | Lancer une session avec les cartes de cette catégorie |
 | **Appui long sur un bloc de catégorie** | Modifier le nom ou la couleur de la catégorie |
 | Appui sur une carte | Ouvrir la carte pour la modifier |
-| Bouton « Session aléatoire » | Lancer une session avec toutes les cartes mélangées |
 | Bouton + (bas droite) | Créer une nouvelle carte |
-| Filtres Difficile / Normal / Facile | Lancer une session filtrée par niveau de difficulté |
-
----
-
-### Créer une carte
-
-1. Appuie sur **+** (bas droite de l'écran principal)
-2. Tape le mot ou la phrase en **anglais** (champ du haut)
-3. Appuie sur l'**icône de traduction ↔** pour traduire automatiquement vers le français
-4. La traduction se place dans le champ français — modifie-la si besoin
-5. **Valider avec Entrée** dans le champ anglais déplace automatiquement le curseur vers le champ français
-6. Ajoute une **catégorie** (optionnel) — commence à taper pour l'auto-complétion
-7. Appuie sur **Enregistrer**
-
-> La traduction fonctionne dans les deux sens (FR→EN ou EN→FR).
-
----
+| Filtres Difficile / Normal / Facile | Lancer une session filtrée par niveau |
 
 ### Session de révision
 
-Une session affiche les cartes une par une en mode plein écran.
+Une session affiche les cartes une par une en plein écran.
 
 | Geste | Action |
 |-------|--------|
 | Appui sur la carte | Retourner la carte (voir la traduction) + écouter la prononciation |
-| Glissement horizontal ou vertical | Passer à la carte suivante / revenir à la précédente |
-| **Appui long sur la carte** | Ouvrir l'écran de modification de la carte en cours |
+| Glissement | Passer à la carte suivante / précédente |
+| **Appui long sur la carte** | Ouvrir l'écran de modification |
 
-Après avoir retourné la carte, trois boutons apparaissent :
+Après avoir retourné la carte, trois votes sont proposés — **Difficile**, **Normal**, **Facile** — qui pilotent directement le prochain intervalle de révision calculé par FSRS.
 
-- **Difficile** — la carte sera représentée très bientôt (intervalle court)
-- **Normal** — intervalle modéré
-- **Facile** — long intervalle avant la prochaine révision
+### Menu latéral
 
-> L'icône 🔇 en haut à droite coupe la synthèse vocale.  
-> À la fin du paquet, les cartes sont automatiquement remélangées pour un nouveau tour.
-
----
-
-### Modifier une carte
-
-- Depuis l'écran principal : **appuie sur la carte**
-- Depuis une session : **appui long** sur la carte
-
-Dans l'écran de modification :
-- Modifie le texte, la catégorie, le niveau de difficulté
-- **Appuyer sur le chip de difficulté actif** le désactive (remet la carte en "non notée")
-- **Icône poubelle** (haut droite) → supprimer la carte définitivement
-
----
-
-### Menu hamburger (≡)
-
-Accessible depuis l'écran principal via l'icône en haut à gauche.
+Accessible depuis l'icône en haut à gauche de l'écran principal.
 
 | Option | Description |
 |--------|-------------|
-| Changer la langue | Basculer l'interface FR / EN |
-| Confidentialité | Politique de confidentialité |
-| Signaler un bug | Formulaire de rapport (requiert un compte Google) |
+| Decks prêts à l'emploi | Parcourir et importer le catalogue de decks pré-traduits |
+| Statistiques | Suivi de tes révisions |
+| Corbeille | Restaurer une carte ou catégorie supprimée |
+| Confidentialité | Renvoie vers la politique de confidentialité publiée sur GitHub Pages |
+| Signaler un bug | Formulaire de rapport intégré |
 | Notes de version | Historique des mises à jour |
 | Se déconnecter | Synchronise les données puis déconnecte |
-| Vider toutes les données | Supprime toutes les cartes et catégories |
+| Vider toutes les données | Supprime cartes et catégories sans fermer le compte |
 | Supprimer mon compte | Suppression RGPD complète (données + compte) |
-
----
 
 ### Compte et synchronisation
 
-- Au premier lancement : un **compte invité anonyme** est créé automatiquement (aucun compte requis)
-- Pour synchroniser sur plusieurs appareils : **Lier avec Google** dans le menu hamburger
-- Le badge nuage (☁) en haut du menu indique l'état de la synchronisation (en cours / synchronisé / erreur)
+- Au premier lancement, un **compte invité anonyme** est créé automatiquement (aucune inscription requise)
+- Pour synchroniser sur plusieurs appareils : **Lier avec Google** dans le menu latéral
 - Les données locales sont automatiquement poussées vers le cloud avant déconnexion
-
----
 
 ## Architecture technique
 
@@ -127,18 +98,17 @@ Accessible depuis l'écran principal via l'icône en haut à gauche.
 |--------|-------------|
 | UI | Flutter / Material 3 |
 | État | Riverpod |
-| Base locale | Drift (SQLite) |
-| Cloud | Firebase Firestore + Firebase Auth |
-| SRS | Algorithme SM-2 |
-| Traduction | MyMemory API (gratuit, sans clé) |
+| Base locale | Drift (SQLite) — source de vérité, hors-ligne d'abord |
+| Cloud | Firebase Firestore + Auth + App Check |
+| Répétition espacée | FSRS-4.5, poids personnalisables (optimiseur local) |
+| Traduction runtime | MyMemory (repli), dictionnaires pré-cuits DeepL/NLLB hors-ligne |
+| Voix | Synthèse vocale + reconnaissance vocale du système |
+| Images | Recherche d'illustration (Pexels / Pixabay) |
 
----
+## Confidentialité
 
-## Changelog
-
-Voir [CHANGELOG.md](CHANGELOG.md) pour l'historique des versions.
-
----
+La politique de confidentialité complète, disponible en 8 langues, est publiée sur GitHub Pages :
+**[deodexer.github.io/vocadeck](https://deodexer.github.io/vocadeck/privacy-policy_fr.html)**
 
 ## Licence
 
