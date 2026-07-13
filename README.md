@@ -107,7 +107,7 @@ Accessible depuis l'icône en haut à gauche de l'écran principal.
 
 ## Confidentialité
 
-La politique de confidentialité complète, disponible en 8 langues, est publiée sur GitHub Pages :
+La politique de confidentialité complète, disponible dans les 27 langues de l'application, est publiée sur GitHub Pages :
 **[deodexer.github.io/vocadeck](https://deodexer.github.io/vocadeck/privacy-policy_fr.html)**
 
 ## Licence
