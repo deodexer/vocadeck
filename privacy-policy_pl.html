@@ -33,7 +33,7 @@
 
 <header>
   <h1>Polityka prywatności</h1>
-  <p>Vocadeck · Ostatnia aktualizacja: 28 czerwca 2026</p>
+  <p>Vocadeck · Ostatnia aktualizacja: 13 lipca 2026</p>
 </header>
 
 <main>
@@ -84,6 +84,21 @@
         <td>SDK Firebase (automatycznie)</td>
         <td>Zarządzanie sesjami uwierzytelniania</td>
       </tr>
+      <tr>
+        <td>Wyszukane słowo do ilustrowania karty</td>
+        <td>Wyszukiwanie obrazów (Pexels / Pixabay)</td>
+        <td>Zaproponowanie odpowiedniego obrazu na karcie</td>
+      </tr>
+      <tr>
+        <td>Czasowe nagranie głosu</td>
+        <td>Funkcja « Sprawdź moją wymowę »</td>
+        <td>Lokalna ocena wymowy za pomocą silnika głosowego systemu — nigdy nie wysyłana na nasze serwery</td>
+      </tr>
+      <tr>
+        <td>Status subskrypcji (identyfikator techniczny)</td>
+        <td>Konto Google + serwer Vocadeck</td>
+        <td>Zarządzanie przyszłą subskrypcją premium Fly Pass (żadne funkcje płatne nie są aktywne w tej chwili)</td>
+      </tr>
     </tbody>
   </table>
   <p><strong>Nie są zbierane żadne dane o lokalizacji, kontakcie, zdrowiu ani płatnościach.</strong></p>
@@ -93,8 +108,12 @@
     <li><strong>Google Firebase Authentication</strong> — zarządzanie logowaniem Google. <span class="badge">Google LLC</span></li>
     <li><strong>Google Cloud Firestore</strong> — zaszyfrowana synchronizacja kart między urządzeniami. <span class="badge">Google LLC</span></li>
     <li><strong>MyMemory Translated.net</strong> — tłumaczenie automatyczne (tylko wpisane słowo/zdanie, bez identyfikacji). <span class="badge">Translated SRL</span></li>
+    <li><strong>Pexels</strong> i <strong>Pixabay</strong> — wyszukiwanie ilustracji dla twoich kart (tylko wyszukane słowo, bez identyfikacji). <span class="badge">Canva / Pixabay</span></li>
+    <li><strong>Cloudflare R2</strong> — hosting pakietów języków do pobrania do użytku offline (tylko pliki statyczne, żadne dane konta nie są przesyłane). <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (poprzez Firebase App Check) — weryfikuje, że wywołania pochodzą z oficjalnej aplikacji w celach antyfraude, bez danych osobowych. <span class="badge">Google LLC / Apple Inc.</span></li>
+    <li><strong>Silnik rozpoznawania mowy systemu operacyjnego</strong> — używany tylko do funkcji « Sprawdź moją wymowę »; dźwięk jest przetwarzany przez twoje urządzenie i nigdy nie jest wysyłany na nasze serwery. <span class="badge">Google / Apple w zależności od urządzenia</span></li>
   </ul>
-  <p>Dane przesyłane do MyMemory nie zawierają żadnych danych osobowych (tylko tekst do przetłumaczenia).</p>
+  <p>Dane przesyłane do MyMemory, Pexels i Pixabay nie zawierają <strong>żadnych danych osobowych</strong> (tylko tekst do przetłumaczenia lub wyszukane słowo).</p>
 
   <h2>4. Czego nie robimy</h2>
   <div class="no-share">
@@ -109,23 +128,26 @@
 
   <h2>5. Przechowywanie i bezpieczeństwo</h2>
   <p>
-    Twoje dane są przechowywane <strong>lokalnie na Twoim urządzeniu</strong> (baza SQLite) oraz <strong>w Google Firestore</strong> (serwery Google w Europie lub Stanach Zjednoczonych). Dane w tranzycie są szyfrowane za pomocą TLS. Reguły bezpieczeństwa Firebase Firestore gwarantują, że żaden inny użytkownik nie ma dostępu do Twoich kart.
+    Twoje dane są przechowywane <strong>lokalnie na Twoim urządzeniu</strong> (baza SQLite) oraz <strong>w Google Firestore</strong> (serwery Google w Europie lub Stanach Zjednoczonych). Dane w tranzycie są szyfrowane za pomocą TLS. Firebase Firestore gwarantuje, że żaden inny użytkownik nie ma dostępu do twoich kart.
+  </p>
+  <p>
+    Szczegółowa historia twoich powtórek (używana do ulepszenia twojego spersonalizowanego planu memoryzacji) pozostaje <strong>wyłącznie lokalnie na twoim urządzeniu</strong> i nigdy nie jest synchronizowana, nawet z połączonym kontem Google.
   </p>
 
   <h2>6. Okres przechowywania</h2>
   <p>
-    Twoje dane są przechowywane tak długo, jak korzystasz z aplikacji. Możesz je usunąć w dowolnym momencie poprzez <strong>Menu &gt; Wyczyść wszystkie dane</strong>, co usuwa je również z Twojego konta Google.
+    Twoje dane są przechowywane tak długo, jak korzystasz z aplikacji. Możesz je usunąć w dowolnym momencie poprzez <strong>Menu &gt; Wyczyść wszystkie dane</strong>, co usuwa je również z twojego konta Google.
   </p>
 
   <h2>7. Twoje prawa (RODO)</h2>
   <ul>
-    <li><strong>Prawo dostępu</strong> — Twoje dane są widoczne bezpośrednio w aplikacji.</li>
+    <li><strong>Prawo dostępu</strong> — twoje dane są widoczne bezpośrednio w aplikacji.</li>
     <li><strong>Prawo do sprostowania</strong> — edytuj swoje karty w dowolnym momencie.</li>
-    <li><strong>Prawo do usunięcia</strong> — „Wyczyść wszystkie dane” w menu, co usuwa te dane również z Twojego konta Google.</li>
-    <li><strong>Prawo do przenoszenia danych</strong> — Twoje karty są w formacie tekstowym, eksportowalne z ustawień aplikacji.</li>
+    <li><strong>Prawo do usunięcia</strong> — dostępne dwa poziomy w menu: « Wyczyść wszystkie dane » usuwa twoje karty i kategorie bez zamykania konta; « Usuń moje konto » trwale usuwa twoje konto i wszystkie powiązane dane (pełne usunięcie zgodnie z RODO).</li>
+    <li><strong>Prawo do przenoszenia danych</strong> — twoje karty są w formacie tekstowym, eksportowalne z ustawień aplikacji.</li>
     <li><strong>Prawo do sprzeciwu</strong> — wyloguj się w dowolnym momencie.</li>
   </ul>
-  <p>Aby skorzystać z tych praw: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
+  <p>Aby skorzystać z tych praw: <a href=”mailto:vocadeck.support@gmail.com”>vocadeck.support@gmail.com</a></p>
 
   <h2>8. Osoby niepełnoletnie</h2>
   <p>Vocadeck nie kieruje swojej oferty do dzieci poniżej 13 roku życia i nie zbiera świadomie danych ich dotyczących.</p>

@@ -33,7 +33,7 @@
 
 <header>
   <h1>Privacy Policy</h1>
-  <p>Vocadeck · Last updated: June 28, 2026</p>
+  <p>Vocadeck · Last updated: July 13, 2026</p>
 </header>
 
 <main>
@@ -84,6 +84,21 @@
         <td>Firebase SDK (automatic)</td>
         <td>Authentication session management</td>
       </tr>
+      <tr>
+        <td>Word searched to illustrate a card</td>
+        <td>Image search (Pexels / Pixabay)</td>
+        <td>Provide a relevant image on the card</td>
+      </tr>
+      <tr>
+        <td>Temporary voice recording</td>
+        <td>"Check my pronunciation" function</td>
+        <td>Local pronunciation evaluation, via the device's voice engine — never sent to our servers</td>
+      </tr>
+      <tr>
+        <td>Subscription status (technical identifier)</td>
+        <td>Google account + Vocadeck server</td>
+        <td>Management of a future Fly Pass premium subscription (no paid features currently active)</td>
+      </tr>
     </tbody>
   </table>
   <p><strong>No location, contact, health, or payment data is collected.</strong></p>
@@ -93,8 +108,12 @@
     <li><strong>Google Firebase Authentication</strong> — Google Sign-In management. <span class="badge">Google LLC</span></li>
     <li><strong>Google Cloud Firestore</strong> — encrypted synchronization of your cards across devices. <span class="badge">Google LLC</span></li>
     <li><strong>MyMemory Translated.net</strong> — automatic translation (only the word/phrase entered, no identification). <span class="badge">Translated SRL</span></li>
+    <li><strong>Pexels</strong> and <strong>Pixabay</strong> — search for illustrations for your cards (only the word searched, no identification). <span class="badge">Canva / Pixabay</span></li>
+    <li><strong>Cloudflare R2</strong> — hosting of downloadable language packs for offline use (static files only, no account data transmitted). <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) — verifies that calls come from the official app, for anti-fraud purposes, without personal data. <span class="badge">Google LLC / Apple Inc.</span></li>
+    <li><strong>Device operating system voice recognition engine</strong> — used only for the "Check my pronunciation" feature; audio is processed by your device and never sent to our servers. <span class="badge">Google / Apple depending on the device</span></li>
   </ul>
-  <p>Data sent to MyMemory contains <strong>no personal information</strong> (only the text to translate).</p>
+  <p>Data sent to MyMemory, Pexels, and Pixabay contains <strong>no personal information</strong> (only the text to translate or the word searched).</p>
 
   <h2>4. What we do not do</h2>
   <div class="no-share">
@@ -109,7 +128,10 @@
 
   <h2>5. Storage and security</h2>
   <p>
-    Your data is stored <strong>locally on your device</strong> (SQLite database) and <strong>in Google Firestore</strong> (Google servers in Europe or the United States). Data in transit is encrypted via TLS. Firebase Firestore security rules ensure no other user can access your cards.
+    Your data is stored <strong>locally on your device</strong> (SQLite database) and <strong>in Google Firestore</strong> (Google servers in Europe or the United States). Data in transit is encrypted via TLS. Firebase Firestore ensures that no other user can access your cards.
+  </p>
+  <p>
+    The detailed history of your reviews (used to fine-tune your personalized study schedule) remains <strong>exclusively local on your device</strong> and is never synced, even with a connected Google account.
   </p>
 
   <h2>6. Retention period</h2>
@@ -121,7 +143,7 @@
   <ul>
     <li><strong>Right of access</strong> — your data is visible directly in the app.</li>
     <li><strong>Right of rectification</strong> — edit your cards at any time.</li>
-    <li><strong>Right to erasure</strong> — "Delete all data" in the menu, which also removes this data from your Google account.</li>
+    <li><strong>Right to erasure</strong> — two levels available in the menu: "Delete all data" removes your cards and categories without closing your account; "Delete my account" permanently deletes your account and all associated data (complete GDPR deletion).</li>
     <li><strong>Right to portability</strong> — your cards are in text format, exportable from the app settings.</li>
     <li><strong>Right to object</strong> — sign out at any time.</li>
   </ul>

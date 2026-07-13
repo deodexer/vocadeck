@@ -33,7 +33,7 @@
 
 <header>
   <h1>Informativa sulla privacy</h1>
-  <p>Vocadeck · Ultimo aggiornamento: 28 giugno 2026</p>
+  <p>Vocadeck · Ultimo aggiornamento: 13 luglio 2026</p>
 </header>
 
 <main>
@@ -84,6 +84,21 @@
         <td>SDK Firebase (automatico)</td>
         <td>Gestione delle sessioni di autenticazione</td>
       </tr>
+      <tr>
+        <td>Parola ricercata per illustrare una carta</td>
+        <td>Ricerca di immagini (Pexels / Pixabay)</td>
+        <td>Suggerire un'immagine pertinente sulla carta</td>
+      </tr>
+      <tr>
+        <td>Registrazione vocale temporanea</td>
+        <td>Funzione « Verifica la mia pronuncia »</td>
+        <td>Valutazione locale della pronuncia tramite il motore vocale del sistema — mai inviata ai nostri server</td>
+      </tr>
+      <tr>
+        <td>Stato dell'abbonamento (identificatore tecnico)</td>
+        <td>Account Google + server Vocadeck</td>
+        <td>Gestione di un futuro abbonamento premium Fly Pass (nessuna funzionalità a pagamento attiva al momento)</td>
+      </tr>
     </tbody>
   </table>
   <p><strong>Nessun dato di posizione, contatto, salute o pagamento viene raccolto.</strong></p>
@@ -93,8 +108,12 @@
     <li><strong>Google Firebase Authentication</strong> — gestione degli accessi Google. <span class="badge">Google LLC</span></li>
     <li><strong>Google Cloud Firestore</strong> — sincronizzazione crittografata delle carte tra dispositivi. <span class="badge">Google LLC</span></li>
     <li><strong>MyMemory Translated.net</strong> — traduzione automatica (solo la parola/frase inserita, senza identificazione). <span class="badge">Translated SRL</span></li>
+    <li><strong>Pexels</strong> e <strong>Pixabay</strong> — ricerca di illustrazioni per le tue carte (solo la parola ricercata, senza identificazione). <span class="badge">Canva / Pixabay</span></li>
+    <li><strong>Cloudflare R2</strong> — hosting dei pacchetti linguistici scaricabili per l'uso offline (solo file statici, nessun dato dell'account trasmesso). <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (tramite Firebase App Check) — verifica che le chiamate provengono dall'app ufficiale, a scopo di anti-frode, senza dati personali. <span class="badge">Google LLC / Apple Inc.</span></li>
+    <li><strong>Motore di riconoscimento vocale del sistema operativo</strong> — utilizzato solo per la funzione « Verifica la mia pronuncia »; l'audio viene elaborato dal tuo dispositivo e non viene mai inviato ai nostri server. <span class="badge">Google / Apple a seconda del dispositivo</span></li>
   </ul>
-  <p>I dati inviati a MyMemory non contengono alcuna informazione personale (solo il testo da tradurre).</p>
+  <p>I dati inviati a MyMemory, Pexels e Pixabay non contengono <strong>alcuna informazione personale</strong> (solo il testo da tradurre o la parola ricercata).</p>
 
   <h2>4. Cosa non facciamo</h2>
   <div class="no-share">
@@ -109,19 +128,22 @@
 
   <h2>5. Archiviazione e sicurezza</h2>
   <p>
-    I tuoi dati sono archiviati <strong>localmente sul tuo dispositivo</strong> (database SQLite) e <strong>su Google Firestore</strong> (server Google in Europa o negli Stati Uniti). I dati in transito sono crittografati tramite TLS. Le regole di sicurezza di Firebase Firestore garantiscono che nessun altro utente possa accedere alle tue carte.
+    I tuoi dati sono archiviati <strong>localmente sul tuo dispositivo</strong> (database SQLite) e <strong>su Google Firestore</strong> (server Google in Europa o negli Stati Uniti). I dati in transito sono crittografati tramite TLS. Firebase Firestore garantisce che nessun altro utente possa accedere alle tue carte.
+  </p>
+  <p>
+    La cronologia dettagliata delle tue revisioni (utilizzata per ottimizzare il tuo programma di memorizzazione personalizzato) rimane <strong>esclusivamente locale sul tuo dispositivo</strong> e non viene mai sincronizzata, anche con un account Google collegato.
   </p>
 
   <h2>6. Periodo di conservazione</h2>
   <p>
-    I tuoi dati vengono conservati finché utilizzi l'app. Puoi eliminarli in qualsiasi momento tramite <strong>Menu &gt; Svuota tutti i dati</strong>, il che li rimuove anche dal tuo account Google.
+    I tuoi dati vengono conservati finché utilizzi l'app. Puoi eliminarli in qualsiasi momento tramite <strong>Menu > Svuota tutti i dati</strong>, il che li rimuove anche dal tuo account Google.
   </p>
 
   <h2>7. I tuoi diritti (GDPR)</h2>
   <ul>
     <li><strong>Diritto di accesso</strong> — i tuoi dati sono visibili direttamente nell'app.</li>
     <li><strong>Diritto di rettifica</strong> — modifica le tue carte in qualsiasi momento.</li>
-    <li><strong>Diritto alla cancellazione</strong> — "Svuota tutti i dati" nel menu, il che rimuove questi dati anche dal tuo account Google.</li>
+    <li><strong>Diritto alla cancellazione</strong> — due livelli disponibili nel menu: « Svuota tutti i dati » elimina le tue carte e categorie senza chiudere il tuo account; « Elimina il mio account » elimina definitivamente il tuo account e tutti i dati associati (cancellazione GDPR completa).</li>
     <li><strong>Diritto alla portabilità</strong> — le tue carte sono in formato testo, esportabili dalle impostazioni dell'app.</li>
     <li><strong>Diritto di opposizione</strong> — disconnettiti in qualsiasi momento.</li>
   </ul>

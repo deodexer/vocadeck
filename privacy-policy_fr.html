@@ -33,7 +33,7 @@
 
 <header>
   <h1>Politique de confidentialité</h1>
-  <p>Vocadeck · Dernière mise à jour : 28 juin 2026</p>
+  <p>Vocadeck · Dernière mise à jour : 13 juillet 2026</p>
 </header>
 
 <main>
@@ -84,6 +84,21 @@
         <td>SDK Firebase (automatique)</td>
         <td>Gestion des sessions d'authentification</td>
       </tr>
+      <tr>
+        <td>Mot recherché pour illustrer une carte</td>
+        <td>Recherche d'image (Pexels / Pixabay)</td>
+        <td>Proposer une image pertinente sur la carte</td>
+      </tr>
+      <tr>
+        <td>Enregistrement vocal temporaire</td>
+        <td>Fonction « Vérifier ma prononciation »</td>
+        <td>Évaluation locale de la prononciation, via le moteur vocal du système — jamais envoyée à nos serveurs</td>
+      </tr>
+      <tr>
+        <td>Statut d'abonnement (identifiant technique)</td>
+        <td>Compte Google + serveur Vocadeck</td>
+        <td>Gestion d'un futur abonnement premium Fly Pass (aucune fonctionnalité payante active à ce jour)</td>
+      </tr>
     </tbody>
   </table>
   <p><strong>Aucune donnée de localisation, de contact, de santé, ou de paiement n'est collectée.</strong></p>
@@ -93,8 +108,12 @@
     <li><strong>Google Firebase Authentication</strong> — gestion des connexions Google. <span class="badge">Google LLC</span></li>
     <li><strong>Google Cloud Firestore</strong> — synchronisation chiffrée de vos cartes entre appareils. <span class="badge">Google LLC</span></li>
     <li><strong>MyMemory Translated.net</strong> — traduction automatique (uniquement le mot/la phrase saisi, sans identification). <span class="badge">Translated SRL</span></li>
+    <li><strong>Pexels</strong> et <strong>Pixabay</strong> — recherche d'illustrations pour vos cartes (uniquement le mot recherché, sans identification). <span class="badge">Canva / Pixabay</span></li>
+    <li><strong>Cloudflare R2</strong> — hébergement des packs de langues téléchargeables pour un usage hors-ligne (fichiers statiques uniquement, aucune donnée de compte transmise). <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) — vérifie que les appels proviennent bien de l'application officielle, à des fins anti-fraude, sans donnée personnelle. <span class="badge">Google LLC / Apple Inc.</span></li>
+    <li><strong>Moteur de reconnaissance vocale du système d'exploitation</strong> — utilisé uniquement pour la fonction « Vérifier ma prononciation » ; l'audio est traité par votre appareil et n'est jamais envoyé à nos serveurs. <span class="badge">Google / Apple selon l'appareil</span></li>
   </ul>
-  <p>Les données transmises à MyMemory ne contiennent <strong>aucune information personnelle</strong> (uniquement le texte à traduire).</p>
+  <p>Les données transmises à MyMemory, Pexels et Pixabay ne contiennent <strong>aucune information personnelle</strong> (uniquement le texte à traduire ou le mot recherché).</p>
 
   <h2>4. Ce que nous ne faisons pas</h2>
   <div class="no-share">
@@ -111,6 +130,9 @@
   <p>
     Vos données sont stockées <strong>localement sur votre appareil</strong> (base SQLite) et <strong>dans Google Firestore</strong> (serveurs Google en Europe ou aux États-Unis). Les données en transit sont chiffrées via TLS. Firebase Firestore garantit qu'aucun autre utilisateur ne peut accéder à vos cartes.
   </p>
+  <p>
+    L'historique détaillé de vos révisions (utilisé pour affiner votre planning de mémorisation personnalisé) reste <strong>exclusivement local sur votre appareil</strong> et n'est jamais synchronisé, même avec un compte Google connecté.
+  </p>
 
   <h2>6. Durée de conservation</h2>
   <p>
@@ -121,7 +143,7 @@
   <ul>
     <li><strong>Droit d'accès</strong> — vos données sont visibles directement dans l'application.</li>
     <li><strong>Droit de rectification</strong> — modifiez vos cartes à tout moment.</li>
-    <li><strong>Droit à l'effacement</strong> — "Vider toutes les données" dans le menu, ce qui supprime également ces données de votre compte Google.</li>
+    <li><strong>Droit à l'effacement</strong> — deux niveaux disponibles dans le menu : « Vider toutes les données » supprime vos cartes et catégories sans fermer votre compte ; « Supprimer mon compte » supprime définitivement votre compte et l'ensemble des données associées (suppression RGPD complète).</li>
     <li><strong>Droit à la portabilité</strong> — vos cartes sont au format texte, exportables dans les paramètres de l'application.</li>
     <li><strong>Droit d'opposition</strong> — déconnectez-vous à tout moment.</li>
   </ul>

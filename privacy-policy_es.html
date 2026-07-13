@@ -33,7 +33,7 @@
 
 <header>
   <h1>Política de privacidad</h1>
-  <p>Vocadeck · Última actualización: 28 de junio de 2026</p>
+  <p>Vocadeck · Última actualización: 13 de julio de 2026</p>
 </header>
 
 <main>
@@ -84,6 +84,21 @@
         <td>SDK de Firebase (automático)</td>
         <td>Gestión de sesiones de autenticación</td>
       </tr>
+      <tr>
+        <td>Palabra buscada para ilustrar una tarjeta</td>
+        <td>Búsqueda de imagen (Pexels / Pixabay)</td>
+        <td>Proporcionar una imagen relevante en la tarjeta</td>
+      </tr>
+      <tr>
+        <td>Grabación de voz temporal</td>
+        <td>Función « Verificar mi pronunciación »</td>
+        <td>Evaluación local de la pronunciación, a través del motor de voz del sistema — nunca se envía a nuestros servidores</td>
+      </tr>
+      <tr>
+        <td>Estado de suscripción (identificador técnico)</td>
+        <td>Cuenta de Google + servidor de Vocadeck</td>
+        <td>Gestión de una futura suscripción premium Fly Pass (ninguna funcionalidad de pago activa actualmente)</td>
+      </tr>
     </tbody>
   </table>
   <p><strong>Ningún dato de ubicación, contacto, salud o pago es recopilado.</strong></p>
@@ -93,8 +108,12 @@
     <li><strong>Google Firebase Authentication</strong> — gestión de inicios de sesión con Google. <span class="badge">Google LLC</span></li>
     <li><strong>Google Cloud Firestore</strong> — sincronización cifrada de tus tarjetas entre dispositivos. <span class="badge">Google LLC</span></li>
     <li><strong>MyMemory Translated.net</strong> — traducción automática (solo la palabra/frase introducida, sin identificación). <span class="badge">Translated SRL</span></li>
+    <li><strong>Pexels</strong> y <strong>Pixabay</strong> — búsqueda de ilustraciones para tus tarjetas (solo la palabra buscada, sin identificación). <span class="badge">Canva / Pixabay</span></li>
+    <li><strong>Cloudflare R2</strong> — alojamiento de paquetes de idiomas descargables para uso sin conexión (solo archivos estáticos, ningún dato de cuenta transmitido). <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (mediante Firebase App Check) — verifica que las llamadas provengan de la aplicación oficial, con fines anti-fraude, sin datos personales. <span class="badge">Google LLC / Apple Inc.</span></li>
+    <li><strong>Motor de reconocimiento de voz del sistema operativo</strong> — se utiliza solo para la función « Verificar mi pronunciación »; el audio se procesa en tu dispositivo y nunca se envía a nuestros servidores. <span class="badge">Google / Apple según el dispositivo</span></li>
   </ul>
-  <p>Los datos enviados a MyMemory no contienen ninguna información personal (solo el texto a traducir).</p>
+  <p>Los datos transmitidos a MyMemory, Pexels y Pixabay no contienen <strong>ninguna información personal</strong> (solo el texto a traducir o la palabra buscada).</p>
 
   <h2>4. Lo que no hacemos</h2>
   <div class="no-share">
@@ -111,6 +130,9 @@
   <p>
     Tus datos se almacenan <strong>localmente en tu dispositivo</strong> (base de datos SQLite) y <strong>en Google Firestore</strong> (servidores de Google en Europa o Estados Unidos). Los datos en tránsito están cifrados mediante TLS. Firebase Firestore garantiza que ningún otro usuario pueda acceder a tus tarjetas.
   </p>
+  <p>
+    El historial detallado de tus revisiones (utilizado para perfeccionar tu planificación de memorización personalizada) permanece <strong>exclusivamente local en tu dispositivo</strong> y nunca se sincroniza, incluso con una cuenta de Google conectada.
+  </p>
 
   <h2>6. Duración de la conservación</h2>
   <p>
@@ -121,7 +143,7 @@
   <ul>
     <li><strong>Derecho de acceso</strong> — tus datos son visibles directamente en la aplicación.</li>
     <li><strong>Derecho de rectificación</strong> — modifica tus tarjetas en cualquier momento.</li>
-    <li><strong>Derecho de supresión</strong> — "Vaciar todos los datos" en el menú, lo que también elimina estos datos de tu cuenta de Google.</li>
+    <li><strong>Derecho de supresión</strong> — dos niveles disponibles en el menú: « Vaciar todos los datos » elimina tus tarjetas y categorías sin cerrar tu cuenta ; « Supprimir mi cuenta » suprime definitivamente tu cuenta y todos los datos asociados (supresión RGPD completa).</li>
     <li><strong>Derecho a la portabilidad</strong> — tus tarjetas están en formato de texto, exportables desde los ajustes de la aplicación.</li>
     <li><strong>Derecho de oposición</strong> — cierra sesión en cualquier momento.</li>
   </ul>

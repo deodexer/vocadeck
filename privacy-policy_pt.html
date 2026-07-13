@@ -33,7 +33,7 @@
 
 <header>
   <h1>Política de Privacidade</h1>
-  <p>Vocadeck · Última atualização: 28 de junho de 2026</p>
+  <p>Vocadeck · Última atualização: 13 de julho de 2026</p>
 </header>
 
 <main>
@@ -84,6 +84,21 @@
         <td>SDK Firebase (automático)</td>
         <td>Gestão das sessões de autenticação</td>
       </tr>
+      <tr>
+        <td>Palavra pesquisada para ilustrar um cartão</td>
+        <td>Pesquisa de imagem (Pexels / Pixabay)</td>
+        <td>Oferecer uma imagem relevante no cartão</td>
+      </tr>
+      <tr>
+        <td>Gravação de voz temporária</td>
+        <td>Função « Verificar a minha pronúncia »</td>
+        <td>Avaliação local da pronúncia, através do motor de voz do sistema — nunca enviada para os nossos servidores</td>
+      </tr>
+      <tr>
+        <td>Estado da subscrição (identificador técnico)</td>
+        <td>Conta Google + servidor Vocadeck</td>
+        <td>Gestão de uma futura subscrição premium Fly Pass (sem funcionalidades pagas ativas neste momento)</td>
+      </tr>
     </tbody>
   </table>
   <p><strong>Não são recolhidos dados de localização, contacto, saúde ou pagamento.</strong></p>
@@ -93,8 +108,12 @@
     <li><strong>Google Firebase Authentication</strong> — gestão dos inícios de sessão com a Google. <span class="badge">Google LLC</span></li>
     <li><strong>Google Cloud Firestore</strong> — sincronização encriptada dos seus cartões entre dispositivos. <span class="badge">Google LLC</span></li>
     <li><strong>MyMemory Translated.net</strong> — tradução automática (apenas a palavra/frase introduzida, sem identificação). <span class="badge">Translated SRL</span></li>
+    <li><strong>Pexels</strong> e <strong>Pixabay</strong> — pesquisa de ilustrações para os seus cartões (apenas a palavra pesquisada, sem identificação). <span class="badge">Canva / Pixabay</span></li>
+    <li><strong>Cloudflare R2</strong> — alojamento de pacotes de linguagem descarregáveis para uso offline (apenas ficheiros estáticos, nenhum dado de conta transmitido). <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) — verifica que as chamadas provêm da aplicação oficial, para fins anti-fraude, sem dados pessoais. <span class="badge">Google LLC / Apple Inc.</span></li>
+    <li><strong>Motor de reconhecimento de voz do sistema operativo</strong> — utilizado apenas para a função « Verificar a minha pronúncia » ; o áudio é processado pelo seu dispositivo e nunca é enviado para os nossos servidores. <span class="badge">Google / Apple consoante o dispositivo</span></li>
   </ul>
-  <p>Os dados enviados para o MyMemory não contêm qualquer informação pessoal (apenas o texto a traduzir).</p>
+  <p>Os dados enviados para o MyMemory, Pexels e Pixabay não contêm <strong>nenhuma informação pessoal</strong> (apenas o texto a traduzir ou a palavra pesquisada).</p>
 
   <h2>4. O que não fazemos</h2>
   <div class="no-share">
@@ -111,6 +130,9 @@
   <p>
     Os seus dados são armazenados <strong>localmente no seu dispositivo</strong> (base de dados SQLite) e <strong>no Google Firestore</strong> (servidores Google na Europa ou nos Estados Unidos). Os dados em trânsito são encriptados através de TLS. As regras de segurança do Firebase Firestore garantem que nenhum outro utilizador pode aceder aos seus cartões.
   </p>
+  <p>
+    O histórico detalhado das suas revisões (utilizado para refinar o seu plano de memorização personalizado) permanece <strong>exclusivamente local no seu dispositivo</strong> e nunca é sincronizado, mesmo com uma conta Google ligada.
+  </p>
 
   <h2>6. Prazo de conservação</h2>
   <p>
@@ -121,7 +143,7 @@
   <ul>
     <li><strong>Direito de acesso</strong> — os seus dados são visíveis diretamente na aplicação.</li>
     <li><strong>Direito de retificação</strong> — edite os seus cartões a qualquer momento.</li>
-    <li><strong>Direito ao apagamento</strong> — "Limpar todos os dados" no menu, o que também remove estes dados da sua conta Google.</li>
+    <li><strong>Direito à exclusão</strong> — dois níveis disponíveis no menu: « Limpar todos os dados » remove os seus cartões e categorias sem fechar a sua conta; « Eliminar a minha conta » elimina permanentemente a sua conta e todos os dados associados (exclusão RGPD completa).</li>
     <li><strong>Direito à portabilidade</strong> — os seus cartões estão em formato de texto, exportáveis a partir das definições da aplicação.</li>
     <li><strong>Direito de oposição</strong> — termine a sessão a qualquer momento.</li>
   </ul>
