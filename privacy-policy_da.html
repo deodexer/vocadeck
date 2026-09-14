@@ -88,7 +88,7 @@
       <tr>
         <td>E-mailadresse, navn og profilbillede</td>
         <td>Log ind med Google (valgfrit)</td>
-        <td>Identificere din konto. Billedet vises ikke nogen steder i dag (se afsnit 7 om den kommende profil).</td>
+        <td>Identificere din konto. Billedet vises kun på din offentlige profil, hvis du vælger det som avatar (afsnit 7). Din e-mailadresse og dit navn vises aldrig der.</td>
       </tr>
       <tr>
         <td>Kort og kortspil med deres indhold</td>
@@ -111,9 +111,19 @@
         <td>Vise dine milepæle, din rekord og dine belønninger. Rundetællerne gemmes under et tilfældigt dannet enheds-id uden nogen forbindelse til hardwaren, som kun bruges til at lægge runder spillet på flere enheder korrekt sammen.</td>
       </tr>
       <tr>
-        <td>Synkroniserede indstillinger (for eksempel de tegninger, der er valgt til den nederste bjælke) og fundne hemmelige badges</td>
+        <td>Synkroniserede indstillinger (for eksempel de tegninger, der er valgt til den nederste bjælke), fundne hemmelige badges og opnåede præstationer, med deres dato</td>
         <td>Dine valg i appen</td>
         <td>Genfinde din app helt magen til fra én enhed til en anden</td>
+      </tr>
+      <tr>
+        <td>Offentlig profil: pseudonym, avatar (eller billedet fra din Google-konto, hvis du vælger det), badges i din udstilling, nøgletal (dagsstribe, lærte ord, rekord i Mod uret, læste historier), sprog og niveauer, den måned, du kom til, og dit spillerniveau</td>
+        <td>Din profil (kun Google-konti)</td>
+        <td>Vise dig for andre spillere via ranglisten (afsnit 7)</td>
+      </tr>
+      <tr>
+        <td>Rangerede runder i Mod uret: de uddelte ord, hvert af dine svar og tidspunktet for det (i millisekunder), den beregnede score, dine bedste scorer for ugen og for alle tider</td>
+        <td>Dine rangerede runder</td>
+        <td>Kontrollere, at runden følger spillets regler, og placere dig på ranglisten (afsnit 7)</td>
       </tr>
       <tr>
         <td>Indberetning af en oversættelsesfejl: det pågældende kort (begge sider, deres sprog, kortspillets navn), den valgte årsag, en valgfri kommentar og appens version</td>
@@ -152,8 +162,8 @@
   <h2>3. Hvorfor vi behandler disse oplysninger (retsgrundlag)</h2>
   <ul>
     <li><strong>For at levere den tjeneste, du bruger</strong> (opfyldelse af en kontrakt): din konto, dine kort, deres synkronisering, dit fremskridt og din statistik.</li>
-    <li><strong>For at holde appen pålidelig og ærlig</strong> (legitim interesse): tekniske fejlrapporter, kontrollen af, at forespørgslerne virkelig kommer fra den officielle app, og snart kontroller mod snyd på ranglisten.</li>
-    <li><strong>Med din tilladelse</strong> (samtykke): de indberetninger, du vælger at sende, og snart det, du vælger at vise på din offentlige profil. Du kan til enhver tid trække dette samtykke tilbage.</li>
+    <li><strong>For at holde appen pålidelig og ærlig</strong> (legitim interesse): tekniske fejlrapporter, kontrollen af, at forespørgslerne virkelig kommer fra den officielle app, og kontroller mod snyd på ranglisten.</li>
+    <li><strong>Med din tilladelse</strong> (samtykke): de indberetninger, du vælger at sende, og det, du vælger at vise på din offentlige profil. Du kan til enhver tid trække dette samtykke tilbage.</li>
   </ul>
 
   <h2>4. Tekniske databehandlere</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> og <strong>Pixabay</strong> – søgning efter illustrationer til dine kort (kun søgeordet, uden identifikation). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> – hosting af de sprogpakker, der kan downloades til offlinebrug (kun statiske filer, ingen kontooplysninger overføres). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> og <strong>Cloudflare Access</strong> – hosting af webversionen (PWA) og adgangskontrol i testfasen. Cloudflare ser adresserne på de indlæste sider og, for den lukkede beta, den e-mailadresse, der er inviteret til at få adgang. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> og <strong>Cloudflare D1</strong> – dommeren for rangerede runder: den uddeler ordene, modtager dine svar og deres tidspunkt, beregner selv scoren og fører ranglisten (pseudonym, avatar, billede, hvis du har valgt det, bedste scorer). Den genkender din konto på dens log ind-token uden at modtage din e-mailadresse eller dit navn. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> – tekniske rapporter, der sendes, når appen støder på en fejl: appens version, enhedsmodel, styresystem og fejlens placering i koden. Intet indhold fra dine kort indgår. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) – kontrollerer, at forespørgslerne virkelig kommer fra den officielle app, for at forebygge svindel, uden personoplysninger. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Styresystemets stemmemaskiner</strong> – talegenkendelsen bruges kun til at tjekke din udtale (mikrofonknappen på et kort), og lyden behandles af din enhed; talesyntesen læser ordene og sætningerne på dine kort højt, og de behandles af din telefons maskine efter dens egne regler. <span class="badge">Google / Apple / enhedsproducent</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Opbevaring og sikkerhed</h2>
   <p>
-    Dine oplysninger opbevares <strong>lokalt på din enhed</strong> (SQLite-database eller din browsers lager for webversionen) og, hvis du er logget ind, <strong>i Google Firestore</strong> (Googles servere i Europa eller USA). Oplysninger under overførsel krypteres med TLS. Firestores sikkerhedsregler sikrer, at ingen andre kan læse dine oplysninger; kun det, du vælger at vise på din offentlige profil, bliver synligt, når den funktion findes (afsnit 7).
+    Dine oplysninger opbevares <strong>lokalt på din enhed</strong> (SQLite-database eller din browsers lager for webversionen) og, hvis du er logget ind, <strong>i Google Firestore</strong> (Googles servere i Europa eller USA). Oplysninger under overførsel krypteres med TLS. Firestores sikkerhedsregler sikrer, at ingen andre kan læse dine oplysninger; kun det, du viser på din offentlige profil, er synligt (afsnit 7). Selve ranglisten føres af dommeren for rangerede runder hos Cloudflare (afsnit 4).
   </p>
   <p>
     Historikken over dine svar synkroniseres med din konto, så din statistik følger dig fra én enhed til en anden. Den tekniske log, der bruges til at tilpasse gennemgangsalgoritmen til din hukommelse, forbliver derimod <strong>udelukkende på din enhed</strong> og synkroniseres aldrig.
@@ -193,17 +204,14 @@
     For at kunne reparere databasen, hvis der opstår et problem, gemmer appen op til tre sikkerhedskopier på din enhed. De forlader aldrig enheden.
   </p>
 
-  <h2>7. Offentlig profil og rangliste (kommer snart)</h2>
-  <div class="a-venir">
-    <strong>Endnu ikke tilgængelig.</strong> Dette afsnit beskriver på forhånd en funktion under forberedelse, så du ved, hvad den vil gøre synligt, før den kommer. Afsnittet gælder først fra funktionens lancering, som annonceres i Versionsnoter.
-  </div>
+  <h2>7. Offentlig profil og rangliste</h2>
   <ul>
-    <li><strong>En profil</strong>, som åbnes fra appens menu: et pseudonym (tildelt tilfældigt, i stil med user#12345678, som du kan ændre), en tegnet avatar eller, hvis du slår det til, billedet fra din Google-konto, de badges, du vælger at vise, nogle tal (dagsstribe, lærte ord, rekord i Mod uret, læste historier), dine sprog og niveauer samt den måned, du kom til.</li>
-    <li><strong>En global rangliste for Mod uret</strong>, for ugen og for alle tider, hvor dit pseudonym, din avatar, din bedste score og din placering vises. Kun konti, der er logget ind med Google, kommer med.</li>
-    <li><strong>Hvem ser det</strong>: andre Vocadeck-brugere, der er logget ind. Aldrig din e-mailadresse, dit Google-navn eller dine kort.</li>
-    <li><strong>Dine valg</strong>: du kan til enhver tid skjule din profil og trække dig fra ranglisten. Et pseudonym kan kun bruges af én person, og et krænkende pseudonym kan blive afvist.</li>
-    <li><strong>Mod snyd</strong>: scorer, der sendes til ranglisten, kan blive kontrolleret automatisk (svartider, sammenhæng i scoren), og en umulig score bliver frasorteret. Disse kontroller bruger ingen andre oplysninger.</li>
-    <li><strong>Sletning</strong>: hvis du sletter din konto, slettes din profil, dit pseudonym og dine linjer på ranglisten.</li>
+    <li><strong>En profil</strong>, som åbnes fra appens menu: et pseudonym (tildelt tilfældigt, i stil med user#12345678, som du kan ændre), en tegnet avatar eller, hvis du slår det til, billedet fra din Google-konto, de badges, du vælger at vise, nogle tal (dagsstribe, lærte ord, rekord i Mod uret, læste historier), dine sprog og niveauer, dit spillerniveau samt den måned, du kom til. Kun konti, der er logget ind med Google, har en offentlig profil.</li>
+    <li><strong>En global rangliste for Mod uret</strong>, for ugen og for alle tider, hvor dit pseudonym, din avatar, din bedste score i en rangeret runde og din placering vises. Kun rangerede runder tæller: deres ord trækkes tilfældigt fra de færdige kortspil og er de samme for alle.</li>
+    <li><strong>Hvem ser det</strong>: andre Vocadeck-brugere via ranglisten. Aldrig din e-mailadresse, dit Google-navn eller dine kort.</li>
+    <li><strong>Dine valg</strong>: du kan til enhver tid skjule din profil og trække dig fra ranglisten (<strong>Profil › Offentlig profil og rangliste</strong>). Et pseudonym kan kun bruges af én person, kan højst ændres én gang om dagen, og et krænkende pseudonym bliver afvist.</li>
+    <li><strong>Mod snyd</strong>: dommeren genspiller hver rangeret runde efter spillets regler – den tid, der faktisk er gået, tiden for hvert svar, scoren. En umulig runde afvises; en runde, der er for hurtig eller for regelmæssig til en menneskelig hånd, lægges til side til kontrol og kommer ikke på ranglisten. Disse kontroller bruger ingen andre oplysninger.</li>
+    <li><strong>Sletning</strong>: hvis du sletter din konto, slettes din profil, dit pseudonym, dine rangerede runder og dine linjer på ranglisten.</li>
   </ul>
 
   <h2>8. Opbevaringsperiode</h2>
@@ -217,7 +225,7 @@
     <li><strong>Ret til berigtigelse</strong> – ret dine kort og indstillinger når som helst.</li>
     <li><strong>Ret til sletning</strong> – to niveauer i Indstillinger: »Slet alle data« sletter dine kort, dine kortspil og dit fremskridt uden at lukke din konto; »Slet min konto« sletter din konto og alle tilknyttede oplysninger endeligt (fuldstændig sletning i henhold til GDPR).</li>
     <li><strong>Ret til dataportabilitet</strong> – dine kort kan eksporteres i åbne formater under <strong>Indstillinger › Importere eller eksportere</strong>.</li>
-    <li><strong>Ret til indsigelse</strong> – log ud når som helst; snart kan du også skjule din offentlige profil og forlade ranglisten.</li>
+    <li><strong>Ret til indsigelse</strong> – log ud når som helst, skjul din offentlige profil og forlad ranglisten (<strong>Profil › Offentlig profil og rangliste</strong>).</li>
     <li><strong>Klage</strong> – du kan indgive en klage til CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) eller til databeskyttelsesmyndigheden i dit land.</li>
   </ul>
   <p>Sådan udøver du disse rettigheder: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck er ikke rettet mod børn under 13 år og indsamler ikke bevidst oplysninger om dem.</p>
 
   <h2>11. Ændringer</h2>
-  <p>Enhver væsentlig ændring meddeles i appens Versionsnoter. Versionen af 14. september 2026 tilføjer: fremskridt i kurser, øvelser, historier og spil; synkroniserede indstillinger; indberetninger; offlineoversættelse med Google ML Kit; retsgrundlagene og retten til at klage; den kommende offentlige profil og rangliste. Den præciserer også, at historikken over dine svar synkroniseres med din konto.</p>
+  <p>Enhver væsentlig ændring meddeles i appens Versionsnoter. Versionen af 14. september 2026 tilføjer: fremskridt i kurser, øvelser, historier og spil; synkroniserede indstillinger; indberetninger; offlineoversættelse med Google ML Kit; retsgrundlagene og retten til at klage; den kommende offentlige profil og rangliste. Den præciserer også, at historikken over dine svar synkroniseres med din konto. Samme dag tager en anden opdatering den offentlige profil, præstationerne og ranglisten for Mod uret i brug sammen med dommeren for rangerede runder.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

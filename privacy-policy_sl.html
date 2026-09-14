@@ -88,7 +88,7 @@
       <tr>
         <td>E-poštni naslov, ime in profilna fotografija</td>
         <td>Prijava z Googlom (neobvezna)</td>
-        <td>Prepoznavanje vašega računa. Fotografija zaenkrat ni nikjer prikazana (za prihajajoči profil glejte razdelek 7).</td>
+        <td>Prepoznavanje vašega računa. Fotografija se na vašem javnem profilu prikaže le, če jo izberete za avatar (razdelek 7). Vaš e-poštni naslov in vaše ime se tam nikoli ne prikažeta.</td>
       </tr>
       <tr>
         <td>Kartice in kompleti kart z njihovo vsebino</td>
@@ -111,9 +111,19 @@
         <td>Prikaz vaših mejnikov, rekorda in nagrad. Števci partij so shranjeni pod naključno ustvarjenim identifikatorjem naprave, ki ni z ničimer povezan s strojno opremo in služi samo pravilnemu seštevanju partij, odigranih na več napravah.</td>
       </tr>
       <tr>
-        <td>Sinhronizirane nastavitve (na primer risbe, izbrane za spodnjo vrstico) in najdeni skrivni znaki</td>
+        <td>Sinhronizirane nastavitve (na primer risbe, izbrane za spodnjo vrstico), najdeni skrivni znaki in pridobljeni dosežki z datumom pridobitve</td>
         <td>Vaše izbire v aplikaciji</td>
         <td>Enaka podoba aplikacije na vseh vaših napravah</td>
+      </tr>
+      <tr>
+        <td>Javni profil: psevdonim, avatar (ali fotografija vašega računa Google, če jo izberete), znaki v vaši vitrini, ključne številke (serija dni, naučene besede, rekord v igri Proti času, prebrane zgodbe), jeziki in ravni, mesec, ko ste se pridružili, in vaša raven igralca</td>
+        <td>Vaš profil (samo računi Google)</td>
+        <td>Prikaz vašega profila drugim igralcem z lestvice (razdelek 7)</td>
+      </tr>
+      <tr>
+        <td>Igre Proti času za lestvico: razdeljene besede, vsak vaš odgovor in njegov trenutek (v milisekundah), izračunani rezultat, vaši najboljši rezultati tedna in vseh časov</td>
+        <td>Vaše igre za lestvico</td>
+        <td>Preverjanje, ali igra upošteva pravila, in uvrstitev na lestvico (razdelek 7)</td>
       </tr>
       <tr>
         <td>Prijava napake v prevodu: zadevna kartica (obe strani, njuna jezika, ime kompleta kart), izbrani razlog, neobvezen komentar in različica aplikacije</td>
@@ -152,8 +162,8 @@
   <h2>3. Zakaj obdelujemo te podatke (pravne podlage)</h2>
   <ul>
     <li><strong>Da vam zagotovimo storitev, ki jo uporabljate</strong> (izvajanje pogodbe): vaš račun, vaše kartice, njihova sinhronizacija, vaš napredek in vaša statistika.</li>
-    <li><strong>Da aplikacija ostane zanesljiva in poštena</strong> (zakoniti interes): tehnična poročila o napakah, preverjanje, ali zahteve res prihajajo iz uradne aplikacije, in v prihodnje preverjanja proti goljufanju na lestvici.</li>
-    <li><strong>Z vašim dovoljenjem</strong> (privolitev): prijave, ki se jih odločite poslati, in v prihodnje to, kar se boste odločili pokazati na svojem javnem profilu. To privolitev lahko kadar koli prekličete.</li>
+    <li><strong>Da aplikacija ostane zanesljiva in poštena</strong> (zakoniti interes): tehnična poročila o napakah, preverjanje, ali zahteve res prihajajo iz uradne aplikacije, in preverjanja proti goljufanju na lestvici.</li>
+    <li><strong>Z vašim dovoljenjem</strong> (privolitev): prijave, ki se jih odločite poslati, in to, kar se odločite pokazati na svojem javnem profilu. To privolitev lahko kadar koli prekličete.</li>
   </ul>
 
   <h2>4. Tehnični obdelovalci</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> in <strong>Pixabay</strong> — iskanje ilustracij za vaše kartice (samo iskana beseda, brez identifikacije). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — gostovanje jezikovnih paketov, ki jih lahko prenesete za uporabo brez povezave (samo statične datoteke, brez prenosa podatkov o računu). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> in <strong>Cloudflare Access</strong> — gostovanje spletne različice (PWA) in nadzor dostopa med preizkusno fazo. Cloudflare vidi naslove naloženih strani in pri zaprti beta različici e-poštni naslov, povabljen k dostopu. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> in <strong>Cloudflare D1</strong> — sodnik iger za lestvico: razdeli besede, prejme vaše odgovore in njihov trenutek, sam izračuna rezultat in vodi lestvico (psevdonim, avatar, fotografija, če ste jo izbrali, najboljši rezultati). Vaš račun prepozna po njegovem žetonu za prijavo, ne da bi prejel vaš e-poštni naslov ali vaše ime. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — tehnična poročila, poslana, ko aplikacija naleti na napako: različica aplikacije, model naprave, operacijski sistem in mesto napake v kodi. Ne vsebujejo nobene vsebine vaših kartic. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (prek Firebase App Check) — preverja, ali zahteve res prihajajo iz uradne aplikacije, za preprečevanje goljufij, brez osebnih podatkov. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Glasovni mehanizmi operacijskega sistema</strong> — prepoznavanje govora služi samo preverjanju vaše izgovorjave (gumb z mikrofonom na kartici), zvok pa obdela vaša naprava; sinteza govora na glas prebere besede in stavke z vaših kartic, ki jih obdela mehanizem vašega telefona po lastnih pravilih. <span class="badge">Google / Apple / proizvajalec naprave</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Shranjevanje in varnost</h2>
   <p>
-    Vaši podatki so shranjeni <strong>lokalno v vaši napravi</strong> (zbirka podatkov SQLite ali shramba vašega brskalnika pri spletni različici) in, če ste prijavljeni, <strong>v Google Firestore</strong> (Googlovi strežniki v Evropi ali Združenih državah). Podatki med prenosom so šifrirani s TLS. Varnostna pravila Firestore zagotavljajo, da vaših podatkov ne more brati nihče drug; vidno bo le to, kar se boste odločili pokazati na svojem javnem profilu, ko bo ta funkcija na voljo (razdelek 7).
+    Vaši podatki so shranjeni <strong>lokalno v vaši napravi</strong> (zbirka podatkov SQLite ali shramba vašega brskalnika pri spletni različici) in, če ste prijavljeni, <strong>v Google Firestore</strong> (Googlovi strežniki v Evropi ali Združenih državah). Podatki med prenosom so šifrirani s TLS. Varnostna pravila Firestore zagotavljajo, da vaših podatkov ne more brati nihče drug; vidno je le to, kar pokažete na svojem javnem profilu (razdelek 7). Samo lestvico pa vodi sodnik iger za lestvico pri Cloudflaru (razdelek 4).
   </p>
   <p>
     Zgodovina vaših odgovorov se sinhronizira z vašim računom, da vas statistika spremlja z ene naprave na drugo. Tehnični dnevnik, ki služi prilagajanju algoritma ponavljanja vašemu spominu, pa ostane <strong>izključno v vaši napravi</strong> in se nikoli ne sinhronizira.
@@ -193,17 +204,14 @@
     Da bi bilo mogoče zbirko podatkov ob težavi popraviti, aplikacija v vaši napravi hrani do tri varnostne kopije. Te nikoli ne zapustijo naprave.
   </p>
 
-  <h2>7. Javni profil in lestvica (kmalu)</h2>
-  <div class="a-venir">
-    <strong>Še ni na voljo.</strong> Ta razdelek vnaprej opisuje funkcijo v pripravi, da boste vedeli, kaj bo naredila vidno, še preden bo na voljo. Veljal bo šele od začetka njenega delovanja, ki bo napovedan v razdelku „Opombe k različici“.
-  </div>
+  <h2>7. Javni profil in lestvica</h2>
   <ul>
-    <li><strong>Profil</strong>, ki se odpre iz menija aplikacije: psevdonim (dodeljen naključno, na primer user#12345678, ki ga boste lahko spremenili), narisan avatar ali, če to vklopite, fotografija vašega računa Google, znaki, ki jih boste izbrali za prikaz, nekaj številk (serija dni, naučene besede, rekord v igri Proti času, prebrane zgodbe), vaši jeziki in ravni ter mesec, ko ste se pridružili.</li>
-    <li><strong>Svetovna lestvica igre Proti času</strong>, tedenska in vseh časov, na kateri bodo vaš psevdonim, vaš avatar, vaš najboljši rezultat in vaše mesto. Na njej bodo samo računi, prijavljeni z Googlom.</li>
-    <li><strong>Kdo ga bo videl</strong>: drugi prijavljeni uporabniki aplikacije Vocadeck. Nikoli vašega e-poštnega naslova, vašega imena v Googlu ali vaših kartic.</li>
-    <li><strong>Vaše izbire</strong>: svoj profil boste lahko kadar koli skrili in se umaknili z lestvice. Psevdonim lahko nosi le ena oseba, žaljiv psevdonim pa je lahko zavrnjen.</li>
-    <li><strong>Proti goljufanju</strong>: rezultati, poslani na lestvico, se lahko samodejno preverjajo (odzivni časi, skladnost rezultata), nemogoč rezultat pa bo izločen. Ta preverjanja ne uporabljajo nobenih drugih podatkov.</li>
-    <li><strong>Izbris</strong>: z izbrisom računa se izbrišejo vaš profil, vaš psevdonim in vaše vrstice na lestvici.</li>
+    <li><strong>Profil</strong>, ki se odpre iz menija aplikacije: psevdonim (dodeljen naključno, na primer user#12345678, ki ga lahko spremenite), narisan avatar ali, če to vklopite, fotografija vašega računa Google, znaki, ki jih izberete za prikaz, nekaj številk (serija dni, naučene besede, rekord v igri Proti času, prebrane zgodbe), vaši jeziki in ravni, vaša raven igralca ter mesec, ko ste se pridružili. Javni profil imajo samo računi, prijavljeni z Googlom.</li>
+    <li><strong>Svetovna lestvica igre Proti času</strong>, tedenska in vseh časov, na kateri so vaš psevdonim, vaš avatar, vaš najboljši rezultat v igri za lestvico in vaše mesto. Štejejo samo igre za lestvico: njihove besede so naključno izžrebane iz pripravljenih kompletov kart, za vse enake.</li>
+    <li><strong>Kdo ga vidi</strong>: drugi uporabniki aplikacije Vocadeck, z lestvice. Nikoli vašega e-poštnega naslova, vašega imena v Googlu ali vaših kartic.</li>
+    <li><strong>Vaše izbire</strong>: svoj profil lahko kadar koli skrijete in se umaknete z lestvice (<strong>Profil › Javni profil in lestvica</strong>). Psevdonim lahko nosi le ena oseba, spremeniti ga je mogoče največ enkrat na dan, žaljiv psevdonim pa je zavrnjen.</li>
+    <li><strong>Proti goljufanju</strong>: sodnik vsako igro za lestvico znova preigra po pravilih igre — dejansko pretečeni čas, čas vsakega odgovora, rezultat. Nemogoča igra je zavrnjena; igra, ki je prehitra ali preveč enakomerna za človeško roko, je odložena v preverjanje in se ne uvrsti na lestvico. Ta preverjanja ne uporabljajo nobenih drugih podatkov.</li>
+    <li><strong>Izbris</strong>: z izbrisom računa se izbrišejo vaš profil, vaš psevdonim, vaše igre za lestvico in vaše vrstice na lestvici.</li>
   </ul>
 
   <h2>8. Obdobje hrambe</h2>
@@ -217,7 +225,7 @@
     <li><strong>Pravica do popravka</strong> — kartice in nastavitve lahko spreminjate kadar koli.</li>
     <li><strong>Pravica do izbrisa</strong> — dve ravni v razdelku Nastavitve: „Izbriši vse podatke“ izbriše vaše kartice, komplete kart in napredek, ne da bi zaprl vaš račun; „Izbriši moj račun“ trajno izbriše vaš račun in vse povezane podatke (popoln izbris v skladu z GDPR).</li>
     <li><strong>Pravica do prenosljivosti</strong> — vaše kartice lahko izvozite v odprtih formatih v <strong>Nastavitve › Uvoz ali izvoz</strong>.</li>
-    <li><strong>Pravica do ugovora</strong> — kadar koli se odjavite; v prihodnje boste lahko tudi skrili svoj javni profil in zapustili lestvico.</li>
+    <li><strong>Pravica do ugovora</strong> — kadar koli se odjavite, skrijte svoj javni profil in zapustite lestvico (<strong>Profil › Javni profil in lestvica</strong>).</li>
     <li><strong>Pritožba</strong> — pritožbo lahko vložite pri CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) ali pri organu za varstvo podatkov v vaši državi.</li>
   </ul>
   <p>Za uveljavljanje teh pravic: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck ni namenjen otrokom, mlajšim od 13 let, in zavestno ne zbira podatkov o njih.</p>
 
   <h2>11. Spremembe</h2>
-  <p>Vsaka bistvena sprememba je navedena v razdelku „Opombe k različici“ v aplikaciji. Različica s 14. septembra 2026 dodaja: napredek pri tečajih, vajah, zgodbah in igrah; sinhronizirane nastavitve; prijave; prevajanje brez povezave z Google ML Kit; pravne podlage in pravico do pritožbe; prihajajoči javni profil in lestvico. Pojasnjuje tudi, da se zgodovina vaših odgovorov sinhronizira z vašim računom.</p>
+  <p>Vsaka bistvena sprememba je navedena v razdelku „Opombe k različici“ v aplikaciji. Različica s 14. septembra 2026 dodaja: napredek pri tečajih, vajah, zgodbah in igrah; sinhronizirane nastavitve; prijave; prevajanje brez povezave z Google ML Kit; pravne podlage in pravico do pritožbe; prihajajoči javni profil in lestvico. Pojasnjuje tudi, da se zgodovina vaših odgovorov sinhronizira z vašim računom. Isti dan druga posodobitev uvede javni profil, dosežke in lestvico igre Proti času, skupaj s sodnikom iger za lestvico.</p>
 
   <h2>12. Stik</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

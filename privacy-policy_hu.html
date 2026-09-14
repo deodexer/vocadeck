@@ -88,7 +88,7 @@
       <tr>
         <td>E-mail-cím, név és profilkép</td>
         <td>Google-bejelentkezés (nem kötelező)</td>
-        <td>Az Ön fiókjának azonosítása. A kép jelenleg sehol sem jelenik meg (a későbbi profilról lásd a 7. szakaszt).</td>
+        <td>Az Ön fiókjának azonosítása. A kép csak akkor jelenik meg nyilvános profilján, ha avatarként választja (7. szakasz). E-mail-címe és neve soha nem jelenik meg ott.</td>
       </tr>
       <tr>
         <td>Kártyák és paklik a tartalmukkal együtt</td>
@@ -111,9 +111,19 @@
         <td>Mérföldkövei, rekordja és díjai megjelenítése. A játszmaszámlálókat egy véletlenszerűen generált eszközazonosító alatt tároljuk, amely semmilyen kapcsolatban nincs a hardverrel, és kizárólag arra szolgál, hogy a több eszközön lejátszott játszmák helyesen összeadódjanak.</td>
       </tr>
       <tr>
-        <td>Szinkronizált beállítások (például az alsó sávhoz választott rajzok) és a megtalált titkos jelvények</td>
+        <td>Szinkronizált beállítások (például az alsó sávhoz választott rajzok), a megtalált titkos jelvények és a megszerzett teljesítmények, dátumukkal együtt</td>
         <td>Az Ön választásai az alkalmazásban</td>
         <td>Hogy alkalmazását minden eszközén ugyanúgy találja meg</td>
+      </tr>
+      <tr>
+        <td>Nyilvános profil: becenév, avatar (vagy Google-fiókja képe, ha azt választja), a vitrinjében lévő jelvények, főbb számok (napi sorozat, megtanult szavak, rekord a „Versenyfutás az idővel” játékban, elolvasott történetek), nyelvek és szintek, a csatlakozás hónapja és játékosszintje</td>
+        <td>Az Ön profilja (csak Google-fiókok)</td>
+        <td>Az Ön megjelenítése a többi játékosnak, a ranglistáról (7. szakasz)</td>
+      </tr>
+      <tr>
+        <td>Ranglistás játszmák a „Versenyfutás az idővel” játékban: a kiosztott szavak, minden válasza és annak időpontja (ezredmásodpercben), a kiszámított pontszám, legjobb heti és minden idők szerinti pontszámai</td>
+        <td>Az Ön ranglistás játszmái</td>
+        <td>Annak ellenőrzése, hogy a játszma betartja-e a játékszabályokat, és az Ön rangsorolása (7. szakasz)</td>
       </tr>
       <tr>
         <td>Fordítási hiba jelentése: az érintett kártya (mindkét oldala, azok nyelve, a pakli neve), a választott ok, egy nem kötelező megjegyzés és az alkalmazás verziója</td>
@@ -152,8 +162,8 @@
   <h2>3. Miért kezeljük ezeket az adatokat (jogalapok)</h2>
   <ul>
     <li><strong>Hogy nyújthassuk az Ön által használt szolgáltatást</strong> (szerződés teljesítése): az Ön fiókja, kártyái, azok szinkronizálása, haladása és statisztikái.</li>
-    <li><strong>Hogy az alkalmazás megbízható és tisztességes maradjon</strong> (jogos érdek): a technikai hibajelentések, annak ellenőrzése, hogy a kérések valóban a hivatalos alkalmazásból érkeznek, és a jövőben a ranglistán a csalás elleni ellenőrzések.</li>
-    <li><strong>Az Ön hozzájárulásával</strong> (hozzájárulás): az Ön által elküldött jelentések, és a jövőben az, amit nyilvános profilján megjelenít. Hozzájárulását bármikor visszavonhatja.</li>
+    <li><strong>Hogy az alkalmazás megbízható és tisztességes maradjon</strong> (jogos érdek): a technikai hibajelentések, annak ellenőrzése, hogy a kérések valóban a hivatalos alkalmazásból érkeznek, és a ranglistán a csalás elleni ellenőrzések.</li>
+    <li><strong>Az Ön hozzájárulásával</strong> (hozzájárulás): az Ön által elküldött jelentések, és az, amit nyilvános profilján megjelenít. Hozzájárulását bármikor visszavonhatja.</li>
   </ul>
 
   <h2>4. Technikai adatfeldolgozók</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> és <strong>Pixabay</strong> — illusztrációk keresése a kártyáihoz (csak a keresett szó, azonosítás nélkül). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — az offline használatra letölthető nyelvi csomagok tárolása (csak statikus fájlok, fiókadatok továbbítása nélkül). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> és <strong>Cloudflare Access</strong> — a webes verzió (PWA) tárolása és a hozzáférés-szabályozás a tesztelési szakaszban. A Cloudflare látja a betöltött oldalak címét, a zárt béta esetében pedig a hozzáférésre meghívott e-mail-címet. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> és <strong>Cloudflare D1</strong> — a ranglistás játszmák bírója: kiosztja a szavakat, fogadja válaszait és azok időpontját, maga számítja ki a pontszámot, és vezeti a ranglistát (becenév, avatar, kép, ha azt választotta, legjobb pontszámok). Fiókját a bejelentkezési tokenje alapján ismeri fel, anélkül hogy megkapná e-mail-címét vagy nevét. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — technikai jelentések, amelyeket az alkalmazás hiba esetén küld: az alkalmazás verziója, az eszköz típusa, az operációs rendszer és a hiba helye a kódban. A kártyái tartalma nem szerepel bennük. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (a Firebase App Check szolgáltatáson keresztül) — ellenőrzi, hogy a kérések valóban a hivatalos alkalmazásból érkeznek, csalásmegelőzési céllal, személyes adatok nélkül. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Az operációs rendszer hangmotorjai</strong> — a beszédfelismerés kizárólag az Ön kiejtésének ellenőrzésére szolgál (egy kártya mikrofon gombja), a hangot pedig az Ön eszköze dolgozza fel; a beszédszintézis felolvassa a kártyái szavait és mondatait, amelyeket telefonja motorja a saját szabályai szerint dolgoz fel. <span class="badge">Google / Apple / az eszköz gyártója</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Tárolás és biztonság</h2>
   <p>
-    Adatait <strong>helyben, az Ön eszközén</strong> tároljuk (SQLite-adatbázisban, a webes verzió esetében a böngésző tárhelyén), és ha bejelentkezett, <strong>a Google Firestore-ban</strong> is (a Google európai vagy egyesült államokbeli szerverein). Az adatokat továbbítás közben TLS-titkosítás védi. A Firestore biztonsági szabályai garantálják, hogy senki más ne olvashassa az adatait; csak az lesz látható, amit nyilvános profilján megjelenít, amikor ez a funkció elérhető lesz (7. szakasz).
+    Adatait <strong>helyben, az Ön eszközén</strong> tároljuk (SQLite-adatbázisban, a webes verzió esetében a böngésző tárhelyén), és ha bejelentkezett, <strong>a Google Firestore-ban</strong> is (a Google európai vagy egyesült államokbeli szerverein). Az adatokat továbbítás közben TLS-titkosítás védi. A Firestore biztonsági szabályai garantálják, hogy senki más ne olvashassa az adatait; csak az látható, amit nyilvános profilján megjelenít (7. szakasz). Magát a ranglistát a ranglistás játszmák bírója vezeti a Cloudflare-nél (4. szakasz).
   </p>
   <p>
     Válaszainak előzményei szinkronizálódnak a fiókjával, hogy statisztikái egyik eszközről a másikra is elkísérjék. Az a technikai napló viszont, amely az ismétlési algoritmust az Ön memóriájához igazítja, <strong>kizárólag az Ön eszközén</strong> marad, és soha nem szinkronizálódik.
@@ -193,17 +204,14 @@
     Hogy probléma esetén az adatbázis helyreállítható legyen, az alkalmazás legfeljebb három biztonsági másolatot tárol az eszközén. Ezek soha nem hagyják el az eszközt.
   </p>
 
-  <h2>7. Nyilvános profil és ranglista (hamarosan)</h2>
-  <div class="a-venir">
-    <strong>Még nem érhető el.</strong> Ez a szakasz előre ismertet egy előkészítés alatt álló funkciót, hogy még a megjelenése előtt tudja, mit tesz majd láthatóvá. Csak a funkció elindításától lesz érvényes, amelyet a „Kiadási megjegyzések” között jelentünk be.
-  </div>
+  <h2>7. Nyilvános profil és ranglista</h2>
   <ul>
-    <li><strong>Egy profil</strong>, amely az alkalmazás menüjéből nyitható meg: egy becenév (véletlenszerűen kiosztva, például user#12345678, amelyet megváltoztathat), egy rajzolt avatar vagy, ha bekapcsolja, Google-fiókja képe, a megjeleníteni kívánt jelvények, néhány szám (napi sorozat, megtanult szavak, rekord a „Versenyfutás az idővel” játékban, elolvasott történetek), az Ön nyelvei és szintjei, valamint csatlakozásának hónapja.</li>
-    <li><strong>Egy világszintű ranglista a „Versenyfutás az idővel” játékhoz</strong>, heti és minden idők szerinti, amelyen megjelenik a beceneve, az avatarja, a legjobb pontszáma és a helyezése. Csak a Google-lel bejelentkezett fiókok szerepelnek rajta.</li>
-    <li><strong>Ki látja majd</strong>: a Vocadeck többi bejelentkezett felhasználója. Soha nem az e-mail-címét, a Google-nevét vagy a kártyáit.</li>
-    <li><strong>Az Ön döntései</strong>: profilját bármikor elrejtheti, és kiléphet a ranglistáról. Egy becenevet csak egy személy viselhet, és a sértő becenév elutasítható.</li>
-    <li><strong>A csalás ellen</strong>: a ranglistára küldött pontszámok automatikusan ellenőrizhetők (válaszidők, a pontszám hihetősége), a lehetetlen pontszámot pedig kizárjuk. Ezek az ellenőrzések semmilyen más adatot nem használnak.</li>
-    <li><strong>Törlés</strong>: fiókja törlésével törlődik a profilja, a beceneve és a ranglistán szereplő sorai.</li>
+    <li><strong>Egy profil</strong>, amely az alkalmazás menüjéből nyitható meg: egy becenév (véletlenszerűen kiosztva, például user#12345678, amelyet megváltoztathat), egy rajzolt avatar vagy, ha bekapcsolja, Google-fiókja képe, a megjeleníteni kívánt jelvények, néhány szám (napi sorozat, megtanult szavak, rekord a „Versenyfutás az idővel” játékban, elolvasott történetek), az Ön nyelvei és szintjei, játékosszintje, valamint csatlakozásának hónapja. Nyilvános profil csak a Google-lel bejelentkezett fiókokhoz tartozik.</li>
+    <li><strong>Egy világszintű ranglista a „Versenyfutás az idővel” játékhoz</strong>, heti és minden idők szerinti, amelyen megjelenik a beceneve, az avatarja, a ranglistás játszmában elért legjobb pontszáma és a helyezése. Csak a ranglistás játszmák számítanak: ezek szavait véletlenszerűen húzzuk a kész paklikból, és mindenki számára ugyanazok.</li>
+    <li><strong>Ki látja</strong>: a Vocadeck többi felhasználója, a ranglistáról. Soha nem az e-mail-címét, a Google-nevét vagy a kártyáit.</li>
+    <li><strong>Az Ön döntései</strong>: profilját bármikor elrejtheti, és kiléphet a ranglistáról (<strong>Profil › Nyilvános profil és ranglista</strong>). Egy becenevet csak egy személy viselhet, naponta legfeljebb egyszer módosítható, a sértő becenevet pedig elutasítjuk.</li>
+    <li><strong>A csalás ellen</strong>: a bíró minden ranglistás játszmát újrajátszik a játék szabályai szerint — a ténylegesen eltelt idő, az egyes válaszok ideje, a pontszám. A lehetetlen játszmát elutasítjuk; az emberi kézhez képest túl gyors vagy túl egyenletes játszmát félretesszük ellenőrzésre, és nem kerül fel a ranglistára. Ezek az ellenőrzések semmilyen más adatot nem használnak.</li>
+    <li><strong>Törlés</strong>: fiókja törlésével törlődik a profilja, a beceneve, a ranglistás játszmái és a ranglistán szereplő sorai.</li>
   </ul>
 
   <h2>8. Megőrzési idő</h2>
@@ -217,7 +225,7 @@
     <li><strong>Helyesbítéshez való jog</strong> — kártyáit és beállításait bármikor módosíthatja.</li>
     <li><strong>Törléshez való jog</strong> — két szint a Beállítások között: „Az összes adat törlése” törli a kártyáit, a paklijait és a haladását, de fiókját nem szünteti meg; a „Fiókom törlése” véglegesen törli fiókját és az összes kapcsolódó adatot (teljes törlés a GDPR szerint).</li>
     <li><strong>Adathordozhatósághoz való jog</strong> — kártyái nyílt formátumokban exportálhatók a <strong>Beállítások › Importálás vagy exportálás</strong> menüpontban.</li>
-    <li><strong>Tiltakozáshoz való jog</strong> — bármikor kijelentkezhet; a jövőben nyilvános profilját is elrejtheti, és kiléphet a ranglistáról.</li>
+    <li><strong>Tiltakozáshoz való jog</strong> — bármikor kijelentkezhet, elrejtheti nyilvános profilját, és kiléphet a ranglistáról (<strong>Profil › Nyilvános profil és ranglista</strong>).</li>
     <li><strong>Panasz</strong> — panaszt tehet a CNIL-nél (<a href="https://www.cnil.fr">www.cnil.fr</a>) vagy országa adatvédelmi hatóságánál.</li>
   </ul>
   <p>Jogai gyakorlásához: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>A Vocadeck nem 13 év alatti gyermekeknek szól, és tudatosan nem gyűjt róluk adatokat.</p>
 
   <h2>11. Módosítások</h2>
-  <p>Minden lényeges módosítást az alkalmazás „Kiadási megjegyzések” részében jelzünk. A 2026. szeptember 14-i változat a következőkkel bővül: haladás a kurzusokban, gyakorlatokban, történetekben és játékokban; szinkronizált beállítások; jelentések; offline fordítás a Google ML Kit segítségével; a jogalapok és a panasztételi jog; a hamarosan érkező nyilvános profil és ranglista. Azt is pontosítja, hogy válaszainak előzményei szinkronizálódnak a fiókjával.</p>
+  <p>Minden lényeges módosítást az alkalmazás „Kiadási megjegyzések” részében jelzünk. A 2026. szeptember 14-i változat a következőkkel bővül: haladás a kurzusokban, gyakorlatokban, történetekben és játékokban; szinkronizált beállítások; jelentések; offline fordítás a Google ML Kit segítségével; a jogalapok és a panasztételi jog; a hamarosan érkező nyilvános profil és ranglista. Azt is pontosítja, hogy válaszainak előzményei szinkronizálódnak a fiókjával. Ugyanazon a napon egy második frissítés elindítja a nyilvános profilt, a teljesítményeket és a „Versenyfutás az idővel” ranglistáját, a ranglistás játszmák bírójával együtt.</p>
 
   <h2>12. Kapcsolat</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

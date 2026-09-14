@@ -88,7 +88,7 @@
       <tr>
         <td>E-Mail-Adresse, Name und Profilbild</td>
         <td>Google-Anmeldung (optional)</td>
-        <td>Identifizierung Ihres Kontos. Das Bild wird derzeit nirgends angezeigt (zum geplanten Profil siehe Abschnitt 7).</td>
+        <td>Identifizierung Ihres Kontos. Das Bild erscheint in Ihrem öffentlichen Profil nur, wenn Sie es als Avatar wählen (Abschnitt 7). Ihre E-Mail-Adresse und Ihr Name erscheinen dort nie.</td>
       </tr>
       <tr>
         <td>Karten und Decks mit ihrem Inhalt</td>
@@ -111,9 +111,19 @@
         <td>Anzeige Ihrer Meilensteine, Ihres Rekords und Ihrer Belohnungen. Die Rundenzähler werden unter einer zufällig erzeugten Gerätekennung gespeichert, die keinerlei Bezug zur Hardware hat und nur dazu dient, die auf mehreren Geräten gespielten Runden korrekt zusammenzuzählen.</td>
       </tr>
       <tr>
-        <td>Synchronisierte Einstellungen (zum Beispiel die für die untere Leiste gewählten Bilder) und gefundene geheime Abzeichen</td>
+        <td>Synchronisierte Einstellungen (zum Beispiel die für die untere Leiste gewählten Bilder), gefundene geheime Abzeichen und errungene Erfolge, mit ihrem Datum</td>
         <td>Ihre Auswahl in der App</td>
         <td>Ihre App auf jedem Gerät genau so wiederfinden, wie Sie sie eingerichtet haben</td>
+      </tr>
+      <tr>
+        <td>Öffentliches Profil: Pseudonym, Avatar (oder das Bild Ihres Google-Kontos, wenn Sie es wählen), die Abzeichen in Ihrer Vitrine, Kennzahlen (Tagesserie, gelernte Wörter, Rekord im Spiel „Gegen die Uhr“, gelesene Geschichten), Sprachen und Niveaus, der Monat Ihrer Anmeldung und Ihr Spielerlevel</td>
+        <td>Ihr Profil (nur Google-Konten)</td>
+        <td>Sie anderen Spielern über die Rangliste zeigen (Abschnitt 7)</td>
+      </tr>
+      <tr>
+        <td>Ranglistenpartien im Spiel „Gegen die Uhr“: die ausgeteilten Wörter, jede Ihrer Antworten und ihr Zeitpunkt (in Millisekunden), die berechnete Punktzahl, Ihre besten Punktzahlen der Woche und aller Zeiten</td>
+        <td>Ihre Ranglistenpartien</td>
+        <td>Prüfen, ob die Partie die Spielregeln einhält, und Sie in die Rangliste einordnen (Abschnitt 7)</td>
       </tr>
       <tr>
         <td>Meldung eines Übersetzungsfehlers: die betroffene Karte (beide Seiten, ihre Sprachen, der Name des Decks), der gewählte Grund, ein optionaler Kommentar und die App-Version</td>
@@ -152,8 +162,8 @@
   <h2>3. Warum wir diese Daten verarbeiten (Rechtsgrundlagen)</h2>
   <ul>
     <li><strong>Um Ihnen den Dienst bereitzustellen, den Sie nutzen</strong> (Vertragserfüllung): Ihr Konto, Ihre Karten, deren Synchronisierung, Ihr Fortschritt und Ihre Statistiken.</li>
-    <li><strong>Um die App zuverlässig und fair zu halten</strong> (berechtigtes Interesse): technische Fehlerberichte, die Prüfung, ob Anfragen tatsächlich aus der offiziellen App stammen, und – demnächst – Kontrollen gegen Betrug in der Rangliste.</li>
-    <li><strong>Mit Ihrem Einverständnis</strong> (Einwilligung): die Meldungen, die Sie senden möchten, und – demnächst – das, was Sie in Ihrem öffentlichen Profil zeigen möchten. Sie können diese Einwilligung jederzeit widerrufen.</li>
+    <li><strong>Um die App zuverlässig und fair zu halten</strong> (berechtigtes Interesse): technische Fehlerberichte, die Prüfung, ob Anfragen tatsächlich aus der offiziellen App stammen, und Kontrollen gegen Betrug in der Rangliste.</li>
+    <li><strong>Mit Ihrem Einverständnis</strong> (Einwilligung): die Meldungen, die Sie senden möchten, und das, was Sie in Ihrem öffentlichen Profil zeigen möchten. Sie können diese Einwilligung jederzeit widerrufen.</li>
   </ul>
 
   <h2>4. Technische Auftragsverarbeiter</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> und <strong>Pixabay</strong> – Suche nach Illustrationen für Ihre Karten (nur der Suchbegriff, ohne Identifizierung). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> – Hosting der Sprachpakete, die für die Offline-Nutzung heruntergeladen werden können (nur statische Dateien, keine Kontodaten übermittelt). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> und <strong>Cloudflare Access</strong> – Hosting der Webversion (PWA) und Zugangskontrolle während der Testphase. Cloudflare sieht die Adressen der geladenen Seiten und, bei der geschlossenen Beta, die zum Zugang eingeladene E-Mail-Adresse. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> und <strong>Cloudflare D1</strong> – der Schiedsrichter der Ranglistenpartien: Er teilt die Wörter aus, empfängt Ihre Antworten und deren Zeitpunkt, berechnet die Punktzahl selbst und führt die Rangliste (Pseudonym, Avatar, Bild, falls Sie es gewählt haben, beste Punktzahlen). Er erkennt Ihr Konto an dessen Anmeldetoken, ohne Ihre E-Mail-Adresse oder Ihren Namen zu erhalten. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> – technische Berichte, die gesendet werden, wenn in der App ein Fehler auftritt: App-Version, Gerätemodell, Betriebssystem und Stelle des Fehlers im Code. Inhalte Ihrer Karten sind darin nicht enthalten. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (über Firebase App Check) – prüft zur Betrugsbekämpfung, ob Anfragen tatsächlich aus der offiziellen App stammen, ohne personenbezogene Daten. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Sprach-Engines des Betriebssystems</strong> – die Spracherkennung dient ausschließlich dazu, Ihre Aussprache zu prüfen (die Mikrofon-Schaltfläche einer Karte), und der Ton wird von Ihrem Gerät verarbeitet; die Sprachausgabe liest die Wörter und Sätze Ihrer Karten vor, die von der Engine Ihres Telefons nach deren eigenen Regeln verarbeitet werden. <span class="badge">Google / Apple / Gerätehersteller</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Speicherung und Sicherheit</h2>
   <p>
-    Ihre Daten werden <strong>lokal auf Ihrem Gerät</strong> gespeichert (SQLite-Datenbank bzw. der Speicher Ihres Browsers bei der Webversion) und, wenn Sie angemeldet sind, <strong>in Google Firestore</strong> (Google-Server in Europa oder den USA). Daten werden bei der Übertragung per TLS verschlüsselt. Die Sicherheitsregeln von Firestore stellen sicher, dass keine andere Person Ihre Daten lesen kann; sichtbar wird nur das, was Sie in Ihrem öffentlichen Profil zeigen möchten, sobald es diese Funktion gibt (Abschnitt 7).
+    Ihre Daten werden <strong>lokal auf Ihrem Gerät</strong> gespeichert (SQLite-Datenbank bzw. der Speicher Ihres Browsers bei der Webversion) und, wenn Sie angemeldet sind, <strong>in Google Firestore</strong> (Google-Server in Europa oder den USA). Daten werden bei der Übertragung per TLS verschlüsselt. Die Sicherheitsregeln von Firestore stellen sicher, dass keine andere Person Ihre Daten lesen kann; sichtbar ist nur das, was Sie in Ihrem öffentlichen Profil zeigen (Abschnitt 7). Die Rangliste selbst wird vom Schiedsrichter der Ranglistenpartien bei Cloudflare geführt (Abschnitt 4).
   </p>
   <p>
     Der Verlauf Ihrer Antworten wird mit Ihrem Konto synchronisiert, damit Ihre Statistiken Sie von einem Gerät zum anderen begleiten. Das technische Protokoll, mit dem der Wiederholungsalgorithmus an Ihr Gedächtnis angepasst wird, bleibt dagegen <strong>ausschließlich auf Ihrem Gerät</strong> und wird nie synchronisiert.
@@ -193,17 +204,14 @@
     Damit die Datenbank bei Problemen repariert werden kann, bewahrt die App auf Ihrem Gerät bis zu drei Sicherungskopien auf. Sie verlassen das Gerät nie.
   </p>
 
-  <h2>7. Öffentliches Profil und Rangliste (demnächst)</h2>
-  <div class="a-venir">
-    <strong>Noch nicht verfügbar.</strong> Dieser Abschnitt beschreibt vorab eine Funktion in Vorbereitung, damit Sie wissen, was sie sichtbar machen wird, bevor sie kommt. Er gilt erst ab ihrer Einführung, die in den Versionshinweisen angekündigt wird.
-  </div>
+  <h2>7. Öffentliches Profil und Rangliste</h2>
   <ul>
-    <li><strong>Ein Profil</strong>, aufrufbar über das Menü der App: ein Pseudonym (zufällig vergeben, etwa user#12345678, das Sie ändern können), ein gezeichneter Avatar oder, wenn Sie es aktivieren, das Bild Ihres Google-Kontos, die Abzeichen, die Sie zeigen möchten, einige Zahlen (Tagesserie, gelernte Wörter, Rekord im Spiel „Gegen die Uhr“, gelesene Geschichten), Ihre Sprachen und Niveaus sowie der Monat Ihrer Anmeldung.</li>
-    <li><strong>Eine weltweite Rangliste für das Spiel „Gegen die Uhr“</strong>, wöchentlich und für alle Zeiten, mit Ihrem Pseudonym, Ihrem Avatar, Ihrer besten Punktzahl und Ihrem Platz. Nur mit Google angemeldete Konten erscheinen darin.</li>
-    <li><strong>Wer es sehen wird</strong>: andere angemeldete Nutzer von Vocadeck. Niemals Ihre E-Mail-Adresse, Ihren Google-Namen oder Ihre Karten.</li>
-    <li><strong>Ihre Wahl</strong>: Sie können Ihr Profil jederzeit verbergen und sich aus der Rangliste zurückziehen. Ein Pseudonym kann nur von einer Person getragen werden, und ein beleidigendes Pseudonym kann abgelehnt werden.</li>
-    <li><strong>Gegen Betrug</strong>: Die an die Rangliste gesendeten Punktzahlen können automatisch überprüft werden (Antwortzeiten, Plausibilität der Punktzahl), und eine unmögliche Punktzahl wird verworfen. Diese Kontrollen verwenden keine anderen Daten.</li>
-    <li><strong>Löschung</strong>: Wenn Sie Ihr Konto löschen, werden Ihr Profil, Ihr Pseudonym und Ihre Einträge in der Rangliste gelöscht.</li>
+    <li><strong>Ein Profil</strong>, aufrufbar über das Menü der App: ein Pseudonym (zufällig vergeben, etwa user#12345678, das Sie ändern können), ein gezeichneter Avatar oder, wenn Sie es aktivieren, das Bild Ihres Google-Kontos, die Abzeichen, die Sie zeigen möchten, einige Zahlen (Tagesserie, gelernte Wörter, Rekord im Spiel „Gegen die Uhr“, gelesene Geschichten), Ihre Sprachen und Niveaus, Ihr Spielerlevel sowie der Monat Ihrer Anmeldung. Nur mit Google angemeldete Konten haben ein öffentliches Profil.</li>
+    <li><strong>Eine weltweite Rangliste für das Spiel „Gegen die Uhr“</strong>, wöchentlich und für alle Zeiten, mit Ihrem Pseudonym, Ihrem Avatar, Ihrer besten Punktzahl in einer Ranglistenpartie und Ihrem Platz. Nur Ranglistenpartien zählen: Deren Wörter werden zufällig aus den fertigen Decks gezogen, für alle dieselben.</li>
+    <li><strong>Wer es sieht</strong>: andere Nutzer von Vocadeck, über die Rangliste. Niemals Ihre E-Mail-Adresse, Ihren Google-Namen oder Ihre Karten.</li>
+    <li><strong>Ihre Wahl</strong>: Sie können Ihr Profil jederzeit verbergen und sich aus der Rangliste zurückziehen (<strong>Profil › Öffentliches Profil und Rangliste</strong>). Ein Pseudonym kann nur von einer Person getragen werden, lässt sich höchstens einmal pro Tag ändern, und ein beleidigendes Pseudonym wird abgelehnt.</li>
+    <li><strong>Gegen Betrug</strong>: Der Schiedsrichter spielt jede Ranglistenpartie mit den Spielregeln nach – die tatsächlich verstrichene Zeit, die Zeit jeder Antwort, die Punktzahl. Eine unmögliche Partie wird abgelehnt; eine Partie, die für eine menschliche Hand zu schnell oder zu gleichmäßig ist, wird zur Überprüfung zurückgestellt und kommt nicht in die Rangliste. Diese Kontrollen verwenden keine anderen Daten.</li>
+    <li><strong>Löschung</strong>: Wenn Sie Ihr Konto löschen, werden Ihr Profil, Ihr Pseudonym, Ihre Ranglistenpartien und Ihre Einträge in der Rangliste gelöscht.</li>
   </ul>
 
   <h2>8. Speicherdauer</h2>
@@ -217,7 +225,7 @@
     <li><strong>Recht auf Berichtigung</strong> – ändern Sie Ihre Karten und Einstellungen jederzeit.</li>
     <li><strong>Recht auf Löschung</strong> – zwei Stufen in den Einstellungen: „Alle Daten löschen“ entfernt Ihre Karten, Decks und Ihren Fortschritt, ohne Ihr Konto zu schließen; „Mein Konto löschen“ löscht Ihr Konto und alle zugehörigen Daten endgültig (vollständige Löschung gemäß DSGVO).</li>
     <li><strong>Recht auf Datenübertragbarkeit</strong> – Ihre Karten lassen sich unter <strong>Einstellungen › Importieren oder exportieren</strong> in offenen Formaten exportieren.</li>
-    <li><strong>Widerspruchsrecht</strong> – melden Sie sich jederzeit ab; demnächst können Sie außerdem Ihr öffentliches Profil verbergen und die Rangliste verlassen.</li>
+    <li><strong>Widerspruchsrecht</strong> – melden Sie sich jederzeit ab, verbergen Sie Ihr öffentliches Profil und verlassen Sie die Rangliste (<strong>Profil › Öffentliches Profil und Rangliste</strong>).</li>
     <li><strong>Beschwerde</strong> – Sie können eine Beschwerde bei der CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) oder bei der Datenschutzaufsichtsbehörde Ihres Landes einreichen.</li>
   </ul>
   <p>Zur Ausübung dieser Rechte: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine Daten über sie.</p>
 
   <h2>11. Änderungen</h2>
-  <p>Jede wesentliche Änderung wird in den Versionshinweisen der App angekündigt. Die Fassung vom 14. September 2026 ergänzt: den Fortschritt in Kursen, Übungen, Geschichten und Spielen; die synchronisierten Einstellungen; die Meldungen; die Offline-Übersetzung mit Google ML Kit; die Rechtsgrundlagen und das Beschwerderecht; das geplante öffentliche Profil und die Rangliste. Außerdem stellt sie klar, dass der Verlauf Ihrer Antworten mit Ihrem Konto synchronisiert wird.</p>
+  <p>Jede wesentliche Änderung wird in den Versionshinweisen der App angekündigt. Die Fassung vom 14. September 2026 ergänzt: den Fortschritt in Kursen, Übungen, Geschichten und Spielen; die synchronisierten Einstellungen; die Meldungen; die Offline-Übersetzung mit Google ML Kit; die Rechtsgrundlagen und das Beschwerderecht; das geplante öffentliche Profil und die Rangliste. Außerdem stellt sie klar, dass der Verlauf Ihrer Antworten mit Ihrem Konto synchronisiert wird. Am selben Tag nimmt eine zweite Aktualisierung das öffentliche Profil, die Erfolge und die Rangliste von „Gegen die Uhr“ in Betrieb, mit dem Schiedsrichter der Ranglistenpartien.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

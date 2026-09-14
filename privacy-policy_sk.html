@@ -88,7 +88,7 @@
       <tr>
         <td>E-mailová adresa, meno a profilová fotka</td>
         <td>Prihlásenie cez Google (voliteľné)</td>
-        <td>Identifikácia vášho účtu. Fotka sa zatiaľ nikde nezobrazuje (o pripravovanom profile pozri oddiel 7).</td>
+        <td>Identifikácia vášho účtu. Fotka sa na vašom verejnom profile zobrazí iba vtedy, ak si ju zvolíte ako avatar (oddiel 7). Vaša e-mailová adresa a vaše meno sa tam nikdy nezobrazujú.</td>
       </tr>
       <tr>
         <td>Karty a balíčky vrátane ich obsahu</td>
@@ -111,9 +111,19 @@
         <td>Zobrazenie vašich míľnikov, rekordu a ocenení. Počítadlá kôl sa ukladajú pod náhodne vygenerovaným identifikátorom zariadenia, ktorý nemá žiadnu väzbu na hardvér a slúži iba na správne spočítanie kôl odohraných na viacerých zariadeniach.</td>
       </tr>
       <tr>
-        <td>Synchronizované nastavenia (napríklad obrázky zvolené pre spodnú lištu) a nájdené tajné odznaky</td>
+        <td>Synchronizované nastavenia (napríklad obrázky zvolené pre spodnú lištu), nájdené tajné odznaky a získané úspechy s dátumom ich získania</td>
         <td>Vaše voľby v aplikácii</td>
         <td>Rovnaká podoba aplikácie na všetkých vašich zariadeniach</td>
+      </tr>
+      <tr>
+        <td>Verejný profil: prezývka, avatar (alebo fotka vášho účtu Google, ak si ju zvolíte), odznaky vo vašej vitríne, kľúčové čísla (séria dní, naučené slová, rekord v hre Proti času, prečítané príbehy), jazyky a úrovne, mesiac, keď ste sa pridali, a vaša úroveň hráča</td>
+        <td>Váš profil (iba účty Google)</td>
+        <td>Zobrazenie vášho profilu ostatným hráčom z rebríčka (oddiel 7)</td>
+      </tr>
+      <tr>
+        <td>Rebríčkové hry v režime Proti času: pridelené slová, každá vaša odpoveď a jej okamih (v milisekundách), vypočítané skóre, vaše najlepšie skóre týždňa a všetkých čias</td>
+        <td>Vaše rebríčkové hry</td>
+        <td>Overenie, že hra dodržiava pravidlá, a vaše zaradenie do rebríčka (oddiel 7)</td>
       </tr>
       <tr>
         <td>Nahlásenie chyby v preklade: príslušná karta (obe jej strany, ich jazyky, názov balíčka), zvolený dôvod, nepovinný komentár a verzia aplikácie</td>
@@ -152,8 +162,8 @@
   <h2>3. Prečo tieto údaje spracúvame (právne základy)</h2>
   <ul>
     <li><strong>Aby sme vám poskytli službu, ktorú používate</strong> (plnenie zmluvy): váš účet, vaše karty, ich synchronizácia, váš pokrok a vaše štatistiky.</li>
-    <li><strong>Aby aplikácia zostala spoľahlivá a poctivá</strong> (oprávnený záujem): technické hlásenia o chybách, overovanie, že požiadavky skutočne pochádzajú z oficiálnej aplikácie, a v budúcnosti kontroly proti podvádzaniu v rebríčku.</li>
-    <li><strong>S vaším súhlasom</strong> (súhlas): hlásenia, ktoré sa rozhodnete odoslať, a v budúcnosti to, čo sa rozhodnete zobraziť na svojom verejnom profile. Tento súhlas môžete kedykoľvek odvolať.</li>
+    <li><strong>Aby aplikácia zostala spoľahlivá a poctivá</strong> (oprávnený záujem): technické hlásenia o chybách, overovanie, že požiadavky skutočne pochádzajú z oficiálnej aplikácie, a kontroly proti podvádzaniu v rebríčku.</li>
+    <li><strong>S vaším súhlasom</strong> (súhlas): hlásenia, ktoré sa rozhodnete odoslať, a to, čo sa rozhodnete zobraziť na svojom verejnom profile. Tento súhlas môžete kedykoľvek odvolať.</li>
   </ul>
 
   <h2>4. Technickí sprostredkovatelia</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> a <strong>Pixabay</strong> — vyhľadávanie ilustrácií pre vaše karty (iba hľadané slovo, bez identifikácie). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting jazykových balíčkov na stiahnutie na offline použitie (iba statické súbory, neprenášajú sa žiadne údaje o účte). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> a <strong>Cloudflare Access</strong> — hosting webovej verzie (PWA) a kontrola prístupu počas testovacej fázy. Cloudflare vidí adresy načítaných stránok a pri uzavretej bete e-mailovú adresu pozvanú na prístup. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> a <strong>Cloudflare D1</strong> — rozhodca rebríčkových hier: prideľuje slová, prijíma vaše odpovede a ich okamih, sám vypočíta skóre a vedie rebríček (prezývka, avatar, fotka, ak ste si ju zvolili, najlepšie skóre). Váš účet rozpozná podľa jeho prihlasovacieho tokenu bez toho, aby dostal vašu e-mailovú adresu alebo vaše meno. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — technické hlásenia odosielané, keď aplikácia narazí na chybu: verzia aplikácie, model zariadenia, operačný systém a miesto chyby v kóde. Neobsahujú žiadny obsah vašich kariet. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (prostredníctvom Firebase App Check) — overuje, že požiadavky skutočne pochádzajú z oficiálnej aplikácie, na účely prevencie podvodov, bez osobných údajov. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Hlasové moduly operačného systému</strong> — rozpoznávanie reči slúži iba na kontrolu vašej výslovnosti (tlačidlo mikrofónu na karte) a zvuk spracúva vaše zariadenie; syntéza reči nahlas číta slová a vety z vašich kariet, ktoré spracúva modul vášho telefónu podľa vlastných pravidiel. <span class="badge">Google / Apple / výrobca zariadenia</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Uchovávanie a bezpečnosť</h2>
   <p>
-    Vaše údaje sa ukladajú <strong>lokálne vo vašom zariadení</strong> (databáza SQLite alebo úložisko vášho prehliadača pri webovej verzii) a, ak ste prihlásení, aj <strong>v Google Firestore</strong> (servery Googlu v Európe alebo v Spojených štátoch). Údaje pri prenose sú šifrované pomocou TLS. Bezpečnostné pravidlá Firestore zaručujú, že vaše údaje nemôže čítať nikto iný; viditeľné bude iba to, čo sa rozhodnete zobraziť na svojom verejnom profile, keď bude táto funkcia existovať (oddiel 7).
+    Vaše údaje sa ukladajú <strong>lokálne vo vašom zariadení</strong> (databáza SQLite alebo úložisko vášho prehliadača pri webovej verzii) a, ak ste prihlásení, aj <strong>v Google Firestore</strong> (servery Googlu v Európe alebo v Spojených štátoch). Údaje pri prenose sú šifrované pomocou TLS. Bezpečnostné pravidlá Firestore zaručujú, že vaše údaje nemôže čítať nikto iný; viditeľné je iba to, čo zobrazujete na svojom verejnom profile (oddiel 7). Samotný rebríček vedie rozhodca rebríčkových hier v službe Cloudflare (oddiel 4).
   </p>
   <p>
     História vašich odpovedí sa synchronizuje s vaším účtom, aby vás vaše štatistiky sprevádzali z jedného zariadenia na druhé. Technický záznam, ktorý slúži na prispôsobenie algoritmu opakovania vašej pamäti, naopak zostáva <strong>výhradne vo vašom zariadení</strong> a nikdy sa nesynchronizuje.
@@ -193,17 +204,14 @@
     Aby bolo možné databázu v prípade problému opraviť, aplikácia uchováva vo vašom zariadení až tri záložné kópie. Nikdy zariadenie neopúšťajú.
   </p>
 
-  <h2>7. Verejný profil a rebríček (pripravujeme)</h2>
-  <div class="a-venir">
-    <strong>Zatiaľ nie je k dispozícii.</strong> Tento oddiel vopred opisuje pripravovanú funkciu, aby ste vedeli, čo zviditeľní, ešte predtým, ako príde. Uplatní sa až od jej spustenia, ktoré oznámime v časti „Poznámky k verzii“.
-  </div>
+  <h2>7. Verejný profil a rebríček</h2>
   <ul>
-    <li><strong>Profil</strong>, otváraný z ponuky aplikácie: prezývka (pridelená náhodne, napríklad user#12345678, ktorú budete môcť zmeniť), kreslený avatar alebo, ak to zapnete, fotka vášho účtu Google, odznaky, ktoré sa rozhodnete zobraziť, niekoľko čísel (séria dní, naučené slová, rekord v hre Proti času, prečítané príbehy), vaše jazyky a úrovne a mesiac, keď ste sa pridali.</li>
-    <li><strong>Celosvetový rebríček hry Proti času</strong>, týždenný a všetkých čias, v ktorom sa zobrazí vaša prezývka, váš avatar, vaše najlepšie skóre a vaše umiestnenie. Budú v ňom iba účty prihlásené cez Google.</li>
-    <li><strong>Kto to uvidí</strong>: ostatní prihlásení používatelia aplikácie Vocadeck. Nikdy nie vašu e-mailovú adresu, vaše meno z Googlu ani vaše karty.</li>
-    <li><strong>Vaše voľby</strong>: svoj profil budete môcť kedykoľvek skryť a vystúpiť z rebríčka. Jednu prezývku môže používať iba jedna osoba a urážlivá prezývka môže byť odmietnutá.</li>
-    <li><strong>Proti podvádzaniu</strong>: skóre odoslané do rebríčka môžu byť automaticky overované (časy odpovedí, vierohodnosť skóre) a nemožné skóre bude vyradené. Tieto kontroly nepoužívajú žiadne iné údaje.</li>
-    <li><strong>Odstránenie</strong>: odstránením účtu sa vymaže váš profil, vaša prezývka a vaše riadky v rebríčku.</li>
+    <li><strong>Profil</strong>, otváraný z ponuky aplikácie: prezývka (pridelená náhodne, napríklad user#12345678, ktorú môžete zmeniť), kreslený avatar alebo, ak to zapnete, fotka vášho účtu Google, odznaky, ktoré sa rozhodnete zobraziť, niekoľko čísel (séria dní, naučené slová, rekord v hre Proti času, prečítané príbehy), vaše jazyky a úrovne, vaša úroveň hráča a mesiac, keď ste sa pridali. Verejný profil majú iba účty prihlásené cez Google.</li>
+    <li><strong>Celosvetový rebríček hry Proti času</strong>, týždenný a všetkých čias, v ktorom sa zobrazuje vaša prezývka, váš avatar, vaše najlepšie skóre v rebríčkovej hre a vaše umiestnenie. Počítajú sa iba rebríčkové hry: ich slová sa náhodne losujú z hotových balíčkov kariet, pre všetkých rovnaké.</li>
+    <li><strong>Kto to vidí</strong>: ostatní používatelia aplikácie Vocadeck, z rebríčka. Nikdy nie vašu e-mailovú adresu, vaše meno z Googlu ani vaše karty.</li>
+    <li><strong>Vaše voľby</strong>: svoj profil môžete kedykoľvek skryť a vystúpiť z rebríčka (<strong>Profil › Verejný profil a rebríček</strong>). Jednu prezývku môže používať iba jedna osoba, zmeniť sa dá najviac raz za deň a urážlivá prezývka sa odmietne.</li>
+    <li><strong>Proti podvádzaniu</strong>: rozhodca každú rebríčkovú hru znovu prejde podľa pravidiel hry — skutočne uplynutý čas, čas každej odpovede, skóre. Nemožná hra sa odmietne; hra, ktorá je na ľudskú ruku príliš rýchla alebo príliš pravidelná, sa odloží na preverenie a do rebríčka sa nedostane. Tieto kontroly nepoužívajú žiadne iné údaje.</li>
+    <li><strong>Odstránenie</strong>: odstránením účtu sa vymaže váš profil, vaša prezývka, vaše rebríčkové hry a vaše riadky v rebríčku.</li>
   </ul>
 
   <h2>8. Doba uchovávania</h2>
@@ -217,7 +225,7 @@
     <li><strong>Právo na opravu</strong> — upravujte svoje karty a nastavenia kedykoľvek.</li>
     <li><strong>Právo na vymazanie</strong> — dve úrovne v časti Nastavenia: „Odstrániť všetky údaje“ vymaže vaše karty, balíčky a pokrok bez zrušenia vášho účtu; „Odstrániť môj účet“ natrvalo odstráni váš účet a všetky súvisiace údaje (úplné vymazanie podľa GDPR).</li>
     <li><strong>Právo na prenosnosť</strong> — vaše karty možno exportovať v otvorených formátoch v <strong>Nastavenia › Importovať alebo exportovať</strong>.</li>
-    <li><strong>Právo namietať</strong> — kedykoľvek sa odhláste; v budúcnosti budete môcť aj skryť svoj verejný profil a opustiť rebríček.</li>
+    <li><strong>Právo namietať</strong> — kedykoľvek sa odhláste, skryte svoj verejný profil a opustite rebríček (<strong>Profil › Verejný profil a rebríček</strong>).</li>
     <li><strong>Sťažnosť</strong> — môžete podať sťažnosť na CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) alebo na úrad na ochranu osobných údajov vo vašej krajine.</li>
   </ul>
   <p>Na uplatnenie týchto práv: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck nie je určený deťom mladším ako 13 rokov a vedome nezhromažďuje údaje, ktoré sa ich týkajú.</p>
 
   <h2>11. Zmeny</h2>
-  <p>Každá podstatná zmena sa uvádza v časti „Poznámky k verzii“ aplikácie. Verzia zo 14. septembra 2026 pridáva: pokrok v kurzoch, cvičeniach, príbehoch a hrách; synchronizované nastavenia; hlásenia; offline preklad pomocou Google ML Kit; právne základy a právo podať sťažnosť; pripravovaný verejný profil a rebríček. Taktiež spresňuje, že história vašich odpovedí sa synchronizuje s vaším účtom.</p>
+  <p>Každá podstatná zmena sa uvádza v časti „Poznámky k verzii“ aplikácie. Verzia zo 14. septembra 2026 pridáva: pokrok v kurzoch, cvičeniach, príbehoch a hrách; synchronizované nastavenia; hlásenia; offline preklad pomocou Google ML Kit; právne základy a právo podať sťažnosť; pripravovaný verejný profil a rebríček. Taktiež spresňuje, že história vašich odpovedí sa synchronizuje s vaším účtom. V ten istý deň druhá aktualizácia spúšťa verejný profil, úspechy a rebríček hry Proti času spolu s rozhodcom rebríčkových hier.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

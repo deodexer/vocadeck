@@ -88,7 +88,7 @@
       <tr>
         <td>Indirizzo e-mail, nome e foto del profilo</td>
         <td>Accesso con Google (facoltativo)</td>
-        <td>Identificare il tuo account. Al momento la foto non viene mostrata da nessuna parte (vedi la sezione 7 per il futuro profilo).</td>
+        <td>Identificare il tuo account. La foto compare sul tuo profilo pubblico solo se la scegli come avatar (sezione 7). Il tuo indirizzo e-mail e il tuo nome non vi compaiono mai.</td>
       </tr>
       <tr>
         <td>Carte e mazzi, con il loro contenuto</td>
@@ -111,9 +111,19 @@
         <td>Mostrare i tuoi traguardi, il tuo record e le tue ricompense. I contatori delle partite sono archiviati sotto un identificativo di dispositivo generato a caso, senza alcun legame con l'hardware, che serve solo a sommare correttamente le partite giocate su più dispositivi.</td>
       </tr>
       <tr>
-        <td>Impostazioni sincronizzate (ad esempio i disegni scelti per la barra in basso) e badge segreti trovati</td>
+        <td>Impostazioni sincronizzate (ad esempio i disegni scelti per la barra in basso), badge segreti trovati e traguardi ottenuti, con la loro data</td>
         <td>Le tue scelte nell'app</td>
         <td>Ritrovare la tua app identica da un dispositivo all'altro</td>
+      </tr>
+      <tr>
+        <td>Profilo pubblico: pseudonimo, avatar (o la foto del tuo account Google, se la scegli), i badge della tua vetrina, numeri chiave (serie di giorni, parole imparate, record a Contro il tempo, storie lette), lingue e livelli, il mese della tua iscrizione e il tuo livello di giocatore</td>
+        <td>Il tuo profilo (solo account Google)</td>
+        <td>Mostrarti agli altri giocatori, dalla classifica (sezione 7)</td>
+      </tr>
+      <tr>
+        <td>Partite classificate di Contro il tempo: le parole distribuite, ciascuna delle tue risposte e il suo istante (in millisecondi), il punteggio calcolato, i tuoi migliori punteggi della settimana e di sempre</td>
+        <td>Le tue partite classificate</td>
+        <td>Verificare che la partita rispetti le regole del gioco e inserirti in classifica (sezione 7)</td>
       </tr>
       <tr>
         <td>Segnalazione di un errore di traduzione: la carta interessata (i suoi due lati, le rispettive lingue, il nome del mazzo), il motivo scelto, un commento facoltativo e la versione dell'app</td>
@@ -152,8 +162,8 @@
   <h2>3. Perché trattiamo questi dati (basi giuridiche)</h2>
   <ul>
     <li><strong>Per fornirti il servizio che usi</strong> (esecuzione di un contratto): il tuo account, le tue carte, la loro sincronizzazione, i tuoi progressi e le tue statistiche.</li>
-    <li><strong>Per mantenere l'app affidabile e corretta</strong> (legittimo interesse): i rapporti tecnici sugli errori, la verifica che le richieste provengano davvero dall'app ufficiale e, in futuro, i controlli contro gli imbrogli in classifica.</li>
-    <li><strong>Con il tuo accordo</strong> (consenso): le segnalazioni che scegli di inviare e, in futuro, ciò che sceglierai di mostrare sul tuo profilo pubblico. Puoi revocare questo consenso in qualsiasi momento.</li>
+    <li><strong>Per mantenere l'app affidabile e corretta</strong> (legittimo interesse): i rapporti tecnici sugli errori, la verifica che le richieste provengano davvero dall'app ufficiale e i controlli contro gli imbrogli in classifica.</li>
+    <li><strong>Con il tuo accordo</strong> (consenso): le segnalazioni che scegli di inviare e ciò che scegli di mostrare sul tuo profilo pubblico. Puoi revocare questo consenso in qualsiasi momento.</li>
   </ul>
 
   <h2>4. Responsabili del trattamento tecnici</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> e <strong>Pixabay</strong> — ricerca di illustrazioni per le tue carte (solo la parola cercata, senza identificazione). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting dei pacchetti linguistici scaricabili per l'uso offline (solo file statici, nessun dato dell'account trasmesso). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> e <strong>Cloudflare Access</strong> — hosting della versione web (PWA) e controllo degli accessi durante la fase di test. Cloudflare vede gli indirizzi delle pagine caricate e, per la beta chiusa, l'indirizzo e-mail invitato ad accedervi. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> e <strong>Cloudflare D1</strong> — l'arbitro delle partite classificate: distribuisce le parole, riceve le tue risposte e il loro istante, calcola da sé il punteggio e tiene la classifica (pseudonimo, avatar, foto se l'hai scelta, migliori punteggi). Riconosce il tuo account dal suo token di accesso, senza ricevere il tuo indirizzo e-mail né il tuo nome. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — rapporti tecnici inviati quando l'app incontra un errore: versione dell'app, modello del dispositivo, sistema operativo e punto del codice in cui si è verificato l'errore. Non contengono alcun contenuto delle tue carte. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (tramite Firebase App Check) — verifica che le richieste provengano davvero dall'app ufficiale, a fini antifrode, senza dati personali. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Motori vocali del sistema operativo</strong> — il riconoscimento vocale serve solo a verificare la tua pronuncia (il pulsante del microfono di una carta) e l'audio viene elaborato dal tuo dispositivo; la sintesi vocale legge ad alta voce le parole e le frasi delle tue carte, elaborate dal motore del tuo telefono secondo le sue regole. <span class="badge">Google / Apple / produttore del dispositivo</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Conservazione e sicurezza</h2>
   <p>
-    I tuoi dati sono archiviati <strong>localmente sul tuo dispositivo</strong> (database SQLite, oppure lo spazio di archiviazione del browser per la versione web) e, se hai effettuato l'accesso, <strong>in Google Firestore</strong> (server Google in Europa o negli Stati Uniti). I dati in transito sono crittografati tramite TLS. Le regole di sicurezza di Firestore garantiscono che nessun'altra persona possa leggere i tuoi dati; sarà visibile solo ciò che sceglierai di mostrare sul tuo profilo pubblico, quando questa funzione esisterà (sezione 7).
+    I tuoi dati sono archiviati <strong>localmente sul tuo dispositivo</strong> (database SQLite, oppure lo spazio di archiviazione del browser per la versione web) e, se hai effettuato l'accesso, <strong>in Google Firestore</strong> (server Google in Europa o negli Stati Uniti). I dati in transito sono crittografati tramite TLS. Le regole di sicurezza di Firestore garantiscono che nessun'altra persona possa leggere i tuoi dati; è visibile solo ciò che mostri sul tuo profilo pubblico (sezione 7). La classifica, invece, è tenuta dall'arbitro delle partite classificate, presso Cloudflare (sezione 4).
   </p>
   <p>
     La cronologia delle tue risposte viene sincronizzata con il tuo account, così le tue statistiche ti seguono da un dispositivo all'altro. Il registro tecnico che serve ad adattare l'algoritmo di ripasso alla tua memoria resta invece <strong>esclusivamente sul tuo dispositivo</strong> e non viene mai sincronizzato.
@@ -193,17 +204,14 @@
     Per poter riparare il database in caso di problemi, l'app conserva sul tuo dispositivo fino a tre copie di backup. Non lasciano mai il dispositivo.
   </p>
 
-  <h2>7. Profilo pubblico e classifica (in arrivo)</h2>
-  <div class="a-venir">
-    <strong>Non ancora disponibile.</strong> Questa sezione descrive in anticipo una funzione in preparazione, perché tu sappia che cosa renderà visibile prima del suo arrivo. Si applicherà solo dalla sua attivazione, annunciata nelle Note di versione.
-  </div>
+  <h2>7. Profilo pubblico e classifica</h2>
   <ul>
-    <li><strong>Un profilo</strong>, accessibile dal menu dell'app: uno pseudonimo (assegnato a caso, del tipo user#12345678, che potrai cambiare), un avatar disegnato o, se lo attivi, la foto del tuo account Google, i badge che sceglierai di mostrare, alcuni numeri (serie di giorni, parole imparate, record a Contro il tempo, storie lette), le tue lingue e i tuoi livelli, e il mese della tua iscrizione.</li>
-    <li><strong>Una classifica mondiale di Contro il tempo</strong>, settimanale e di sempre, in cui compariranno il tuo pseudonimo, il tuo avatar, il tuo miglior punteggio e la tua posizione. Vi compariranno solo gli account che hanno effettuato l'accesso con Google.</li>
-    <li><strong>Chi lo vedrà</strong>: gli altri utenti di Vocadeck che hanno effettuato l'accesso. Mai il tuo indirizzo e-mail, il tuo nome Google o le tue carte.</li>
-    <li><strong>Le tue scelte</strong>: potrai nascondere il tuo profilo e ritirarti dalla classifica in qualsiasi momento. Uno pseudonimo può appartenere a una sola persona e uno pseudonimo offensivo potrà essere rifiutato.</li>
-    <li><strong>Contro gli imbrogli</strong>: i punteggi inviati alla classifica potranno essere verificati automaticamente (tempi di risposta, coerenza del punteggio) e un punteggio impossibile verrà scartato. Questi controlli non usano nessun altro dato.</li>
-    <li><strong>Cancellazione</strong>: eliminare il tuo account cancellerà il tuo profilo, il tuo pseudonimo e le tue righe in classifica.</li>
+    <li><strong>Un profilo</strong>, accessibile dal menu dell'app: uno pseudonimo (assegnato a caso, del tipo user#12345678, che puoi cambiare), un avatar disegnato o, se lo attivi, la foto del tuo account Google, i badge che scegli di mostrare, alcuni numeri (serie di giorni, parole imparate, record a Contro il tempo, storie lette), le tue lingue e i tuoi livelli, il tuo livello di giocatore e il mese della tua iscrizione. Solo gli account che hanno effettuato l'accesso con Google hanno un profilo pubblico.</li>
+    <li><strong>Una classifica mondiale di Contro il tempo</strong>, settimanale e di sempre, in cui compaiono il tuo pseudonimo, il tuo avatar, il tuo miglior punteggio in partita classificata e la tua posizione. Contano solo le partite classificate: le loro parole vengono estratte a caso dai mazzi pronti all'uso, uguali per tutti.</li>
+    <li><strong>Chi lo vede</strong>: gli altri utenti di Vocadeck, dalla classifica. Mai il tuo indirizzo e-mail, il tuo nome Google o le tue carte.</li>
+    <li><strong>Le tue scelte</strong>: puoi nascondere il tuo profilo e ritirarti dalla classifica in qualsiasi momento (<strong>Profilo › Profilo pubblico e classifica</strong>). Uno pseudonimo può appartenere a una sola persona, si può cambiare al massimo una volta al giorno e uno pseudonimo offensivo viene rifiutato.</li>
+    <li><strong>Contro gli imbrogli</strong>: l'arbitro rigioca ogni partita classificata con le regole del gioco — il tempo realmente trascorso, il tempo di ogni risposta, il punteggio. Una partita impossibile viene rifiutata; una partita troppo veloce o troppo regolare per una mano umana viene messa da parte per una verifica e non entra in classifica. Questi controlli non usano nessun altro dato.</li>
+    <li><strong>Cancellazione</strong>: eliminare il tuo account cancella il tuo profilo, il tuo pseudonimo, le tue partite classificate e le tue righe in classifica.</li>
   </ul>
 
   <h2>8. Periodo di conservazione</h2>
@@ -217,7 +225,7 @@
     <li><strong>Diritto di rettifica</strong> — modifica le tue carte e le tue impostazioni in qualsiasi momento.</li>
     <li><strong>Diritto alla cancellazione</strong> — due livelli nelle Impostazioni: «Elimina tutti i dati» cancella le tue carte, i tuoi mazzi e i tuoi progressi senza chiudere il tuo account; «Elimina il mio account» elimina definitivamente il tuo account e tutti i dati associati (cancellazione completa ai sensi del GDPR).</li>
     <li><strong>Diritto alla portabilità dei dati</strong> — le tue carte si esportano in formati aperti da <strong>Impostazioni › Importare o esportare</strong>.</li>
-    <li><strong>Diritto di opposizione</strong> — esci dal tuo account in qualsiasi momento; in futuro potrai anche nascondere il tuo profilo pubblico e lasciare la classifica.</li>
+    <li><strong>Diritto di opposizione</strong> — esci dal tuo account in qualsiasi momento, nascondi il tuo profilo pubblico e lascia la classifica (<strong>Profilo › Profilo pubblico e classifica</strong>).</li>
     <li><strong>Reclamo</strong> — puoi proporre reclamo alla CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) o all'autorità per la protezione dei dati del tuo paese.</li>
   </ul>
   <p>Per esercitare questi diritti: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck non si rivolge ai minori di 13 anni e non raccoglie consapevolmente dati che li riguardano.</p>
 
   <h2>11. Modifiche</h2>
-  <p>Ogni modifica sostanziale viene segnalata nelle Note di versione dell'app. La versione del 14 settembre 2026 aggiunge: l'avanzamento nei corsi, negli esercizi, nelle storie e nei giochi; le impostazioni sincronizzate; le segnalazioni; la traduzione offline con Google ML Kit; le basi giuridiche e il diritto di reclamo; il futuro profilo pubblico e la classifica. Precisa inoltre che la cronologia delle tue risposte viene sincronizzata con il tuo account.</p>
+  <p>Ogni modifica sostanziale viene segnalata nelle Note di versione dell'app. La versione del 14 settembre 2026 aggiunge: l'avanzamento nei corsi, negli esercizi, nelle storie e nei giochi; le impostazioni sincronizzate; le segnalazioni; la traduzione offline con Google ML Kit; le basi giuridiche e il diritto di reclamo; il futuro profilo pubblico e la classifica. Precisa inoltre che la cronologia delle tue risposte viene sincronizzata con il tuo account. Lo stesso giorno, un secondo aggiornamento mette in funzione il profilo pubblico, i traguardi e la classifica di Contro il tempo, con l'arbitro delle partite classificate.</p>
 
   <h2>12. Contatti</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

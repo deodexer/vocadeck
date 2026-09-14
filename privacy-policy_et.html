@@ -88,7 +88,7 @@
       <tr>
         <td>E-posti aadress, nimi ja profiilipilt</td>
         <td>Google'iga sisselogimine (valikuline)</td>
-        <td>Teie konto tuvastamine. Pilti praegu kusagil ei kuvata (tulevase profiili kohta vt jaotist 7).</td>
+        <td>Teie konto tuvastamine. Pilt kuvatakse teie avalikus profiilis ainult siis, kui valite selle oma avatariks (jaotis 7). Teie e-posti aadressi ja nime seal kunagi ei kuvata.</td>
       </tr>
       <tr>
         <td>Kaardid ja kaardipakid koos nende sisuga</td>
@@ -111,9 +111,19 @@
         <td>Teie vahe-eesmärkide, rekordi ja auhindade kuvamine. Mängukordade loendureid hoitakse juhuslikult loodud seadmetunnuse all, millel pole riistvaraga mingit seost ja mis on vajalik ainult selleks, et mitmes seadmes mängitud mängukorrad õigesti kokku liita.</td>
       </tr>
       <tr>
-        <td>Sünkroonitud seaded (näiteks alumise riba jaoks valitud joonised) ja leitud salajased märgid</td>
+        <td>Sünkroonitud seaded (näiteks alumise riba jaoks valitud joonised), leitud salajased märgid ja teenitud saavutused koos nende kuupäevaga</td>
         <td>Teie valikud rakenduses</td>
         <td>Et leiaksite oma rakenduse igas seadmes täpselt samasugusena</td>
+      </tr>
+      <tr>
+        <td>Avalik profiil: varjunimi, avatar (või teie Google'i konto pilt, kui selle valite), teie vitriini märgid, põhinäitajad (päevade seeria, õpitud sõnad, rekord mängus „Võidujooks ajaga“, loetud lood), keeled ja tasemed, liitumise kuu ja teie mängijatase</td>
+        <td>Teie profiil (ainult Google'i kontod)</td>
+        <td>Teie näitamine teistele mängijatele edetabeli kaudu (jaotis 7)</td>
+      </tr>
+      <tr>
+        <td>Mängu „Võidujooks ajaga“ edetabelimängud: jagatud sõnad, iga teie vastus ja selle hetk (millisekundites), arvutatud tulemus, teie nädala ja kõigi aegade parimad tulemused</td>
+        <td>Teie edetabelimängud</td>
+        <td>Kontroll, et mäng järgib mängureegleid, ja teie paigutamine edetabelisse (jaotis 7)</td>
       </tr>
       <tr>
         <td>Tõlkeveast teatamine: asjaomane kaart (selle mõlemad pooled, nende keeled, kaardipaki nimi), valitud põhjus, valikuline kommentaar ja rakenduse versioon</td>
@@ -152,8 +162,8 @@
   <h2>3. Miks me neid andmeid töötleme (õiguslikud alused)</h2>
   <ul>
     <li><strong>Et pakkuda teile teenust, mida kasutate</strong> (lepingu täitmine): teie konto, teie kaardid, nende sünkroonimine, teie edusammud ja statistika.</li>
-    <li><strong>Et hoida rakendus usaldusväärne ja aus</strong> (õigustatud huvi): tehnilised veaaruanded, kontroll, et päringud tulevad tõesti ametlikust rakendusest, ning edaspidi pettusevastased kontrollid edetabelis.</li>
-    <li><strong>Teie nõusolekul</strong> (nõusolek): teated, mille otsustate saata, ning edaspidi see, mida otsustate näidata oma avalikus profiilis. Võite selle nõusoleku igal ajal tagasi võtta.</li>
+    <li><strong>Et hoida rakendus usaldusväärne ja aus</strong> (õigustatud huvi): tehnilised veaaruanded, kontroll, et päringud tulevad tõesti ametlikust rakendusest, ning pettusevastased kontrollid edetabelis.</li>
+    <li><strong>Teie nõusolekul</strong> (nõusolek): teated, mille otsustate saata, ning see, mida otsustate näidata oma avalikus profiilis. Võite selle nõusoleku igal ajal tagasi võtta.</li>
   </ul>
 
   <h2>4. Tehnilised volitatud töötlejad</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> ja <strong>Pixabay</strong> — illustratsioonide otsimine teie kaartidele (ainult otsitav sõna, ilma tuvastamiseta). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — võrguühenduseta kasutamiseks allalaaditavate keelepakettide majutamine (ainult staatilised failid, kontoandmeid ei edastata). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> ja <strong>Cloudflare Access</strong> — veebiversiooni (PWA) majutamine ja juurdepääsu kontroll testimisetapis. Cloudflare näeb laaditud lehtede aadresse ja suletud beetaversiooni puhul e-posti aadressi, mis on kutsutud sellele juurde pääsema. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> ja <strong>Cloudflare D1</strong> — edetabelimängude kohtunik: jagab sõnad, võtab vastu teie vastused ja nende hetke, arvutab tulemuse ise ja peab edetabelit (varjunimi, avatar, pilt, kui olete selle valinud, parimad tulemused). See tunneb teie konto ära selle sisselogimistõendi järgi, saamata teie e-posti aadressi ega nime. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — tehnilised aruanded, mis saadetakse, kui rakenduses tekib viga: rakenduse versioon, seadme mudel, operatsioonisüsteem ja vea asukoht koodis. Need ei sisalda midagi teie kaartide sisust. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (teenuse Firebase App Check kaudu) — kontrollib pettuste vältimiseks, et päringud tulevad tõesti ametlikust rakendusest, ilma isikuandmeteta. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Operatsioonisüsteemi kõnemootorid</strong> — kõnetuvastus on mõeldud ainult teie häälduse kontrollimiseks (kaardi mikrofoninupp) ja heli töötleb teie seade; kõnesüntees loeb teie kaartide sõnad ja laused ette ning neid töötleb teie telefoni mootor oma reeglite järgi. <span class="badge">Google / Apple / seadme tootja</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Säilitamine ja turvalisus</h2>
   <p>
-    Teie andmeid säilitatakse <strong>kohapeal teie seadmes</strong> (SQLite'i andmebaasis või veebiversiooni puhul teie brauseri salvestusruumis) ja kui olete sisse loginud, ka <strong>Google Firestore'is</strong> (Google'i serverid Euroopas või Ameerika Ühendriikides). Edastatavad andmed krüpteeritakse TLS-iga. Firestore'i turvareeglid tagavad, et keegi teine ei saa teie andmeid lugeda; nähtav on ainult see, mida otsustate näidata oma avalikus profiilis, kui see funktsioon on olemas (jaotis 7).
+    Teie andmeid säilitatakse <strong>kohapeal teie seadmes</strong> (SQLite'i andmebaasis või veebiversiooni puhul teie brauseri salvestusruumis) ja kui olete sisse loginud, ka <strong>Google Firestore'is</strong> (Google'i serverid Euroopas või Ameerika Ühendriikides). Edastatavad andmed krüpteeritakse TLS-iga. Firestore'i turvareeglid tagavad, et keegi teine ei saa teie andmeid lugeda; nähtav on ainult see, mida näitate oma avalikus profiilis (jaotis 7). Edetabelit ennast peab edetabelimängude kohtunik Cloudflare'is (jaotis 4).
   </p>
   <p>
     Teie vastuste ajalugu sünkroonitakse teie kontoga, et teie statistika liiguks teiega seadmest seadmesse. Tehniline logi, mis kohandab kordamisalgoritmi teie mäluga, jääb seevastu <strong>ainult teie seadmesse</strong> ja seda ei sünkroonita kunagi.
@@ -193,17 +204,14 @@
     Et andmebaasi saaks probleemi korral parandada, hoiab rakendus teie seadmes kuni kolme varukoopiat. Need ei lahku kunagi seadmest.
   </p>
 
-  <h2>7. Avalik profiil ja edetabel (tulekul)</h2>
-  <div class="a-venir">
-    <strong>Veel pole saadaval.</strong> See jaotis kirjeldab ette ettevalmistamisel olevat funktsiooni, et teaksite juba enne selle saabumist, mida see nähtavaks teeb. Jaotis hakkab kehtima alles funktsiooni kasutuselevõtust, millest teatatakse jaotises „Väljalaskeinfo“.
-  </div>
+  <h2>7. Avalik profiil ja edetabel</h2>
   <ul>
-    <li><strong>Profiil</strong>, mis avaneb rakenduse menüüst: varjunimi (määratakse juhuslikult, näiteks user#12345678, ja seda saab muuta), joonistatud avatar või, kui selle sisse lülitate, teie Google'i konto pilt, märgid, mida otsustate näidata, mõned arvud (päevade seeria, õpitud sõnad, rekord mängus „Võidujooks ajaga“, loetud lood), teie keeled ja tasemed ning liitumise kuu.</li>
-    <li><strong>Mängu „Võidujooks ajaga“ ülemaailmne edetabel</strong>, nädala ja kõigi aegade kohta, kus on näha teie varjunimi, teie avatar, teie parim tulemus ja teie koht. Sinna jõuavad ainult Google'iga sisse loginud kontod.</li>
-    <li><strong>Kes seda näeb</strong>: teised sisse loginud Vocadecki kasutajad. Mitte kunagi teie e-posti aadressi, teie Google'i nime ega teie kaarte.</li>
-    <li><strong>Teie valikud</strong>: saate oma profiili igal ajal peita ja edetabelist lahkuda. Üks varjunimi saab kuuluda ainult ühele inimesele ning solvava varjunime võib tagasi lükata.</li>
-    <li><strong>Pettuste vastu</strong>: edetabelisse saadetud tulemusi võidakse automaatselt kontrollida (vastamisajad, tulemuse usutavus) ning võimatu tulemus kõrvaldatakse. Need kontrollid ei kasuta mingeid muid andmeid.</li>
-    <li><strong>Kustutamine</strong>: konto kustutamisel kustutatakse teie profiil, teie varjunimi ja teie read edetabelis.</li>
+    <li><strong>Profiil</strong>, mis avaneb rakenduse menüüst: varjunimi (määratakse juhuslikult, näiteks user#12345678, ja seda saab muuta), joonistatud avatar või, kui selle sisse lülitate, teie Google'i konto pilt, märgid, mida otsustate näidata, mõned arvud (päevade seeria, õpitud sõnad, rekord mängus „Võidujooks ajaga“, loetud lood), teie keeled ja tasemed, teie mängijatase ning liitumise kuu. Avalik profiil on ainult Google'iga sisse loginud kontodel.</li>
+    <li><strong>Mängu „Võidujooks ajaga“ ülemaailmne edetabel</strong>, nädala ja kõigi aegade kohta, kus on näha teie varjunimi, teie avatar, teie parim tulemus edetabelimängus ja teie koht. Arvesse lähevad ainult edetabelimängud: nende sõnad valitakse juhuslikult valmis kaardipakkidest ja need on kõigile samad.</li>
+    <li><strong>Kes seda näeb</strong>: teised Vocadecki kasutajad, edetabeli kaudu. Mitte kunagi teie e-posti aadressi, teie Google'i nime ega teie kaarte.</li>
+    <li><strong>Teie valikud</strong>: saate oma profiili igal ajal peita ja edetabelist lahkuda (<strong>Profiil › Avalik profiil ja edetabel</strong>). Üks varjunimi saab kuuluda ainult ühele inimesele, seda saab muuta kõige rohkem kord päevas ning solvav varjunimi lükatakse tagasi.</li>
+    <li><strong>Pettuste vastu</strong>: kohtunik mängib iga edetabelimängu mängureeglite järgi uuesti läbi — tegelikult möödunud aeg, iga vastuse aeg, tulemus. Võimatu mäng lükatakse tagasi; mäng, mis on inimkäe jaoks liiga kiire või liiga ühtlane, pannakse kontrollimiseks kõrvale ega jõua edetabelisse. Need kontrollid ei kasuta mingeid muid andmeid.</li>
+    <li><strong>Kustutamine</strong>: konto kustutamisel kustutatakse teie profiil, teie varjunimi, teie edetabelimängud ja teie read edetabelis.</li>
   </ul>
 
   <h2>8. Säilitamise aeg</h2>
@@ -217,7 +225,7 @@
     <li><strong>Õigus andmete parandamisele</strong> — muutke oma kaarte ja seadeid igal ajal.</li>
     <li><strong>Õigus andmete kustutamisele</strong> — kaks taset jaotises Seaded: „Kõik andmed kustutada“ kustutab teie kaardid, kaardipakid ja edusammud ilma kontot sulgemata; „Kustuta minu konto“ kustutab jäädavalt teie konto ja kõik sellega seotud andmed (täielik kustutamine IKÜMi kohaselt).</li>
     <li><strong>Õigus andmete ülekandmisele</strong> — teie kaarte saab avatud vormingutes eksportida jaotisest <strong>Seaded › Importida või eksportida</strong>.</li>
-    <li><strong>Vastuväite esitamise õigus</strong> — logige igal ajal välja; edaspidi saate ka peita oma avaliku profiili ja lahkuda edetabelist.</li>
+    <li><strong>Vastuväite esitamise õigus</strong> — logige igal ajal välja, peitke oma avalik profiil ja lahkuge edetabelist (<strong>Profiil › Avalik profiil ja edetabel</strong>).</li>
     <li><strong>Kaebus</strong> — võite esitada kaebuse CNIL-ile (<a href="https://www.cnil.fr">www.cnil.fr</a>) või oma riigi andmekaitseasutusele.</li>
   </ul>
   <p>Nende õiguste kasutamiseks: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck ei ole mõeldud alla 13-aastastele lastele ega kogu teadlikult nende kohta andmeid.</p>
 
   <h2>11. Muudatused</h2>
-  <p>Igast olulisest muudatusest antakse teada rakenduse jaotises „Väljalaskeinfo“. 14. septembri 2026. aasta versioon lisab: edusammud kursustel, harjutustes, lugudes ja mängudes; sünkroonitud seaded; teated; võrguühenduseta tõlkimise tööriistaga Google ML Kit; õiguslikud alused ja kaebuse esitamise õiguse; tulevase avaliku profiili ja edetabeli. Samuti täpsustab see, et teie vastuste ajalugu sünkroonitakse teie kontoga.</p>
+  <p>Igast olulisest muudatusest antakse teada rakenduse jaotises „Väljalaskeinfo“. 14. septembri 2026. aasta versioon lisab: edusammud kursustel, harjutustes, lugudes ja mängudes; sünkroonitud seaded; teated; võrguühenduseta tõlkimise tööriistaga Google ML Kit; õiguslikud alused ja kaebuse esitamise õiguse; tulevase avaliku profiili ja edetabeli. Samuti täpsustab see, et teie vastuste ajalugu sünkroonitakse teie kontoga. Samal päeval võtab teine uuendus kasutusele avaliku profiili, saavutused ja mängu „Võidujooks ajaga“ edetabeli koos edetabelimängude kohtunikuga.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

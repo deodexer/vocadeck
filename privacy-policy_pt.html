@@ -88,7 +88,7 @@
       <tr>
         <td>Endereço de e-mail, nome e fotografia de perfil</td>
         <td>Início de sessão com a Google (facultativo)</td>
-        <td>Identificar a sua conta. Por enquanto, a fotografia não é apresentada em lado nenhum (consulte a secção 7 sobre o futuro perfil).</td>
+        <td>Identificar a sua conta. A fotografia só aparece no seu perfil público se a escolher como avatar (secção 7). O seu e-mail e o seu nome nunca aparecem aí.</td>
       </tr>
       <tr>
         <td>Cartões e baralhos, com o respetivo conteúdo</td>
@@ -111,9 +111,19 @@
         <td>Mostrar as suas metas, o seu recorde e as suas recompensas. Os contadores de partidas são guardados sob um identificador de dispositivo gerado aleatoriamente, sem qualquer ligação ao equipamento, que serve apenas para somar corretamente as partidas jogadas em vários dispositivos.</td>
       </tr>
       <tr>
-        <td>Definições sincronizadas (por exemplo, os desenhos escolhidos para a barra inferior) e emblemas secretos encontrados</td>
+        <td>Definições sincronizadas (por exemplo, os desenhos escolhidos para a barra inferior), emblemas secretos encontrados e conquistas obtidas, com a respetiva data</td>
         <td>As suas escolhas na aplicação</td>
         <td>Encontrar a sua aplicação exatamente igual de um dispositivo para outro</td>
+      </tr>
+      <tr>
+        <td>Perfil público: pseudónimo, avatar (ou a fotografia da sua conta Google, se a escolher), os emblemas da sua montra, números-chave (sequência de dias, palavras aprendidas, recorde no Contra-relógio, histórias lidas), idiomas e níveis, o mês em que se juntou e o seu nível de jogador</td>
+        <td>O seu perfil (apenas contas Google)</td>
+        <td>Mostrá-lo aos outros jogadores, a partir da classificação (secção 7)</td>
+      </tr>
+      <tr>
+        <td>Partidas classificativas do Contra-relógio: as palavras distribuídas, cada uma das suas respostas e o respetivo instante (em milissegundos), a pontuação calculada, as suas melhores pontuações da semana e de sempre</td>
+        <td>As suas partidas classificativas</td>
+        <td>Verificar que a partida respeita as regras do jogo e classificá-lo (secção 7)</td>
       </tr>
       <tr>
         <td>Comunicação de um erro de tradução: o cartão em causa (as suas duas faces, os respetivos idiomas, o nome do baralho), o motivo escolhido, um comentário facultativo e a versão da aplicação</td>
@@ -152,8 +162,8 @@
   <h2>3. Por que tratamos estes dados (fundamentos jurídicos)</h2>
   <ul>
     <li><strong>Para lhe prestar o serviço que utiliza</strong> (execução de um contrato): a sua conta, os seus cartões, a respetiva sincronização, o seu progresso e as suas estatísticas.</li>
-    <li><strong>Para manter a aplicação fiável e honesta</strong> (interesse legítimo): os relatórios técnicos de erros, a verificação de que os pedidos provêm efetivamente da aplicação oficial e, em breve, os controlos contra batota na classificação.</li>
-    <li><strong>Com o seu acordo</strong> (consentimento): as comunicações que decidir enviar e, em breve, o que decidir mostrar no seu perfil público. Pode retirar este consentimento a qualquer momento.</li>
+    <li><strong>Para manter a aplicação fiável e honesta</strong> (interesse legítimo): os relatórios técnicos de erros, a verificação de que os pedidos provêm efetivamente da aplicação oficial e os controlos contra batota na classificação.</li>
+    <li><strong>Com o seu acordo</strong> (consentimento): as comunicações que decidir enviar e o que decidir mostrar no seu perfil público. Pode retirar este consentimento a qualquer momento.</li>
   </ul>
 
   <h2>4. Subcontratantes técnicos</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> e <strong>Pixabay</strong> — pesquisa de ilustrações para os seus cartões (apenas a palavra pesquisada, sem identificação). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — alojamento dos pacotes de idioma transferíveis para utilização offline (apenas ficheiros estáticos, nenhum dado da conta transmitido). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> e <strong>Cloudflare Access</strong> — alojamento da versão web (PWA) e controlo de acesso durante a fase de testes. A Cloudflare vê os endereços das páginas carregadas e, na beta fechada, o endereço de e-mail convidado a aceder-lhe. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> e <strong>Cloudflare D1</strong> — o árbitro das partidas classificativas: distribui as palavras, recebe as suas respostas e o respetivo instante, calcula ele próprio a pontuação e mantém a classificação (pseudónimo, avatar, fotografia se a tiver escolhido, melhores pontuações). Reconhece a sua conta pelo respetivo token de sessão, sem receber o seu e-mail nem o seu nome. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — relatórios técnicos enviados quando a aplicação encontra um erro: versão da aplicação, modelo do dispositivo, sistema operativo e localização do erro no código. Não incluem qualquer conteúdo dos seus cartões. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (através do Firebase App Check) — verifica que os pedidos provêm efetivamente da aplicação oficial, para fins antifraude, sem dados pessoais. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Motores de voz do sistema operativo</strong> — o reconhecimento de voz serve apenas para verificar a sua pronúncia (o botão do microfone de um cartão), e o áudio é processado pelo seu dispositivo; a síntese de voz lê em voz alta as palavras e as frases dos seus cartões, processadas pelo motor do seu telemóvel segundo as suas próprias regras. <span class="badge">Google / Apple / fabricante do dispositivo</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Armazenamento e segurança</h2>
   <p>
-    Os seus dados são armazenados <strong>localmente no seu dispositivo</strong> (base de dados SQLite, ou o armazenamento do seu navegador na versão web) e, se tiver sessão iniciada, <strong>no Google Firestore</strong> (servidores da Google na Europa ou nos Estados Unidos). Os dados em trânsito são cifrados através de TLS. As regras de segurança do Firestore garantem que nenhuma outra pessoa pode ler os seus dados; apenas será visível o que decidir mostrar no seu perfil público, quando essa funcionalidade existir (secção 7).
+    Os seus dados são armazenados <strong>localmente no seu dispositivo</strong> (base de dados SQLite, ou o armazenamento do seu navegador na versão web) e, se tiver sessão iniciada, <strong>no Google Firestore</strong> (servidores da Google na Europa ou nos Estados Unidos). Os dados em trânsito são cifrados através de TLS. As regras de segurança do Firestore garantem que nenhuma outra pessoa pode ler os seus dados; apenas é visível o que mostra no seu perfil público (secção 7). A classificação, essa, é mantida pelo árbitro das partidas classificativas, na Cloudflare (secção 4).
   </p>
   <p>
     O histórico das suas respostas é sincronizado com a sua conta, para que as suas estatísticas o acompanhem de um dispositivo para outro. Já o registo técnico que serve para ajustar o algoritmo de revisão à sua memória fica <strong>exclusivamente no seu dispositivo</strong> e nunca é sincronizado.
@@ -193,17 +204,14 @@
     Para poder reparar a base de dados em caso de problema, a aplicação guarda no seu dispositivo até três cópias de segurança. Estas nunca saem do dispositivo.
   </p>
 
-  <h2>7. Perfil público e classificação (brevemente)</h2>
-  <div class="a-venir">
-    <strong>Ainda não disponível.</strong> Esta secção descreve antecipadamente uma funcionalidade em preparação, para que saiba o que ela tornará visível antes de chegar. Só se aplicará a partir da sua entrada em funcionamento, anunciada nas Notas de versão.
-  </div>
+  <h2>7. Perfil público e classificação</h2>
   <ul>
-    <li><strong>Um perfil</strong>, aberto a partir do menu da aplicação: um pseudónimo (atribuído aleatoriamente, do tipo user#12345678, que poderá alterar), um avatar desenhado ou, se o ativar, a fotografia da sua conta Google, os emblemas que decidir mostrar, alguns números (sequência de dias, palavras aprendidas, recorde no Contra-relógio, histórias lidas), os seus idiomas e os seus níveis, e o mês em que se juntou.</li>
-    <li><strong>Uma classificação mundial do Contra-relógio</strong>, da semana e de sempre, onde constarão o seu pseudónimo, o seu avatar, a sua melhor pontuação e a sua posição. Só constarão dela as contas com sessão iniciada com a Google.</li>
-    <li><strong>Quem o verá</strong>: os outros utilizadores da Vocadeck com sessão iniciada. Nunca o seu endereço de e-mail, o seu nome Google ou os seus cartões.</li>
-    <li><strong>As suas escolhas</strong>: poderá ocultar o seu perfil e sair da classificação a qualquer momento. Um pseudónimo só pode pertencer a uma pessoa, e um pseudónimo ofensivo poderá ser recusado.</li>
-    <li><strong>Contra a batota</strong>: as pontuações enviadas para a classificação poderão ser verificadas automaticamente (tempos de resposta, coerência da pontuação) e uma pontuação impossível será excluída. Estes controlos não utilizam nenhum outro dado.</li>
-    <li><strong>Eliminação</strong>: eliminar a sua conta apagará o seu perfil, o seu pseudónimo e as suas entradas na classificação.</li>
+    <li><strong>Um perfil</strong>, aberto a partir do menu da aplicação: um pseudónimo (atribuído aleatoriamente, do tipo user#12345678, que pode alterar), um avatar desenhado ou, se o ativar, a fotografia da sua conta Google, os emblemas que decidir mostrar, alguns números (sequência de dias, palavras aprendidas, recorde no Contra-relógio, histórias lidas), os seus idiomas e os seus níveis, o seu nível de jogador e o mês em que se juntou. Só as contas com sessão iniciada com a Google têm um perfil público.</li>
+    <li><strong>Uma classificação mundial do Contra-relógio</strong>, da semana e de sempre, onde constam o seu pseudónimo, o seu avatar, a sua melhor pontuação numa partida classificativa e a sua posição. Só contam as partidas classificativas: as respetivas palavras são tiradas ao acaso dos baralhos prontos a usar, as mesmas para todos.</li>
+    <li><strong>Quem o vê</strong>: os outros utilizadores da Vocadeck, a partir da classificação. Nunca o seu endereço de e-mail, o seu nome Google ou os seus cartões.</li>
+    <li><strong>As suas escolhas</strong>: pode ocultar o seu perfil e sair da classificação a qualquer momento (<strong>Perfil › Perfil público e classificação</strong>). Um pseudónimo só pode pertencer a uma pessoa, pode ser alterado no máximo uma vez por dia, e um pseudónimo ofensivo é recusado.</li>
+    <li><strong>Contra a batota</strong>: o árbitro reproduz cada partida classificativa segundo as regras do jogo — o tempo realmente decorrido, o tempo de cada resposta, a pontuação. Uma partida impossível é recusada; uma partida demasiado rápida ou demasiado regular para uma mão humana é posta de lado para verificação e não entra na classificação. Estes controlos não utilizam nenhum outro dado.</li>
+    <li><strong>Eliminação</strong>: eliminar a sua conta apaga o seu perfil, o seu pseudónimo, as suas partidas classificativas e as suas entradas na classificação.</li>
   </ul>
 
   <h2>8. Prazo de conservação</h2>
@@ -217,7 +225,7 @@
     <li><strong>Direito de retificação</strong> — altere os seus cartões e as suas definições a qualquer momento.</li>
     <li><strong>Direito ao apagamento</strong> — dois níveis nos Parâmetros: «Apagar todos os dados» apaga os seus cartões, os seus baralhos e o seu progresso sem encerrar a sua conta; «Eliminar a minha conta» elimina definitivamente a sua conta e todos os dados associados (apagamento completo nos termos do RGPD).</li>
     <li><strong>Direito de portabilidade</strong> — os seus cartões podem ser exportados em formatos abertos a partir de <strong>Parâmetros › Importar ou exportar</strong>.</li>
-    <li><strong>Direito de oposição</strong> — termine a sessão a qualquer momento; em breve, poderá também ocultar o seu perfil público e sair da classificação.</li>
+    <li><strong>Direito de oposição</strong> — termine a sessão a qualquer momento, oculte o seu perfil público e saia da classificação (<strong>Perfil › Perfil público e classificação</strong>).</li>
     <li><strong>Reclamação</strong> — pode apresentar uma reclamação à CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) ou à autoridade de proteção de dados do seu país.</li>
   </ul>
   <p>Para exercer estes direitos: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>A Vocadeck não se destina a crianças com menos de 13 anos e não recolhe conscientemente dados que lhes digam respeito.</p>
 
   <h2>11. Alterações</h2>
-  <p>Qualquer alteração substancial é assinalada nas Notas de versão da aplicação. A versão de 14 de setembro de 2026 acrescenta: o progresso nos cursos, nos exercícios, nas histórias e nos jogos; as definições sincronizadas; as comunicações; a tradução offline com o Google ML Kit; os fundamentos jurídicos e o direito de reclamação; o futuro perfil público e a classificação. Esclarece também que o histórico das suas respostas é sincronizado com a sua conta.</p>
+  <p>Qualquer alteração substancial é assinalada nas Notas de versão da aplicação. A versão de 14 de setembro de 2026 acrescenta: o progresso nos cursos, nos exercícios, nas histórias e nos jogos; as definições sincronizadas; as comunicações; a tradução offline com o Google ML Kit; os fundamentos jurídicos e o direito de reclamação; o futuro perfil público e a classificação. Esclarece também que o histórico das suas respostas é sincronizado com a sua conta. No mesmo dia, uma segunda atualização põe em funcionamento o perfil público, as conquistas e a classificação do Contra-relógio, com o árbitro das partidas classificativas.</p>
 
   <h2>12. Contacto</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

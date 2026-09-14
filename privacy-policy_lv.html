@@ -88,7 +88,7 @@
       <tr>
         <td>E-pasta adrese, vārds un profila fotoattēls</td>
         <td>Pieteikšanās ar Google (pēc izvēles)</td>
-        <td>Jūsu konta identificēšana. Pašlaik fotoattēls netiek rādīts nekur (par gaidāmo profilu sk. 7. sadaļu).</td>
+        <td>Jūsu konta identificēšana. Fotoattēls jūsu publiskajā profilā parādās tikai tad, ja izvēlaties to kā avatāru (7. sadaļa). Jūsu e-pasta adrese un vārds tur nekad neparādās.</td>
       </tr>
       <tr>
         <td>Kartītes un kāršu komplekti ar to saturu</td>
@@ -111,9 +111,19 @@
         <td>Jūsu sasniegumu, rekorda un apbalvojumu rādīšana. Partiju skaitītāji tiek glabāti ar nejauši ģenerētu ierīces identifikatoru, kam nav nekādas saistības ar aparatūru un kas kalpo tikai tam, lai pareizi saskaitītu vairākās ierīcēs izspēlētās partijas.</td>
       </tr>
       <tr>
-        <td>Sinhronizētie iestatījumi (piemēram, apakšējai joslai izvēlētie zīmējumi) un atrastās slepenās nozīmītes</td>
+        <td>Sinhronizētie iestatījumi (piemēram, apakšējai joslai izvēlētie zīmējumi), atrastās slepenās nozīmītes un iegūtie sasniegumi ar to datumu</td>
         <td>Jūsu izvēles lietotnē</td>
         <td>Lai lietotne izskatītos vienādi visās jūsu ierīcēs</td>
+      </tr>
+      <tr>
+        <td>Publiskais profils: pseidonīms, avatārs (vai jūsu Google konta fotoattēls, ja to izvēlaties), jūsu vitrīnas nozīmītes, galvenie skaitļi (dienu sērija, apgūtie vārdi, rekords spēlē „Pret laiku“, izlasītie stāsti), valodas un līmeņi, pievienošanās mēnesis un spēlētāja līmenis</td>
+        <td>Jūsu profils (tikai Google konti)</td>
+        <td>Jūsu parādīšana citiem spēlētājiem līderu tabulā (7. sadaļa)</td>
+      </tr>
+      <tr>
+        <td>Spēles „Pret laiku“ reitinga spēles: izdalītie vārdi, katra jūsu atbilde un tās brīdis (milisekundēs), aprēķinātais rezultāts, jūsu labākie nedēļas un visu laiku rezultāti</td>
+        <td>Jūsu reitinga spēles</td>
+        <td>Pārbaude, vai spēle atbilst spēles noteikumiem, un jūsu ierindošana līderu tabulā (7. sadaļa)</td>
       </tr>
       <tr>
         <td>Ziņojums par tulkojuma kļūdu: attiecīgā kartīte (abas tās puses, to valodas, komplekta nosaukums), izvēlētais iemesls, neobligāts komentārs un lietotnes versija</td>
@@ -152,8 +162,8 @@
   <h2>3. Kāpēc mēs apstrādājam šos datus (juridiskais pamats)</h2>
   <ul>
     <li><strong>Lai sniegtu jums pakalpojumu, ko izmantojat</strong> (līguma izpilde): jūsu konts, jūsu kartītes, to sinhronizācija, jūsu progress un statistika.</li>
-    <li><strong>Lai lietotne būtu uzticama un godīga</strong> (leģitīmās intereses): tehniskie kļūdu ziņojumi, pārbaude, vai pieprasījumi patiešām nāk no oficiālās lietotnes, un nākotnē – krāpšanas novēršanas pārbaudes līderu tabulā.</li>
-    <li><strong>Ar jūsu piekrišanu</strong> (piekrišana): ziņojumi, kurus izvēlaties nosūtīt, un nākotnē – tas, ko izvēlēsieties rādīt savā publiskajā profilā. Šo piekrišanu varat atsaukt jebkurā laikā.</li>
+    <li><strong>Lai lietotne būtu uzticama un godīga</strong> (leģitīmās intereses): tehniskie kļūdu ziņojumi, pārbaude, vai pieprasījumi patiešām nāk no oficiālās lietotnes, un krāpšanas novēršanas pārbaudes līderu tabulā.</li>
+    <li><strong>Ar jūsu piekrišanu</strong> (piekrišana): ziņojumi, kurus izvēlaties nosūtīt, un tas, ko izvēlaties rādīt savā publiskajā profilā. Šo piekrišanu varat atsaukt jebkurā laikā.</li>
   </ul>
 
   <h2>4. Tehniskie apstrādātāji</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> un <strong>Pixabay</strong> – ilustrāciju meklēšana jūsu kartītēm (tikai meklētais vārds, bez identificēšanas). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> – bezsaistes lietošanai lejupielādējamo valodu pakotņu mitināšana (tikai statiski faili, konta dati netiek pārsūtīti). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> un <strong>Cloudflare Access</strong> – tīmekļa versijas (PWA) mitināšana un piekļuves kontrole testēšanas posmā. Cloudflare redz ielādēto lapu adreses un slēgtās beta versijas gadījumā e-pasta adresi, kas uzaicināta tai piekļūt. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> un <strong>Cloudflare D1</strong> – reitinga spēļu tiesnesis: tas izdala vārdus, saņem jūsu atbildes un to brīžus, pats aprēķina rezultātu un uztur līderu tabulu (pseidonīms, avatārs, fotoattēls, ja to izvēlējāties, labākie rezultāti). Tas atpazīst jūsu kontu pēc tā pieteikšanās marķiera, nesaņemot jūsu e-pasta adresi vai vārdu. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> – tehniski ziņojumi, kas tiek nosūtīti, kad lietotnē rodas kļūda: lietotnes versija, ierīces modelis, operētājsistēma un kļūdas vieta kodā. Tajos nav nekāda jūsu kartīšu satura. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (ar Firebase App Check starpniecību) – pārbauda, vai pieprasījumi patiešām nāk no oficiālās lietotnes, lai novērstu krāpšanu, bez personas datiem. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Operētājsistēmas balss dzinēji</strong> – runas atpazīšana tiek izmantota tikai jūsu izrunas pārbaudei (kartītes mikrofona poga), un skaņu apstrādā jūsu ierīce; runas sintēze skaļi nolasa jūsu kartīšu vārdus un teikumus, ko apstrādā jūsu tālruņa dzinējs saskaņā ar saviem noteikumiem. <span class="badge">Google / Apple / ierīces ražotājs</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Glabāšana un drošība</h2>
   <p>
-    Jūsu dati tiek glabāti <strong>lokāli jūsu ierīcē</strong> (SQLite datubāzē vai tīmekļa versijas gadījumā jūsu pārlūkprogrammas krātuvē) un, ja esat pieteicies, arī <strong>Google Firestore sistēmā</strong> (Google serveros Eiropā vai Amerikas Savienotajās Valstīs). Pārsūtīšanas laikā dati tiek šifrēti ar TLS. Firestore drošības noteikumi garantē, ka neviens cits nevar lasīt jūsu datus; redzams būs tikai tas, ko izvēlēsieties rādīt savā publiskajā profilā, kad šī funkcija būs pieejama (7. sadaļa).
+    Jūsu dati tiek glabāti <strong>lokāli jūsu ierīcē</strong> (SQLite datubāzē vai tīmekļa versijas gadījumā jūsu pārlūkprogrammas krātuvē) un, ja esat pieteicies, arī <strong>Google Firestore sistēmā</strong> (Google serveros Eiropā vai Amerikas Savienotajās Valstīs). Pārsūtīšanas laikā dati tiek šifrēti ar TLS. Firestore drošības noteikumi garantē, ka neviens cits nevar lasīt jūsu datus; redzams ir tikai tas, ko rādāt savā publiskajā profilā (7. sadaļa). Savukārt līderu tabulu uztur reitinga spēļu tiesnesis Cloudflare serveros (4. sadaļa).
   </p>
   <p>
     Jūsu atbilžu vēsture tiek sinhronizēta ar jūsu kontu, lai jūsu statistika jums sekotu no vienas ierīces uz citu. Savukārt tehniskais žurnāls, kas kalpo atkārtošanas algoritma pielāgošanai jūsu atmiņai, paliek <strong>tikai jūsu ierīcē</strong> un nekad netiek sinhronizēts.
@@ -193,17 +204,14 @@
     Lai problēmas gadījumā datubāzi varētu salabot, lietotne jūsu ierīcē glabā līdz trim rezerves kopijām. Tās nekad nepamet ierīci.
   </p>
 
-  <h2>7. Publiskais profils un līderu tabula (drīzumā)</h2>
-  <div class="a-venir">
-    <strong>Vēl nav pieejams.</strong> Šajā sadaļā iepriekš aprakstīta sagatavošanā esoša funkcija, lai jūs jau pirms tās ieviešanas zinātu, ko tā padarīs redzamu. Sadaļa būs piemērojama tikai no funkcijas ieviešanas brīža, par ko tiks paziņots sadaļā „Versijas piezīmes“.
-  </div>
+  <h2>7. Publiskais profils un līderu tabula</h2>
   <ul>
-    <li><strong>Profils</strong>, kas atverams no lietotnes izvēlnes: pseidonīms (piešķirts nejauši, piemēram, user#12345678, un to varēsiet mainīt), zīmēts avatārs vai, ja to ieslēgsiet, jūsu Google konta fotoattēls, nozīmītes, kuras izvēlēsieties rādīt, daži skaitļi (dienu sērija, apgūtie vārdi, rekords spēlē „Pret laiku“, izlasītie stāsti), jūsu valodas un līmeņi, kā arī mēnesis, kad pievienojāties.</li>
-    <li><strong>Spēles „Pret laiku“ pasaules līderu tabula</strong> – nedēļas un visu laiku, kurā būs redzams jūsu pseidonīms, avatārs, labākais rezultāts un vieta. Tajā būs tikai ar Google pieteikušies konti.</li>
-    <li><strong>Kas to redzēs</strong>: citi pieteikušies Vocadeck lietotāji. Nekad – jūsu e-pasta adresi, Google vārdu vai kartītes.</li>
-    <li><strong>Jūsu izvēles</strong>: jebkurā laikā varēsiet paslēpt savu profilu un izstāties no līderu tabulas. Pseidonīms var piederēt tikai vienai personai, un aizskarošs pseidonīms var tikt noraidīts.</li>
-    <li><strong>Pret krāpšanos</strong>: līderu tabulai nosūtītos rezultātus var pārbaudīt automātiski (atbilžu laiks, rezultāta ticamība), un neiespējams rezultāts tiks noraidīts. Šajās pārbaudēs netiek izmantoti nekādi citi dati.</li>
-    <li><strong>Dzēšana</strong>: dzēšot kontu, tiks izdzēsts jūsu profils, pseidonīms un jūsu rindas līderu tabulā.</li>
+    <li><strong>Profils</strong>, kas atverams no lietotnes izvēlnes: pseidonīms (piešķirts nejauši, piemēram, user#12345678, un to varat mainīt), zīmēts avatārs vai, ja to ieslēdzat, jūsu Google konta fotoattēls, nozīmītes, kuras izvēlaties rādīt, daži skaitļi (dienu sērija, apgūtie vārdi, rekords spēlē „Pret laiku“, izlasītie stāsti), jūsu valodas un līmeņi, jūsu spēlētāja līmenis un mēnesis, kad pievienojāties. Publisks profils ir tikai ar Google pieteiktiem kontiem.</li>
+    <li><strong>Spēles „Pret laiku“ pasaules līderu tabula</strong> – nedēļas un visu laiku, kurā redzams jūsu pseidonīms, avatārs, labākais reitinga spēles rezultāts un vieta. Tajā tiek ņemtas vērā tikai reitinga spēles: to vārdi tiek izvēlēti nejauši no gatavajiem komplektiem, visiem vienādi.</li>
+    <li><strong>Kas to redz</strong>: citi Vocadeck lietotāji, no līderu tabulas. Nekad – jūsu e-pasta adresi, Google vārdu vai kartītes.</li>
+    <li><strong>Jūsu izvēles</strong>: jebkurā laikā varat paslēpt savu profilu un izstāties no līderu tabulas (<strong>Profils › Publisks profils un līderu saraksts</strong>). Pseidonīms var piederēt tikai vienai personai, to var mainīt ne biežāk kā reizi dienā, un aizskarošs pseidonīms tiek noraidīts.</li>
+    <li><strong>Pret krāpšanos</strong>: tiesnesis no jauna izspēlē katru reitinga spēli pēc spēles noteikumiem – faktiski pagājušais laiks, katras atbildes laiks, rezultāts. Neiespējama spēle tiek noraidīta; spēle, kas cilvēka rokai ir pārāk ātra vai pārāk vienmērīga, tiek atlikta pārbaudei un līderu tabulā neiekļūst. Šajās pārbaudēs netiek izmantoti nekādi citi dati.</li>
+    <li><strong>Dzēšana</strong>: dzēšot kontu, tiek izdzēsts jūsu profils, pseidonīms, reitinga spēles un jūsu rindas līderu tabulā.</li>
   </ul>
 
   <h2>8. Glabāšanas laiks</h2>
@@ -217,7 +225,7 @@
     <li><strong>Tiesības labot datus</strong> – mainiet savas kartītes un iestatījumus jebkurā laikā.</li>
     <li><strong>Tiesības uz dzēšanu</strong> – divi līmeņi sadaļā „Parametri“: „Dzēst visus datus“ izdzēš jūsu kartītes, kāršu komplektus un progresu, neslēdzot kontu; „Dzēst manu kontu“ neatgriezeniski izdzēš jūsu kontu un visus saistītos datus (pilnīga dzēšana saskaņā ar VDAR).</li>
     <li><strong>Tiesības uz datu pārnesamību</strong> – jūsu kartītes var eksportēt atvērtos formātos sadaļā <strong>Parametri › Importēt vai eksportēt</strong>.</li>
-    <li><strong>Tiesības iebilst</strong> – jebkurā laikā izrakstieties; nākotnē varēsiet arī paslēpt savu publisko profilu un pamest līderu tabulu.</li>
+    <li><strong>Tiesības iebilst</strong> – jebkurā laikā izrakstieties, paslēpiet savu publisko profilu un pametiet līderu tabulu (<strong>Profils › Publisks profils un līderu saraksts</strong>).</li>
     <li><strong>Sūdzība</strong> – varat iesniegt sūdzību CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) vai savas valsts datu aizsardzības iestādei.</li>
   </ul>
   <p>Lai izmantotu šīs tiesības, rakstiet: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck nav paredzēta bērniem, kas jaunāki par 13 gadiem, un apzināti nevāc datus par viņiem.</p>
 
   <h2>11. Izmaiņas</h2>
-  <p>Par katru būtisku izmaiņu tiek paziņots lietotnes sadaļā „Versijas piezīmes“. 2026. gada 14. septembra versijā pievienots: progress kursos, uzdevumos, stāstos un spēlēs; sinhronizētie iestatījumi; ziņojumi; bezsaistes tulkošana ar Google ML Kit; juridiskais pamats un tiesības iesniegt sūdzību; gaidāmais publiskais profils un līderu tabula. Tajā arī precizēts, ka jūsu atbilžu vēsture tiek sinhronizēta ar jūsu kontu.</p>
+  <p>Par katru būtisku izmaiņu tiek paziņots lietotnes sadaļā „Versijas piezīmes“. 2026. gada 14. septembra versijā pievienots: progress kursos, uzdevumos, stāstos un spēlēs; sinhronizētie iestatījumi; ziņojumi; bezsaistes tulkošana ar Google ML Kit; juridiskais pamats un tiesības iesniegt sūdzību; gaidāmais publiskais profils un līderu tabula. Tajā arī precizēts, ka jūsu atbilžu vēsture tiek sinhronizēta ar jūsu kontu. Tajā pašā dienā otrs atjauninājums ievieš publisko profilu, sasniegumus un spēles „Pret laiku“ līderu tabulu kopā ar reitinga spēļu tiesnesi.</p>
 
   <h2>12. Kontakti</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

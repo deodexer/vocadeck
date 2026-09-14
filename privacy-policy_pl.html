@@ -88,7 +88,7 @@
       <tr>
         <td>Adres e-mail, imię i nazwisko oraz zdjęcie profilowe</td>
         <td>Logowanie przez Google (opcjonalne)</td>
-        <td>Identyfikacja Twojego konta. Obecnie zdjęcie nie jest nigdzie wyświetlane (przyszły profil opisuje sekcja 7).</td>
+        <td>Identyfikacja Twojego konta. Zdjęcie pojawia się w Twoim profilu publicznym tylko wtedy, gdy wybierzesz je jako awatar (sekcja 7). Twój adres e-mail oraz Twoje imię i nazwisko nigdy się tam nie pojawiają.</td>
       </tr>
       <tr>
         <td>Karty i talie wraz z ich zawartością</td>
@@ -111,9 +111,19 @@
         <td>Wyświetlanie Twoich kamieni milowych, rekordu i nagród. Liczniki rozgrywek są zapisywane pod losowo wygenerowanym identyfikatorem urządzenia, bez żadnego związku ze sprzętem, który służy wyłącznie do prawidłowego sumowania rozgrywek z kilku urządzeń.</td>
       </tr>
       <tr>
-        <td>Synchronizowane ustawienia (na przykład rysunki wybrane dla dolnego paska) i znalezione sekretne odznaki</td>
+        <td>Synchronizowane ustawienia (na przykład rysunki wybrane dla dolnego paska), znalezione sekretne odznaki i zdobyte osiągnięcia wraz z ich datą</td>
         <td>Twoje wybory w aplikacji</td>
         <td>Odnajdywanie aplikacji w identycznym stanie na każdym urządzeniu</td>
+      </tr>
+      <tr>
+        <td>Profil publiczny: pseudonim, awatar (lub zdjęcie z Twojego konta Google, jeśli je wybierzesz), odznaki w Twojej gablocie, kluczowe liczby (seria dni, nauczone słowa, rekord w grze Wyścig z czasem, przeczytane historyjki), języki i poziomy, miesiąc dołączenia i Twój poziom gracza</td>
+        <td>Twój profil (tylko konta Google)</td>
+        <td>Pokazywanie Cię innym graczom z poziomu rankingu (sekcja 7)</td>
+      </tr>
+      <tr>
+        <td>Gry rankingowe w Wyścigu z czasem: rozdane słowa, każda Twoja odpowiedź i jej moment (w milisekundach), obliczony wynik, Twoje najlepsze wyniki tygodnia i wszech czasów</td>
+        <td>Twoje gry rankingowe</td>
+        <td>Sprawdzanie, czy gra jest zgodna z zasadami, i umieszczanie Cię w rankingu (sekcja 7)</td>
       </tr>
       <tr>
         <td>Zgłoszenie błędu w tłumaczeniu: dana karta (obie jej strony, ich języki, nazwa talii), wybrany powód, opcjonalny komentarz i wersja aplikacji</td>
@@ -152,8 +162,8 @@
   <h2>3. Dlaczego przetwarzamy te dane (podstawy prawne)</h2>
   <ul>
     <li><strong>Aby świadczyć usługę, z której korzystasz</strong> (wykonanie umowy): Twoje konto, Twoje karty, ich synchronizacja, Twoje postępy i Twoje statystyki.</li>
-    <li><strong>Aby aplikacja działała niezawodnie i uczciwie</strong> (prawnie uzasadniony interes): techniczne raporty o błędach, sprawdzanie, czy żądania rzeczywiście pochodzą z oficjalnej aplikacji, a wkrótce także kontrole przeciwko oszustwom w rankingu.</li>
-    <li><strong>Za Twoją zgodą</strong> (zgoda): zgłoszenia, które zdecydujesz się wysłać, a wkrótce także to, co zdecydujesz się pokazać w swoim profilu publicznym. Możesz wycofać tę zgodę w dowolnym momencie.</li>
+    <li><strong>Aby aplikacja działała niezawodnie i uczciwie</strong> (prawnie uzasadniony interes): techniczne raporty o błędach, sprawdzanie, czy żądania rzeczywiście pochodzą z oficjalnej aplikacji, oraz kontrole przeciwko oszustwom w rankingu.</li>
+    <li><strong>Za Twoją zgodą</strong> (zgoda): zgłoszenia, które zdecydujesz się wysłać, oraz to, co zdecydujesz się pokazać w swoim profilu publicznym. Możesz wycofać tę zgodę w dowolnym momencie.</li>
   </ul>
 
   <h2>4. Techniczne podmioty przetwarzające</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> i <strong>Pixabay</strong> — wyszukiwanie ilustracji do Twoich kart (wyłącznie wyszukiwane słowo, bez identyfikacji). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting pakietów językowych do pobrania na potrzeby korzystania offline (wyłącznie pliki statyczne, żadne dane konta nie są przesyłane). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> i <strong>Cloudflare Access</strong> — hosting wersji internetowej (PWA) i kontrola dostępu w fazie testów. Cloudflare widzi adresy wczytywanych stron, a w przypadku zamkniętej bety — adres e-mail zaproszony do udziału w niej. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> i <strong>Cloudflare D1</strong> — sędzia gier rankingowych: rozdaje słowa, odbiera Twoje odpowiedzi i ich moment, sam oblicza wynik i prowadzi ranking (pseudonim, awatar, zdjęcie, jeśli je wybrałeś, najlepsze wyniki). Rozpoznaje Twoje konto po jego tokenie logowania, nie otrzymując Twojego adresu e-mail ani Twojego imienia i nazwiska. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — raporty techniczne wysyłane, gdy w aplikacji wystąpi błąd: wersja aplikacji, model urządzenia, system operacyjny i miejsce w kodzie, w którym wystąpił błąd. Nie zawierają żadnej treści Twoich kart. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (za pośrednictwem Firebase App Check) — sprawdza, czy żądania rzeczywiście pochodzą z oficjalnej aplikacji, w celu przeciwdziałania oszustwom, bez danych osobowych. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Mechanizmy mowy systemu operacyjnego</strong> — rozpoznawanie mowy służy wyłącznie do sprawdzania Twojej wymowy (przycisk mikrofonu na karcie), a dźwięk jest przetwarzany przez Twoje urządzenie; synteza mowy odczytuje na głos słowa i zdania z Twoich kart, przetwarzane przez mechanizm Twojego telefonu według jego własnych zasad. <span class="badge">Google / Apple / producent urządzenia</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Przechowywanie i bezpieczeństwo</h2>
   <p>
-    Twoje dane są przechowywane <strong>lokalnie na Twoim urządzeniu</strong> (baza SQLite lub pamięć przeglądarki w przypadku wersji internetowej), a jeśli jesteś zalogowany, także <strong>w Google Firestore</strong> (serwery Google w Europie lub w Stanach Zjednoczonych). Dane przesyłane są szyfrowane za pomocą TLS. Reguły bezpieczeństwa Firestore gwarantują, że nikt inny nie może odczytać Twoich danych; widoczne będzie tylko to, co zdecydujesz się pokazać w swoim profilu publicznym, gdy ta funkcja zostanie udostępniona (sekcja 7).
+    Twoje dane są przechowywane <strong>lokalnie na Twoim urządzeniu</strong> (baza SQLite lub pamięć przeglądarki w przypadku wersji internetowej), a jeśli jesteś zalogowany, także <strong>w Google Firestore</strong> (serwery Google w Europie lub w Stanach Zjednoczonych). Dane przesyłane są szyfrowane za pomocą TLS. Reguły bezpieczeństwa Firestore gwarantują, że nikt inny nie może odczytać Twoich danych; widoczne jest tylko to, co pokazujesz w swoim profilu publicznym (sekcja 7). Sam ranking prowadzi natomiast sędzia gier rankingowych, na serwerach Cloudflare (sekcja 4).
   </p>
   <p>
     Historia Twoich odpowiedzi jest synchronizowana z Twoim kontem, aby Twoje statystyki towarzyszyły Ci na każdym urządzeniu. Natomiast dziennik techniczny, który służy do dopasowania algorytmu powtórek do Twojej pamięci, pozostaje <strong>wyłącznie na Twoim urządzeniu</strong> i nigdy nie jest synchronizowany.
@@ -193,17 +204,14 @@
     Aby w razie problemu móc naprawić bazę danych, aplikacja przechowuje na Twoim urządzeniu maksymalnie trzy kopie zapasowe. Nigdy nie opuszczają one urządzenia.
   </p>
 
-  <h2>7. Profil publiczny i ranking (wkrótce)</h2>
-  <div class="a-venir">
-    <strong>Jeszcze niedostępne.</strong> Ta sekcja z wyprzedzeniem opisuje przygotowywaną funkcję, abyś jeszcze przed jej pojawieniem się wiedział, co będzie dzięki niej widoczne. Będzie obowiązywać dopiero od jej uruchomienia, o którym poinformujemy w sekcji Informacje o wersji.
-  </div>
+  <h2>7. Profil publiczny i ranking</h2>
   <ul>
-    <li><strong>Profil</strong>, otwierany z menu aplikacji: pseudonim (przydzielony losowo, w rodzaju user#12345678, który będzie można zmienić), rysowany awatar lub — jeśli to włączysz — zdjęcie z Twojego konta Google, odznaki, które zdecydujesz się pokazać, kilka liczb (seria dni, nauczone słowa, rekord w grze Wyścig z czasem, przeczytane historyjki), Twoje języki i poziomy oraz miesiąc, w którym dołączyłeś.</li>
-    <li><strong>Światowy ranking gry Wyścig z czasem</strong>, tygodniowy i wszech czasów, w którym pojawią się Twój pseudonim, Twój awatar, Twój najlepszy wynik i Twoje miejsce. Znajdą się w nim wyłącznie konta zalogowane przez Google.</li>
-    <li><strong>Kto to zobaczy</strong>: inni zalogowani użytkownicy Vocadeck. Nigdy Twój adres e-mail, Twoje imię i nazwisko z Google ani Twoje karty.</li>
-    <li><strong>Twoje wybory</strong>: w dowolnym momencie będzie można ukryć profil i wycofać się z rankingu. Dany pseudonim może należeć tylko do jednej osoby, a pseudonim obraźliwy może zostać odrzucony.</li>
-    <li><strong>Przeciw oszustwom</strong>: wyniki przesyłane do rankingu mogą być automatycznie weryfikowane (czas odpowiedzi, spójność wyniku), a niemożliwy wynik zostanie odrzucony. Te kontrole nie wykorzystują żadnych innych danych.</li>
-    <li><strong>Usunięcie</strong>: usunięcie konta spowoduje usunięcie Twojego profilu, Twojego pseudonimu i Twoich wpisów w rankingu.</li>
+    <li><strong>Profil</strong>, otwierany z menu aplikacji: pseudonim (przydzielony losowo, w rodzaju user#12345678, który możesz zmienić), rysowany awatar lub — jeśli to włączysz — zdjęcie z Twojego konta Google, odznaki, które zdecydujesz się pokazać, kilka liczb (seria dni, nauczone słowa, rekord w grze Wyścig z czasem, przeczytane historyjki), Twoje języki i poziomy, Twój poziom gracza oraz miesiąc, w którym dołączyłeś. Profil publiczny mają tylko konta zalogowane przez Google.</li>
+    <li><strong>Światowy ranking gry Wyścig z czasem</strong>, tygodniowy i wszech czasów, w którym widnieją Twój pseudonim, Twój awatar, Twój najlepszy wynik w grze rankingowej i Twoje miejsce. Liczą się w nim tylko gry rankingowe: ich słowa są losowane z gotowych talii, te same dla wszystkich.</li>
+    <li><strong>Kto to widzi</strong>: inni użytkownicy Vocadeck, z poziomu rankingu. Nigdy Twój adres e-mail, Twoje imię i nazwisko z Google ani Twoje karty.</li>
+    <li><strong>Twoje wybory</strong>: w dowolnym momencie możesz ukryć profil i wycofać się z rankingu (<strong>Profil › Publiczny profil i ranking</strong>). Dany pseudonim może należeć tylko do jednej osoby, można go zmienić najwyżej raz dziennie, a pseudonim obraźliwy jest odrzucany.</li>
+    <li><strong>Przeciw oszustwom</strong>: sędzia odtwarza każdą grę rankingową zgodnie z zasadami gry — czas, który faktycznie upłynął, czas każdej odpowiedzi, wynik. Niemożliwa gra jest odrzucana; gra zbyt szybka lub zbyt regularna jak na ludzką rękę zostaje odłożona do weryfikacji i nie trafia do rankingu. Te kontrole nie wykorzystują żadnych innych danych.</li>
+    <li><strong>Usunięcie</strong>: usunięcie konta usuwa Twój profil, Twój pseudonim, Twoje gry rankingowe i Twoje wpisy w rankingu.</li>
   </ul>
 
   <h2>8. Okres przechowywania</h2>
@@ -217,7 +225,7 @@
     <li><strong>Prawo do sprostowania</strong> — w dowolnym momencie możesz zmienić swoje karty i ustawienia.</li>
     <li><strong>Prawo do usunięcia danych</strong> — dwa poziomy w Ustawieniach: „Usuń wszystkie dane” usuwa Twoje karty, talie i postępy bez zamykania konta; „Usuń moje konto” trwale usuwa Twoje konto i wszystkie powiązane z nim dane (pełne usunięcie zgodnie z RODO).</li>
     <li><strong>Prawo do przenoszenia danych</strong> — Twoje karty można wyeksportować w otwartych formatach w <strong>Ustawienia › Importuj lub eksportuj</strong>.</li>
-    <li><strong>Prawo do sprzeciwu</strong> — w dowolnym momencie możesz się wylogować; wkrótce będziesz też mógł ukryć swój profil publiczny i opuścić ranking.</li>
+    <li><strong>Prawo do sprzeciwu</strong> — w dowolnym momencie możesz się wylogować, ukryć swój profil publiczny i opuścić ranking (<strong>Profil › Publiczny profil i ranking</strong>).</li>
     <li><strong>Skarga</strong> — możesz wnieść skargę do CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) lub do organu ochrony danych w Twoim kraju.</li>
   </ul>
   <p>Aby skorzystać z tych praw: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck nie jest skierowany do dzieci poniżej 13 roku życia i nie zbiera świadomie dotyczących ich danych.</p>
 
   <h2>11. Zmiany</h2>
-  <p>Każda istotna zmiana jest sygnalizowana w sekcji Informacje o wersji aplikacji. Wersja z 14 września 2026 r. dodaje: postępy w kursach, ćwiczeniach, historyjkach i grach; synchronizowane ustawienia; zgłoszenia; tłumaczenie offline za pomocą Google ML Kit; podstawy prawne i prawo do wniesienia skargi; przyszły profil publiczny i ranking. Wyjaśnia też, że historia Twoich odpowiedzi jest synchronizowana z Twoim kontem.</p>
+  <p>Każda istotna zmiana jest sygnalizowana w sekcji Informacje o wersji aplikacji. Wersja z 14 września 2026 r. dodaje: postępy w kursach, ćwiczeniach, historyjkach i grach; synchronizowane ustawienia; zgłoszenia; tłumaczenie offline za pomocą Google ML Kit; podstawy prawne i prawo do wniesienia skargi; przyszły profil publiczny i ranking. Wyjaśnia też, że historia Twoich odpowiedzi jest synchronizowana z Twoim kontem. Tego samego dnia druga aktualizacja uruchamia profil publiczny, osiągnięcia i ranking gry Wyścig z czasem, wraz z sędzią gier rankingowych.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

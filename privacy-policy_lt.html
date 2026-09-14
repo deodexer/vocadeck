@@ -88,7 +88,7 @@
       <tr>
         <td>El. pašto adresas, vardas ir profilio nuotrauka</td>
         <td>Prisijungimas per Google (neprivalomas)</td>
-        <td>Jūsų paskyros identifikavimas. Šiuo metu nuotrauka niekur nerodoma (apie būsimą profilį žr. 7 skyrių).</td>
+        <td>Jūsų paskyros identifikavimas. Nuotrauka jūsų viešame profilyje rodoma tik tada, jei ją pasirenkate kaip avatarą (7 skyrius). Jūsų el. pašto adresas ir vardas ten niekada nerodomi.</td>
       </tr>
       <tr>
         <td>Kortelės ir kaladės su jų turiniu</td>
@@ -111,9 +111,19 @@
         <td>Jūsų gairių, rekordo ir apdovanojimų rodymas. Partijų skaitikliai saugomi pagal atsitiktinai sugeneruotą įrenginio identifikatorių, kuris niekaip nesusijęs su aparatine įranga ir naudojamas tik tam, kad būtų teisingai susumuotos keliuose įrenginiuose žaistos partijos.</td>
       </tr>
       <tr>
-        <td>Sinchronizuojami nustatymai (pavyzdžiui, apatinei juostai pasirinkti piešiniai) ir rasti slapti ženkleliai</td>
+        <td>Sinchronizuojami nustatymai (pavyzdžiui, apatinei juostai pasirinkti piešiniai), rasti slapti ženkleliai ir gauti pasiekimai kartu su jų data</td>
         <td>Jūsų pasirinkimai programėlėje</td>
         <td>Kad programėlė atrodytų vienodai visuose jūsų įrenginiuose</td>
+      </tr>
+      <tr>
+        <td>Viešas profilis: slapyvardis, avataras (arba jūsų Google paskyros nuotrauka, jei ją pasirenkate), jūsų vitrinos ženkleliai, pagrindiniai skaičiai (dienų serija, išmokti žodžiai, rekordas žaidime „Lenktynės su laiku“, perskaitytos istorijos), kalbos ir lygiai, prisijungimo mėnuo ir jūsų žaidėjo lygis</td>
+        <td>Jūsų profilis (tik Google paskyros)</td>
+        <td>Jūsų rodymas kitiems žaidėjams iš lyderių lentelės (7 skyrius)</td>
+      </tr>
+      <tr>
+        <td>Reitinginės žaidimo „Lenktynės su laiku“ partijos: išdalyti žodžiai, kiekvienas jūsų atsakymas ir jo momentas (milisekundėmis), apskaičiuotas rezultatas, geriausi jūsų savaitės ir visų laikų rezultatai</td>
+        <td>Jūsų reitinginės partijos</td>
+        <td>Patikrinimas, ar partija atitinka žaidimo taisykles, ir jūsų vietos lyderių lentelėje nustatymas (7 skyrius)</td>
       </tr>
       <tr>
         <td>Pranešimas apie vertimo klaidą: atitinkama kortelė (abi jos pusės, jų kalbos, kaladės pavadinimas), pasirinkta priežastis, neprivalomas komentaras ir programėlės versija</td>
@@ -152,8 +162,8 @@
   <h2>3. Kodėl tvarkome šiuos duomenis (teisiniai pagrindai)</h2>
   <ul>
     <li><strong>Kad galėtume teikti jūsų naudojamą paslaugą</strong> (sutarties vykdymas): jūsų paskyra, jūsų kortelės, jų sinchronizavimas, jūsų pažanga ir statistika.</li>
-    <li><strong>Kad programėlė išliktų patikima ir sąžininga</strong> (teisėtas interesas): techninės klaidų ataskaitos, patikrinimas, ar užklausos tikrai siunčiamos iš oficialios programėlės, o ateityje – patikros prieš sukčiavimą lyderių lentelėje.</li>
-    <li><strong>Su jūsų sutikimu</strong> (sutikimas): pranešimai, kuriuos nusprendžiate išsiųsti, o ateityje – tai, ką nuspręsite rodyti savo viešame profilyje. Šį sutikimą galite bet kada atšaukti.</li>
+    <li><strong>Kad programėlė išliktų patikima ir sąžininga</strong> (teisėtas interesas): techninės klaidų ataskaitos, patikrinimas, ar užklausos tikrai siunčiamos iš oficialios programėlės, ir patikros prieš sukčiavimą lyderių lentelėje.</li>
+    <li><strong>Su jūsų sutikimu</strong> (sutikimas): pranešimai, kuriuos nusprendžiate išsiųsti, ir tai, ką nusprendžiate rodyti savo viešame profilyje. Šį sutikimą galite bet kada atšaukti.</li>
   </ul>
 
   <h2>4. Techniniai duomenų tvarkytojai</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> ir <strong>Pixabay</strong> – iliustracijų jūsų kortelėms paieška (tik ieškomas žodis, be identifikavimo). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> – kalbų paketų, kuriuos galima atsisiųsti naudoti neprisijungus, talpinimas (tik statiniai failai, jokie paskyros duomenys neperduodami). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> ir <strong>Cloudflare Access</strong> – žiniatinklio versijos (PWA) talpinimas ir prieigos kontrolė bandomuoju etapu. Cloudflare mato įkeltų puslapių adresus, o uždarosios beta versijos atveju – el. pašto adresą, pakviestą ja naudotis. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> ir <strong>Cloudflare D1</strong> – reitinginių partijų teisėjas: jis išdalija žodžius, gauna jūsų atsakymus ir jų momentą, pats apskaičiuoja rezultatą ir tvarko lyderių lentelę (slapyvardis, avataras, nuotrauka, jei ją pasirinkote, geriausi rezultatai). Jūsų paskyrą jis atpažįsta iš jos prisijungimo žetono, negaudamas jūsų el. pašto adreso ar vardo. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> – techninės ataskaitos, siunčiamos, kai programėlėje įvyksta klaida: programėlės versija, įrenginio modelis, operacinė sistema ir klaidos vieta kode. Jose nėra jokio jūsų kortelių turinio. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (per Firebase App Check) – tikrina, ar užklausos tikrai siunčiamos iš oficialios programėlės, siekiant užkirsti kelią sukčiavimui, be asmens duomenų. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Operacinės sistemos balso varikliai</strong> – kalbos atpažinimas naudojamas tik jūsų tarimui tikrinti (kortelės mikrofono mygtukas), o garsą apdoroja jūsų įrenginys; kalbos sintezė garsiai perskaito jūsų kortelių žodžius ir sakinius, kuriuos apdoroja jūsų telefono variklis pagal savo taisykles. <span class="badge">Google / Apple / įrenginio gamintojas</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Saugojimas ir saugumas</h2>
   <p>
-    Jūsų duomenys saugomi <strong>vietoje, jūsų įrenginyje</strong> (SQLite duomenų bazėje arba, žiniatinklio versijos atveju, jūsų naršyklės saugykloje) ir, jei esate prisijungę, <strong>Google Firestore sistemoje</strong> (Google serveriuose Europoje arba Jungtinėse Valstijose). Perduodami duomenys šifruojami naudojant TLS. Firestore saugumo taisyklės užtikrina, kad niekas kitas negalėtų skaityti jūsų duomenų; matoma bus tik tai, ką nuspręsite rodyti savo viešame profilyje, kai ši funkcija atsiras (7 skyrius).
+    Jūsų duomenys saugomi <strong>vietoje, jūsų įrenginyje</strong> (SQLite duomenų bazėje arba, žiniatinklio versijos atveju, jūsų naršyklės saugykloje) ir, jei esate prisijungę, <strong>Google Firestore sistemoje</strong> (Google serveriuose Europoje arba Jungtinėse Valstijose). Perduodami duomenys šifruojami naudojant TLS. Firestore saugumo taisyklės užtikrina, kad niekas kitas negalėtų skaityti jūsų duomenų; matoma tik tai, ką rodote savo viešame profilyje (7 skyrius). Pačią lyderių lentelę tvarko reitinginių partijų teisėjas Cloudflare serveriuose (4 skyrius).
   </p>
   <p>
     Jūsų atsakymų istorija sinchronizuojama su jūsų paskyra, kad statistika jus lydėtų iš vieno įrenginio į kitą. O techninis žurnalas, naudojamas kartojimo algoritmui pritaikyti prie jūsų atminties, lieka <strong>tik jūsų įrenginyje</strong> ir niekada nesinchronizuojamas.
@@ -193,17 +204,14 @@
     Kad kilus problemai būtų galima pataisyti duomenų bazę, programėlė jūsų įrenginyje saugo iki trijų atsarginių kopijų. Jos niekada nepalieka įrenginio.
   </p>
 
-  <h2>7. Viešas profilis ir lyderių lentelė (netrukus)</h2>
-  <div class="a-venir">
-    <strong>Kol kas neprieinama.</strong> Šiame skyriuje iš anksto aprašoma rengiama funkcija, kad dar prieš jai atsirandant žinotumėte, ką ji padarys matoma. Skyrius bus taikomas tik nuo funkcijos paleidimo, apie kurį bus paskelbta skiltyje „Versijos pastabos“.
-  </div>
+  <h2>7. Viešas profilis ir lyderių lentelė</h2>
   <ul>
-    <li><strong>Profilis</strong>, atidaromas iš programėlės meniu: slapyvardis (priskiriamas atsitiktinai, pvz., user#12345678, kurį galėsite pakeisti), pieštas avataras arba, jei tai įjungsite, jūsų Google paskyros nuotrauka, ženkleliai, kuriuos nuspręsite rodyti, keli skaičiai (dienų serija, išmokti žodžiai, rekordas žaidime „Lenktynės su laiku“, perskaitytos istorijos), jūsų kalbos ir lygiai bei mėnuo, kada prisijungėte.</li>
-    <li><strong>Pasaulinė žaidimo „Lenktynės su laiku“ lyderių lentelė</strong> – savaitės ir visų laikų, kurioje bus rodomi jūsų slapyvardis, avataras, geriausias rezultatas ir vieta. Joje bus tik per Google prisijungusios paskyros.</li>
-    <li><strong>Kas tai matys</strong>: kiti prisijungę Vocadeck naudotojai. Niekada – jūsų el. pašto adreso, Google vardo ar kortelių.</li>
-    <li><strong>Jūsų pasirinkimai</strong>: bet kada galėsite paslėpti savo profilį ir pasitraukti iš lyderių lentelės. Tą patį slapyvardį gali turėti tik vienas asmuo, o įžeidus slapyvardis gali būti atmestas.</li>
-    <li><strong>Prieš sukčiavimą</strong>: į lyderių lentelę siunčiami rezultatai gali būti tikrinami automatiškai (atsakymų laikas, rezultato nuoseklumas), o neįmanomas rezultatas bus atmestas. Šioms patikroms nenaudojami jokie kiti duomenys.</li>
-    <li><strong>Ištrynimas</strong>: ištrynus paskyrą, bus ištrinti jūsų profilis, slapyvardis ir jūsų eilutės lyderių lentelėje.</li>
+    <li><strong>Profilis</strong>, atidaromas iš programėlės meniu: slapyvardis (priskiriamas atsitiktinai, pvz., user#12345678, kurį galite pakeisti), pieštas avataras arba, jei tai įjungsite, jūsų Google paskyros nuotrauka, ženkleliai, kuriuos nusprendžiate rodyti, keli skaičiai (dienų serija, išmokti žodžiai, rekordas žaidime „Lenktynės su laiku“, perskaitytos istorijos), jūsų kalbos ir lygiai, jūsų žaidėjo lygis bei mėnuo, kada prisijungėte. Viešą profilį turi tik per Google prisijungusios paskyros.</li>
+    <li><strong>Pasaulinė žaidimo „Lenktynės su laiku“ lyderių lentelė</strong> – savaitės ir visų laikų, kurioje rodomi jūsų slapyvardis, avataras, geriausias reitinginės partijos rezultatas ir vieta. Skaičiuojamos tik reitinginės partijos: jų žodžiai atsitiktinai parenkami iš paruoštų naudoti kortų rinkinių ir yra vienodi visiems.</li>
+    <li><strong>Kas tai mato</strong>: kiti Vocadeck naudotojai, iš lyderių lentelės. Niekada – jūsų el. pašto adreso, Google vardo ar kortelių.</li>
+    <li><strong>Jūsų pasirinkimai</strong>: bet kada galite paslėpti savo profilį ir pasitraukti iš lyderių lentelės (<strong>Profilis › Viešas profilis ir reitingas</strong>). Tą patį slapyvardį gali turėti tik vienas asmuo, jį galima keisti ne dažniau kaip kartą per dieną, o įžeidus slapyvardis atmetamas.</li>
+    <li><strong>Prieš sukčiavimą</strong>: teisėjas pagal žaidimo taisykles iš naujo atkuria kiekvieną reitinginę partiją – realiai praėjusį laiką, kiekvieno atsakymo laiką, rezultatą. Neįmanoma partija atmetama; per greita ar per tolygi žmogaus rankai partija atidedama patikrinti ir į lyderių lentelę nepatenka. Šioms patikroms nenaudojami jokie kiti duomenys.</li>
+    <li><strong>Ištrynimas</strong>: ištrynus paskyrą, ištrinami jūsų profilis, slapyvardis, reitinginės partijos ir jūsų eilutės lyderių lentelėje.</li>
   </ul>
 
   <h2>8. Saugojimo laikotarpis</h2>
@@ -217,7 +225,7 @@
     <li><strong>Teisė reikalauti ištaisyti duomenis</strong> – bet kada keiskite savo korteles ir nustatymus.</li>
     <li><strong>Teisė reikalauti ištrinti duomenis</strong> – du lygiai skiltyje „Parametrai“: „Ištrinti visus duomenis“ ištrina jūsų korteles, kalades ir pažangą neuždarant paskyros; „Ištrinti mano paskyrą“ visam laikui ištrina jūsų paskyrą ir visus susijusius duomenis (visiškas ištrynimas pagal BDAR).</li>
     <li><strong>Teisė į duomenų perkeliamumą</strong> – jūsų korteles galima eksportuoti atviraisiais formatais skiltyje <strong>Parametrai › Importuoti arba eksportuoti</strong>.</li>
-    <li><strong>Teisė nesutikti</strong> – bet kada atsijunkite; ateityje taip pat galėsite paslėpti savo viešą profilį ir palikti lyderių lentelę.</li>
+    <li><strong>Teisė nesutikti</strong> – bet kada atsijunkite, paslėpkite savo viešą profilį ir palikite lyderių lentelę (<strong>Profilis › Viešas profilis ir reitingas</strong>).</li>
     <li><strong>Skundas</strong> – skundą galite pateikti CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) arba savo šalies duomenų apsaugos institucijai.</li>
   </ul>
   <p>Norėdami pasinaudoti šiomis teisėmis, rašykite: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck nėra skirta jaunesniems nei 13 metų vaikams ir sąmoningai nerenka su jais susijusių duomenų.</p>
 
   <h2>11. Pakeitimai</h2>
-  <p>Apie kiekvieną esminį pakeitimą pranešama programėlės skiltyje „Versijos pastabos“. 2026 m. rugsėjo 14 d. versijoje papildomai aprašoma: pažanga kursuose, pratimuose, istorijose ir žaidimuose; sinchronizuojami nustatymai; pranešimai; vertimas neprisijungus naudojant Google ML Kit; teisiniai pagrindai ir teisė pateikti skundą; būsimas viešas profilis ir lyderių lentelė. Joje taip pat patikslinta, kad jūsų atsakymų istorija sinchronizuojama su jūsų paskyra.</p>
+  <p>Apie kiekvieną esminį pakeitimą pranešama programėlės skiltyje „Versijos pastabos“. 2026 m. rugsėjo 14 d. versijoje papildomai aprašoma: pažanga kursuose, pratimuose, istorijose ir žaidimuose; sinchronizuojami nustatymai; pranešimai; vertimas neprisijungus naudojant Google ML Kit; teisiniai pagrindai ir teisė pateikti skundą; būsimas viešas profilis ir lyderių lentelė. Joje taip pat patikslinta, kad jūsų atsakymų istorija sinchronizuojama su jūsų paskyra. Tą pačią dieną antrasis atnaujinimas paleidžia viešą profilį, pasiekimus ir žaidimo „Lenktynės su laiku“ lyderių lentelę kartu su reitinginių partijų teisėju.</p>
 
   <h2>12. Kontaktai</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

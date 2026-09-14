@@ -88,7 +88,7 @@
       <tr>
         <td>Email address, name and profile picture</td>
         <td>Google sign-in (optional)</td>
-        <td>Identifying your account. The picture is not displayed anywhere today (see section 7 for the upcoming profile).</td>
+        <td>Identifying your account. The picture only appears on your public profile if you choose it as your avatar (section 7). Your email and your name never appear there.</td>
       </tr>
       <tr>
         <td>Cards and decks, with their content</td>
@@ -111,9 +111,19 @@
         <td>Showing your milestones, your record and your rewards. Game counters are filed under a randomly drawn device identifier, with no link whatsoever to the hardware, used only to add up correctly the games played on several devices.</td>
       </tr>
       <tr>
-        <td>Synced settings (for example the drawings chosen for the bottom bar) and secret badges found</td>
+        <td>Synced settings (for example the drawings chosen for the bottom bar), secret badges found and achievements earned, with their date</td>
         <td>Your choices in the app</td>
         <td>Finding your app exactly as you left it from one device to another</td>
+      </tr>
+      <tr>
+        <td>Public profile: pseudonym, avatar (or your Google account picture if you choose it), the badges in your showcase, key figures (day streak, words learned, Time Attack record, stories read), languages and levels, the month you joined and your player level</td>
+        <td>Your profile (Google accounts only)</td>
+        <td>Showing you to other players, from the leaderboard (section 7)</td>
+      </tr>
+      <tr>
+        <td>Ranked Time Attack games: the words dealt, each of your answers and its moment (in milliseconds), the score computed, your best scores of the week and of all time</td>
+        <td>Your ranked games</td>
+        <td>Checking that the game follows the rules and ranking you (section 7)</td>
       </tr>
       <tr>
         <td>Report of a translation error: the card concerned (both sides, their languages, the deck name), the reason chosen, an optional comment and the app version</td>
@@ -152,8 +162,8 @@
   <h2>3. Why we process this data (legal bases)</h2>
   <ul>
     <li><strong>To provide the service you use</strong> (performance of a contract): your account, your cards, their synchronization, your progress and your statistics.</li>
-    <li><strong>To keep the app reliable and fair</strong> (legitimate interest): technical error reports, checking that requests really come from the official app and, coming soon, anti-cheating checks on the leaderboard.</li>
-    <li><strong>With your agreement</strong> (consent): the reports you choose to send and, coming soon, what you choose to show on your public profile. You can withdraw this agreement at any time.</li>
+    <li><strong>To keep the app reliable and fair</strong> (legitimate interest): technical error reports, checking that requests really come from the official app and anti-cheating checks on the leaderboard.</li>
+    <li><strong>With your agreement</strong> (consent): the reports you choose to send and what you choose to show on your public profile. You can withdraw this agreement at any time.</li>
   </ul>
 
   <h2>4. Technical processors</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> and <strong>Pixabay</strong> — searching illustrations for your cards (only the word searched, with no identification). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting of the language packs downloadable for offline use (static files only, no account data sent). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> and <strong>Cloudflare Access</strong> — hosting of the web version (PWA) and access control during the testing phase. Cloudflare sees the addresses of the pages loaded and, for the closed beta, the email address invited to access it. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> and <strong>Cloudflare D1</strong> — the referee of ranked games: it deals the words, receives your answers and their moment, computes the score itself and keeps the leaderboard (pseudonym, avatar, picture if you chose it, best scores). It recognizes your account by its sign-in token, without receiving your email or your name. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — technical reports sent when the app runs into an error: app version, device model, operating system and where the error occurred in the code. None of your card content is included. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) — checks that requests really come from the official app, for anti-fraud purposes, with no personal data. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Operating-system voice engines</strong> — speech recognition is used only to check your pronunciation (a card's microphone button), and the audio is processed by your device; text-to-speech reads your cards' words and sentences aloud, processed by your phone's engine under its own rules. <span class="badge">Google / Apple / device maker</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Storage and security</h2>
   <p>
-    Your data is stored <strong>locally on your device</strong> (an SQLite database, or your browser's storage for the web version) and, if you are signed in, <strong>in Google Firestore</strong> (Google servers in Europe or the United States). Data in transit is encrypted with TLS. Firestore's security rules ensure that no one else can read your data; only what you choose to show on your public profile will be visible, once that feature exists (section 7).
+    Your data is stored <strong>locally on your device</strong> (an SQLite database, or your browser's storage for the web version) and, if you are signed in, <strong>in Google Firestore</strong> (Google servers in Europe or the United States). Data in transit is encrypted with TLS. Firestore's security rules ensure that no one else can read your data; only what you show on your public profile is visible (section 7). The leaderboard itself is kept by the referee of ranked games, at Cloudflare (section 4).
   </p>
   <p>
     The history of your answers is synced with your account, so that your statistics follow you from one device to another. The technical log used to fit the review algorithm to your memory, on the other hand, stays <strong>exclusively on your device</strong> and is never synced.
@@ -193,17 +204,14 @@
     To be able to repair the database if something goes wrong, the app keeps up to three backup copies on your device. They never leave the device.
   </p>
 
-  <h2>7. Public profile and leaderboard (coming soon)</h2>
-  <div class="a-venir">
-    <strong>Not available yet.</strong> This section describes a feature in preparation ahead of time, so that you know what it will make visible before it arrives. It will only apply once the feature is launched, which will be announced in the release notes.
-  </div>
+  <h2>7. Public profile and leaderboard</h2>
   <ul>
-    <li><strong>A profile</strong>, opened from the app menu: a pseudonym (randomly assigned, such as user#12345678, which you will be able to change), a drawn avatar or, if you turn it on, your Google account picture, the badges you choose to show, a few figures (day streak, words learned, Time Attack record, stories read), your languages and levels, and the month you joined.</li>
-    <li><strong>A worldwide Time Attack leaderboard</strong>, for the week and for all time, showing your pseudonym, your avatar, your best score and your rank. Only accounts signed in with Google will appear on it.</li>
-    <li><strong>Who will see it</strong>: other signed-in Vocadeck users. Never your email address, your Google name or your cards.</li>
-    <li><strong>Your choices</strong>: you will be able to hide your profile and leave the leaderboard at any time. A pseudonym can only be held by one person, and an offensive pseudonym may be refused.</li>
-    <li><strong>Against cheating</strong>: scores sent to the leaderboard may be checked automatically (answer times, consistency of the score), and an impossible score will be discarded. These checks use no other data.</li>
-    <li><strong>Deletion</strong>: deleting your account will erase your profile, your pseudonym and your leaderboard entries.</li>
+    <li><strong>A profile</strong>, opened from the app menu: a pseudonym (randomly assigned, such as user#12345678, which you can change), a drawn avatar or, if you turn it on, your Google account picture, the badges you choose to show, a few figures (day streak, words learned, Time Attack record, stories read), your languages and levels, your player level and the month you joined. Only accounts signed in with Google have a public profile.</li>
+    <li><strong>A worldwide Time Attack leaderboard</strong>, for the week and for all time, showing your pseudonym, your avatar, your best ranked-game score and your rank. Only ranked games count: their words are drawn at random from the ready-made decks, the same for everyone.</li>
+    <li><strong>Who sees it</strong>: other Vocadeck users, from the leaderboard. Never your email address, your Google name or your cards.</li>
+    <li><strong>Your choices</strong>: you can hide your profile and leave the leaderboard at any time (<strong>Profile › Public profile and leaderboard</strong>). A pseudonym can only be held by one person, can be changed once a day at most, and an offensive pseudonym is refused.</li>
+    <li><strong>Against cheating</strong>: the referee replays every ranked game with the game's rules — the time actually elapsed, the time of each answer, the score. An impossible game is rejected; a game too fast or too regular for a human hand is set aside for review and does not enter the leaderboard. These checks use no other data.</li>
+    <li><strong>Deletion</strong>: deleting your account erases your profile, your pseudonym, your ranked games and your leaderboard entries.</li>
   </ul>
 
   <h2>8. How long we keep data</h2>
@@ -217,7 +225,7 @@
     <li><strong>Right to rectification</strong> — edit your cards and settings at any time.</li>
     <li><strong>Right to erasure</strong> — two levels in Settings: "Delete all data" erases your cards, decks and progress without closing your account; "Delete my account" permanently deletes your account and all associated data (full GDPR deletion).</li>
     <li><strong>Right to data portability</strong> — your cards can be exported in open formats from <strong>Settings › Import or export</strong>.</li>
-    <li><strong>Right to object</strong> — sign out at any time; coming soon, hide your public profile and leave the leaderboard.</li>
+    <li><strong>Right to object</strong> — sign out at any time, hide your public profile and leave the leaderboard (<strong>Profile › Public profile and leaderboard</strong>).</li>
     <li><strong>Complaint</strong> — you can lodge a complaint with the CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) or with the data protection authority of your country.</li>
   </ul>
   <p>To exercise these rights: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck is not aimed at children under 13 and does not knowingly collect data about them.</p>
 
   <h2>11. Changes</h2>
-  <p>Any substantial change is announced in the app's release notes. The September 14, 2026 version adds: progress in courses, exercises, stories and games; synced settings; reports; offline translation with Google ML Kit; the legal bases and the right to complain; the upcoming public profile and leaderboard. It also makes clear that the history of your answers is synced with your account.</p>
+  <p>Any substantial change is announced in the app's release notes. The September 14, 2026 version adds: progress in courses, exercises, stories and games; synced settings; reports; offline translation with Google ML Kit; the legal bases and the right to complain; the upcoming public profile and leaderboard. It also makes clear that the history of your answers is synced with your account. On the same day, a second update launches the public profile, achievements and the Time Attack leaderboard, with the referee of ranked games.</p>
 
   <h2>12. Contact</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

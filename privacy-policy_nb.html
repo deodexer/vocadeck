@@ -88,7 +88,7 @@
       <tr>
         <td>E-postadresse, navn og profilbilde</td>
         <td>Innlogging med Google (valgfritt)</td>
-        <td>Identifisere kontoen din. Bildet vises foreløpig ingen steder (se punkt 7 om den kommende profilen).</td>
+        <td>Identifisere kontoen din. Bildet vises bare på den offentlige profilen din hvis du velger det som avatar (punkt 7). E-postadressen og navnet ditt vises aldri der.</td>
       </tr>
       <tr>
         <td>Kort og kortstokker, med innholdet sitt</td>
@@ -111,9 +111,19 @@
         <td>Vise milepælene, rekorden og belønningene dine. Rundetellerne lagres under en tilfeldig generert enhets-ID uten noen tilknytning til maskinvaren, som bare brukes til å legge sammen runder spilt på flere enheter på riktig måte.</td>
       </tr>
       <tr>
-        <td>Synkroniserte innstillinger (for eksempel tegningene som er valgt for den nederste linjen) og hemmelige merker du har funnet</td>
+        <td>Synkroniserte innstillinger (for eksempel tegningene som er valgt for den nederste linjen), hemmelige merker du har funnet og prestasjoner du har oppnådd, med tilhørende dato</td>
         <td>Valgene dine i appen</td>
         <td>Finne appen din helt lik igjen fra én enhet til en annen</td>
+      </tr>
+      <tr>
+        <td>Offentlig profil: pseudonym, avatar (eller bildet fra Google-kontoen din hvis du velger det), merkene i utstillingen din, nøkkeltall (dagsrekke, lærte ord, rekord i Mot klokka, leste historier), språk og nivåer, måneden du ble med og spillernivået ditt</td>
+        <td>Profilen din (bare Google-kontoer)</td>
+        <td>Vise deg til andre spillere, fra rangeringslisten (punkt 7)</td>
+      </tr>
+      <tr>
+        <td>Rangerte spill i Mot klokka: ordene som deles ut, hvert av svarene dine og tidspunktet for det (i millisekunder), den beregnede poengsummen, de beste poengsummene dine for uken og gjennom tidene</td>
+        <td>De rangerte spillene dine</td>
+        <td>Kontrollere at spillet følger spillereglene, og rangere deg (punkt 7)</td>
       </tr>
       <tr>
         <td>Rapport om en oversettelsesfeil: det aktuelle kortet (begge sidene, språkene deres, navnet på kortstokken), valgt årsak, en valgfri kommentar og appversjonen</td>
@@ -152,8 +162,8 @@
   <h2>3. Hvorfor vi behandler disse opplysningene (behandlingsgrunnlag)</h2>
   <ul>
     <li><strong>For å levere tjenesten du bruker</strong> (oppfyllelse av en avtale): kontoen din, kortene dine, synkroniseringen av dem, fremgangen og statistikken din.</li>
-    <li><strong>For å holde appen pålitelig og ærlig</strong> (berettiget interesse): tekniske feilrapporter, kontrollen av at forespørslene virkelig kommer fra den offisielle appen, og etter hvert kontroller mot juks på rangeringslisten.</li>
-    <li><strong>Med din tillatelse</strong> (samtykke): rapportene du velger å sende og, etter hvert, det du velger å vise på den offentlige profilen din. Du kan når som helst trekke tilbake dette samtykket.</li>
+    <li><strong>For å holde appen pålitelig og ærlig</strong> (berettiget interesse): tekniske feilrapporter, kontrollen av at forespørslene virkelig kommer fra den offisielle appen, og kontroller mot juks på rangeringslisten.</li>
+    <li><strong>Med din tillatelse</strong> (samtykke): rapportene du velger å sende, og det du velger å vise på den offentlige profilen din. Du kan når som helst trekke tilbake dette samtykket.</li>
   </ul>
 
   <h2>4. Tekniske databehandlere</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> og <strong>Pixabay</strong> – søk etter illustrasjoner til kortene dine (bare søkeordet, uten identifikasjon). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> – lagring av språkpakkene som kan lastes ned for frakoblet bruk (bare statiske filer, ingen kontoopplysninger overføres). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> og <strong>Cloudflare Access</strong> – drift av nettversjonen (PWA) og tilgangskontroll i testfasen. Cloudflare ser adressene til sidene som lastes inn og, for den lukkede betaen, e-postadressen som er invitert til å få tilgang. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> og <strong>Cloudflare D1</strong> – dommeren i rangerte spill: den deler ut ordene, mottar svarene dine og tidspunktet for dem, beregner selv poengsummen og fører rangeringslisten (pseudonym, avatar, bilde hvis du har valgt det, beste poengsummer). Den kjenner igjen kontoen din på innloggingstokenet, uten å motta e-postadressen eller navnet ditt. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> – tekniske rapporter som sendes når appen støter på en feil: appversjon, enhetsmodell, operativsystem og hvor i koden feilen oppsto. Ikke noe innhold fra kortene dine er med. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) – kontrollerer at forespørslene virkelig kommer fra den offisielle appen, for å hindre svindel, uten personopplysninger. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Operativsystemets talemotorer</strong> – talegjenkjenningen brukes bare til å sjekke uttalen din (mikrofonknappen på et kort), og lyden behandles av enheten din; talesyntesen leser ordene og setningene på kortene dine høyt, og de behandles av telefonens motor etter dens egne regler. <span class="badge">Google / Apple / enhetsprodusent</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Lagring og sikkerhet</h2>
   <p>
-    Opplysningene dine lagres <strong>lokalt på enheten din</strong> (SQLite-database, eller nettleserens lagring for nettversjonen) og, hvis du er logget inn, <strong>i Google Firestore</strong> (Googles servere i Europa eller USA). Opplysninger under overføring krypteres med TLS. Sikkerhetsreglene i Firestore sikrer at ingen andre kan lese opplysningene dine; bare det du velger å vise på den offentlige profilen din, blir synlig når den funksjonen finnes (punkt 7).
+    Opplysningene dine lagres <strong>lokalt på enheten din</strong> (SQLite-database, eller nettleserens lagring for nettversjonen) og, hvis du er logget inn, <strong>i Google Firestore</strong> (Googles servere i Europa eller USA). Opplysninger under overføring krypteres med TLS. Sikkerhetsreglene i Firestore sikrer at ingen andre kan lese opplysningene dine; bare det du viser på den offentlige profilen din, er synlig (punkt 7). Selve rangeringslisten føres av dommeren i rangerte spill, hos Cloudflare (punkt 4).
   </p>
   <p>
     Historikken over svarene dine synkroniseres med kontoen din, slik at statistikken din følger deg fra én enhet til en annen. Den tekniske loggen som brukes til å tilpasse repetisjonsalgoritmen til hukommelsen din, blir derimot værende <strong>utelukkende på enheten din</strong> og synkroniseres aldri.
@@ -193,17 +204,14 @@
     For å kunne reparere databasen hvis noe går galt, lagrer appen opptil tre sikkerhetskopier på enheten din. De forlater aldri enheten.
   </p>
 
-  <h2>7. Offentlig profil og rangeringsliste (kommer snart)</h2>
-  <div class="a-venir">
-    <strong>Ikke tilgjengelig ennå.</strong> Dette punktet beskriver på forhånd en funksjon under utvikling, slik at du vet hva den vil gjøre synlig før den kommer. Punktet gjelder først fra funksjonen lanseres, noe som kunngjøres i Versjonsnotater.
-  </div>
+  <h2>7. Offentlig profil og rangeringsliste</h2>
   <ul>
-    <li><strong>En profil</strong>, som åpnes fra appmenyen: et pseudonym (tildelt tilfeldig, for eksempel user#12345678, som du kan endre), en tegnet avatar eller, hvis du slår det på, bildet fra Google-kontoen din, merkene du velger å vise, noen tall (dagsrekke, lærte ord, rekord i Mot klokka, leste historier), språkene og nivåene dine og måneden du ble med.</li>
-    <li><strong>En global rangeringsliste for Mot klokka</strong>, for uken og for alle tider, der pseudonymet ditt, avataren din, den beste poengsummen din og plasseringen din vises. Bare kontoer som er logget inn med Google, kommer med.</li>
-    <li><strong>Hvem som ser det</strong>: andre innloggede brukere av Vocadeck. Aldri e-postadressen din, Google-navnet ditt eller kortene dine.</li>
-    <li><strong>Valgene dine</strong>: du kan når som helst skjule profilen din og trekke deg fra rangeringslisten. Et pseudonym kan bare brukes av én person, og et krenkende pseudonym kan bli avvist.</li>
-    <li><strong>Mot juks</strong>: poengsummer som sendes til rangeringslisten, kan kontrolleres automatisk (svartider, sammenheng i poengsummen), og en umulig poengsum blir forkastet. Disse kontrollene bruker ingen andre opplysninger.</li>
-    <li><strong>Sletting</strong>: hvis du sletter kontoen din, slettes profilen din, pseudonymet ditt og linjene dine på rangeringslisten.</li>
+    <li><strong>En profil</strong>, som åpnes fra appmenyen: et pseudonym (tildelt tilfeldig, for eksempel user#12345678, som du kan endre), en tegnet avatar eller, hvis du slår det på, bildet fra Google-kontoen din, merkene du velger å vise, noen tall (dagsrekke, lærte ord, rekord i Mot klokka, leste historier), språkene og nivåene dine, spillernivået ditt og måneden du ble med. Bare kontoer som er logget inn med Google, har en offentlig profil.</li>
+    <li><strong>En global rangeringsliste for Mot klokka</strong>, for uken og for alle tider, der pseudonymet ditt, avataren din, den beste poengsummen din i et rangert spill og plasseringen din vises. Bare rangerte spill teller: ordene deres trekkes tilfeldig fra de ferdige kortstokkene, de samme for alle.</li>
+    <li><strong>Hvem som ser det</strong>: andre brukere av Vocadeck, fra rangeringslisten. Aldri e-postadressen din, Google-navnet ditt eller kortene dine.</li>
+    <li><strong>Valgene dine</strong>: du kan når som helst skjule profilen din og trekke deg fra rangeringslisten (<strong>Profil › Offentlig profil og toppliste</strong>). Et pseudonym kan bare brukes av én person, kan endres høyst én gang per dag, og et krenkende pseudonym blir avvist.</li>
+    <li><strong>Mot juks</strong>: dommeren spiller gjennom hvert rangert spill på nytt etter spillereglene – tiden som faktisk har gått, tiden for hvert svar, poengsummen. Et umulig spill blir avvist; et spill som er for raskt eller for jevnt for en menneskehånd, settes til side for kontroll og kommer ikke med på rangeringslisten. Disse kontrollene bruker ingen andre opplysninger.</li>
+    <li><strong>Sletting</strong>: hvis du sletter kontoen din, slettes profilen din, pseudonymet ditt, de rangerte spillene dine og linjene dine på rangeringslisten.</li>
   </ul>
 
   <h2>8. Lagringstid</h2>
@@ -217,7 +225,7 @@
     <li><strong>Rett til retting</strong> – endre kortene og innstillingene dine når som helst.</li>
     <li><strong>Rett til sletting</strong> – to nivåer i Innstillinger: «Slett alle dataene» sletter kortene, kortstokkene og fremgangen din uten å lukke kontoen; «Slett kontoen min» sletter kontoen din og alle tilknyttede opplysninger for godt (fullstendig sletting etter GDPR).</li>
     <li><strong>Rett til dataportabilitet</strong> – kortene dine kan eksporteres i åpne formater under <strong>Innstillinger › Importere eller eksportere</strong>.</li>
-    <li><strong>Rett til å protestere</strong> – logg ut når som helst; etter hvert kan du også skjule den offentlige profilen din og forlate rangeringslisten.</li>
+    <li><strong>Rett til å protestere</strong> – logg ut når som helst, skjul den offentlige profilen din og forlat rangeringslisten (<strong>Profil › Offentlig profil og toppliste</strong>).</li>
     <li><strong>Klage</strong> – du kan sende en klage til CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) eller til datatilsynsmyndigheten i landet ditt.</li>
   </ul>
   <p>For å utøve disse rettighetene: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck er ikke rettet mot barn under 13 år og samler ikke bevisst inn opplysninger om dem.</p>
 
   <h2>11. Endringer</h2>
-  <p>Alle vesentlige endringer kunngjøres i appens Versjonsnotater. Versjonen av 14. september 2026 legger til: fremgang i kurs, øvelser, historier og spill; synkroniserte innstillinger; rapporter; frakoblet oversettelse med Google ML Kit; behandlingsgrunnlagene og retten til å klage; den kommende offentlige profilen og rangeringslisten. Den presiserer også at historikken over svarene dine synkroniseres med kontoen din.</p>
+  <p>Alle vesentlige endringer kunngjøres i appens Versjonsnotater. Versjonen av 14. september 2026 legger til: fremgang i kurs, øvelser, historier og spill; synkroniserte innstillinger; rapporter; frakoblet oversettelse med Google ML Kit; behandlingsgrunnlagene og retten til å klage; den kommende offentlige profilen og rangeringslisten. Den presiserer også at historikken over svarene dine synkroniseres med kontoen din. Samme dag tar enda en oppdatering i bruk den offentlige profilen, prestasjonene og rangeringslisten for Mot klokka, med dommeren i rangerte spill.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

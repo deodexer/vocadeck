@@ -88,7 +88,7 @@
       <tr>
         <td>Sähköpostiosoite, nimi ja profiilikuva</td>
         <td>Kirjautuminen Googlella (vapaaehtoinen)</td>
-        <td>Tilisi tunnistaminen. Kuvaa ei tällä hetkellä näytetä missään (tulevasta profiilista kerrotaan kohdassa 7).</td>
+        <td>Tilisi tunnistaminen. Kuva näkyy julkisessa profiilissasi vain, jos valitset sen avatariksesi (kohta 7). Sähköpostiosoitteesi ja nimesi eivät näy siellä koskaan.</td>
       </tr>
       <tr>
         <td>Kortit ja korttipakat sisältöineen</td>
@@ -111,9 +111,19 @@
         <td>Välitavoitteidesi, ennätyksesi ja palkintojesi näyttäminen. Pelilaskurit tallennetaan satunnaisesti luodun laitetunnisteen alle, jolla ei ole mitään yhteyttä laitteistoon ja jota käytetään vain useilla laitteilla pelattujen pelien laskemiseen oikein yhteen.</td>
       </tr>
       <tr>
-        <td>Synkronoidut asetukset (esimerkiksi alapalkkiin valitut piirrokset) ja löydetyt salaiset merkit</td>
+        <td>Synkronoidut asetukset (esimerkiksi alapalkkiin valitut piirrokset), löydetyt salaiset merkit ja ansaitut saavutukset päivämäärineen</td>
         <td>Valintasi sovelluksessa</td>
         <td>Sovelluksesi löytyy täsmälleen samanlaisena laitteelta toiselle</td>
+      </tr>
+      <tr>
+        <td>Julkinen profiili: nimimerkki, avatar (tai Google-tilisi kuva, jos valitset sen), vitriinisi merkit, tunnusluvut (päiväputki, opitut sanat, Aikakilpailun ennätys, luetut tarinat), kielet ja tasot, liittymiskuukausi ja pelaajatasosi</td>
+        <td>Profiilisi (vain Google-tilit)</td>
+        <td>Sinun näyttämisesi muille pelaajille tulostaulukon kautta (kohta 7)</td>
+      </tr>
+      <tr>
+        <td>Aikakilpailun rankingpelit: jaetut sanat, jokainen vastauksesi ja sen hetki (millisekunteina), laskettu tulos, viikon ja kaikkien aikojen parhaat tuloksesi</td>
+        <td>Rankingpelisi</td>
+        <td>Sen tarkistaminen, että peli noudattaa pelin sääntöjä, ja sijoituksesi määrittäminen (kohta 7)</td>
       </tr>
       <tr>
         <td>Ilmoitus käännösvirheestä: kyseinen kortti (sen molemmat puolet, niiden kielet, korttipakan nimi), valittu syy, vapaaehtoinen kommentti ja sovelluksen versio</td>
@@ -152,8 +162,8 @@
   <h2>3. Miksi käsittelemme näitä tietoja (käsittelyn oikeusperusteet)</h2>
   <ul>
     <li><strong>Voidaksemme tarjota käyttämäsi palvelun</strong> (sopimuksen täytäntöönpano): tilisi, korttisi, niiden synkronointi, edistymisesi ja tilastosi.</li>
-    <li><strong>Pitääksemme sovelluksen luotettavana ja reiluna</strong> (oikeutettu etu): tekniset virheraportit, sen tarkistaminen, että pyynnöt todella tulevat virallisesta sovelluksesta, ja pian myös huijaamisen estävät tarkistukset tulostaulukossa.</li>
-    <li><strong>Luvallasi</strong> (suostumus): ilmoitukset, jotka päätät lähettää, ja pian myös se, mitä päätät näyttää julkisessa profiilissasi. Voit perua suostumuksesi milloin tahansa.</li>
+    <li><strong>Pitääksemme sovelluksen luotettavana ja reiluna</strong> (oikeutettu etu): tekniset virheraportit, sen tarkistaminen, että pyynnöt todella tulevat virallisesta sovelluksesta, ja huijaamisen estävät tarkistukset tulostaulukossa.</li>
+    <li><strong>Luvallasi</strong> (suostumus): ilmoitukset, jotka päätät lähettää, ja se, mitä päätät näyttää julkisessa profiilissasi. Voit perua suostumuksesi milloin tahansa.</li>
   </ul>
 
   <h2>4. Tekniset henkilötietojen käsittelijät</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> ja <strong>Pixabay</strong> – kuvitusten haku korteillesi (vain hakusana, ilman tunnistetietoja). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> – offline-käyttöön ladattavien kielipakettien säilytys (vain staattisia tiedostoja, tilitietoja ei välitetä). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> ja <strong>Cloudflare Access</strong> – verkkoversion (PWA) ylläpito ja pääsynvalvonta testivaiheen aikana. Cloudflare näkee ladattujen sivujen osoitteet ja suljetussa betassa sen sähköpostiosoitteen, joka on kutsuttu mukaan. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> ja <strong>Cloudflare D1</strong> – rankingpelien tuomari: se jakaa sanat, vastaanottaa vastauksesi ja niiden hetken, laskee tuloksen itse ja ylläpitää tulostaulukkoa (nimimerkki, avatar, kuva, jos olet valinnut sen, parhaat tulokset). Se tunnistaa tilisi sen kirjautumistokenin perusteella saamatta sähköpostiosoitettasi tai nimeäsi. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> – tekniset raportit, jotka lähetetään, kun sovelluksessa tapahtuu virhe: sovelluksen versio, laitemalli, käyttöjärjestelmä ja virheen sijainti koodissa. Niissä ei ole mitään korttiesi sisältöä. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (Firebase App Checkin kautta) – tarkistaa väärinkäytösten estämiseksi, että pyynnöt todella tulevat virallisesta sovelluksesta, ilman henkilötietoja. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Käyttöjärjestelmän puhemoottorit</strong> – puheentunnistusta käytetään vain ääntämisesi tarkistamiseen (kortin mikrofonipainike), ja ääni käsitellään laitteellasi; puhesynteesi lukee korttiesi sanat ja lauseet ääneen, ja puhelimesi moottori käsittelee ne omien sääntöjensä mukaisesti. <span class="badge">Google / Apple / laitteen valmistaja</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Tallennus ja tietoturva</h2>
   <p>
-    Tietosi tallennetaan <strong>paikallisesti laitteellesi</strong> (SQLite-tietokantaan tai verkkoversiossa selaimesi tallennustilaan) ja, jos olet kirjautunut sisään, <strong>Google Firestoreen</strong> (Googlen palvelimet Euroopassa tai Yhdysvalloissa). Siirrettävät tiedot salataan TLS:llä. Firestoren tietoturvasäännöt takaavat, ettei kukaan muu voi lukea tietojasi; näkyviin tulee vain se, mitä päätät näyttää julkisessa profiilissasi, kun tämä toiminto on olemassa (kohta 7).
+    Tietosi tallennetaan <strong>paikallisesti laitteellesi</strong> (SQLite-tietokantaan tai verkkoversiossa selaimesi tallennustilaan) ja, jos olet kirjautunut sisään, <strong>Google Firestoreen</strong> (Googlen palvelimet Euroopassa tai Yhdysvalloissa). Siirrettävät tiedot salataan TLS:llä. Firestoren tietoturvasäännöt takaavat, ettei kukaan muu voi lukea tietojasi; näkyvissä on vain se, mitä näytät julkisessa profiilissasi (kohta 7). Itse tulostaulukkoa ylläpitää rankingpelien tuomari Cloudflarella (kohta 4).
   </p>
   <p>
     Vastaushistoriasi synkronoidaan tiliisi, jotta tilastosi seuraavat sinua laitteelta toiselle. Sen sijaan tekninen loki, jolla kertausalgoritmi sovitetaan muistiisi, pysyy <strong>yksinomaan laitteellasi</strong> eikä sitä koskaan synkronoida.
@@ -193,17 +204,14 @@
     Jotta tietokanta voidaan korjata ongelmatilanteessa, sovellus säilyttää laitteellasi enintään kolme varmuuskopiota. Ne eivät koskaan poistu laitteelta.
   </p>
 
-  <h2>7. Julkinen profiili ja tulostaulukko (tulossa)</h2>
-  <div class="a-venir">
-    <strong>Ei vielä käytettävissä.</strong> Tässä kohdassa kuvataan etukäteen valmisteilla oleva toiminto, jotta tiedät jo ennen sen tuloa, mitä se tuo näkyviin. Kohtaa sovelletaan vasta toiminnon käyttöönotosta alkaen, ja siitä ilmoitetaan Julkaisutiedoissa.
-  </div>
+  <h2>7. Julkinen profiili ja tulostaulukko</h2>
   <ul>
-    <li><strong>Profiili</strong>, joka avataan sovelluksen valikosta: nimimerkki (arvotaan satunnaisesti, esimerkiksi user#12345678, ja voit vaihtaa sen), piirretty avatar tai, jos otat sen käyttöön, Google-tilisi kuva, merkit, jotka päätät näyttää, muutama luku (päiväputki, opitut sanat, Aikakilpailun ennätys, luetut tarinat), kielesi ja tasosi sekä kuukausi, jolloin liityit.</li>
-    <li><strong>Aikakilpailun maailmanlaajuinen tulostaulukko</strong>, viikon ja kaikkien aikojen, jossa näkyvät nimimerkkisi, avatarisi, paras tuloksesi ja sijoituksesi. Siinä näkyvät vain Googlella kirjautuneet tilit.</li>
-    <li><strong>Kuka sen näkee</strong>: muut sisäänkirjautuneet Vocadeckin käyttäjät. Ei koskaan sähköpostiosoitettasi, Google-nimeäsi eikä korttejasi.</li>
-    <li><strong>Valintasi</strong>: voit milloin tahansa piilottaa profiilisi ja poistua tulostaulukosta. Nimimerkki voi kuulua vain yhdelle henkilölle, ja loukkaava nimimerkki voidaan hylätä.</li>
-    <li><strong>Huijaamista vastaan</strong>: tulostaulukkoon lähetetyt tulokset voidaan tarkistaa automaattisesti (vastausajat, tuloksen johdonmukaisuus), ja mahdoton tulos hylätään. Näissä tarkistuksissa ei käytetä mitään muita tietoja.</li>
-    <li><strong>Poistaminen</strong>: tilin poistaminen poistaa profiilisi, nimimerkkisi ja rivisi tulostaulukossa.</li>
+    <li><strong>Profiili</strong>, joka avataan sovelluksen valikosta: nimimerkki (arvotaan satunnaisesti, esimerkiksi user#12345678, ja voit vaihtaa sen), piirretty avatar tai, jos otat sen käyttöön, Google-tilisi kuva, merkit, jotka päätät näyttää, muutama luku (päiväputki, opitut sanat, Aikakilpailun ennätys, luetut tarinat), kielesi ja tasosi, pelaajatasosi sekä kuukausi, jolloin liityit. Julkinen profiili on vain Googlella kirjautuneilla tileillä.</li>
+    <li><strong>Aikakilpailun maailmanlaajuinen tulostaulukko</strong>, viikon ja kaikkien aikojen, jossa näkyvät nimimerkkisi, avatarisi, paras tuloksesi rankingpelissä ja sijoituksesi. Vain rankingpelit lasketaan: niiden sanat arvotaan käyttövalmiista korttipakoista, ja ne ovat kaikille samat.</li>
+    <li><strong>Kuka sen näkee</strong>: muut Vocadeckin käyttäjät tulostaulukon kautta. Ei koskaan sähköpostiosoitettasi, Google-nimeäsi eikä korttejasi.</li>
+    <li><strong>Valintasi</strong>: voit milloin tahansa piilottaa profiilisi ja poistua tulostaulukosta (<strong>Profiili › Julkinen profiili ja tulostaulu</strong>). Nimimerkki voi kuulua vain yhdelle henkilölle, sen voi vaihtaa enintään kerran päivässä, ja loukkaava nimimerkki hylätään.</li>
+    <li><strong>Huijaamista vastaan</strong>: tuomari pelaa jokaisen rankingpelin uudelleen pelin säännöillä – todellisuudessa kulunut aika, kunkin vastauksen aika, tulos. Mahdoton peli hylätään; peli, joka on liian nopea tai liian tasainen ihmiskädelle, siirretään tarkistettavaksi eikä pääse tulostaulukkoon. Näissä tarkistuksissa ei käytetä mitään muita tietoja.</li>
+    <li><strong>Poistaminen</strong>: tilin poistaminen poistaa profiilisi, nimimerkkisi, rankingpelisi ja rivisi tulostaulukossa.</li>
   </ul>
 
   <h2>8. Säilytysaika</h2>
@@ -217,7 +225,7 @@
     <li><strong>Oikeus tietojen oikaisemiseen</strong> – muokkaa korttejasi ja asetuksiasi milloin tahansa.</li>
     <li><strong>Oikeus tietojen poistamiseen</strong> – Asetuksissa on kaksi tasoa: ”Poista kaikki tiedot” poistaa korttisi, korttipakkasi ja edistymisesi sulkematta tiliäsi; ”Poista tilini” poistaa pysyvästi tilisi ja kaikki siihen liittyvät tiedot (täydellinen poisto GDPR:n mukaisesti).</li>
     <li><strong>Oikeus siirtää tiedot järjestelmästä toiseen</strong> – korttisi voi viedä avoimissa muodoissa kohdasta <strong>Asetukset › Tuonti tai vienti</strong>.</li>
-    <li><strong>Vastustamisoikeus</strong> – kirjaudu ulos milloin tahansa; pian voit myös piilottaa julkisen profiilisi ja poistua tulostaulukosta.</li>
+    <li><strong>Vastustamisoikeus</strong> – kirjaudu ulos milloin tahansa, piilota julkinen profiilisi ja poistu tulostaulukosta (<strong>Profiili › Julkinen profiili ja tulostaulu</strong>).</li>
     <li><strong>Valitus</strong> – voit tehdä valituksen CNIL:lle (<a href="https://www.cnil.fr">www.cnil.fr</a>) tai oman maasi tietosuojaviranomaiselle.</li>
   </ul>
   <p>Näiden oikeuksien käyttämiseksi: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeckia ei ole suunnattu alle 13-vuotiaille lapsille, eikä se tietoisesti kerää heitä koskevia tietoja.</p>
 
   <h2>11. Muutokset</h2>
-  <p>Kaikista olennaisista muutoksista kerrotaan sovelluksen Julkaisutiedoissa. 14.9.2026 päivätty versio lisää: edistymisen kursseilla, harjoituksissa, tarinoissa ja peleissä; synkronoidut asetukset; ilmoitukset; offline-käännöksen Google ML Kitillä; käsittelyn oikeusperusteet ja oikeuden tehdä valitus; tulevan julkisen profiilin ja tulostaulukon. Lisäksi se täsmentää, että vastaushistoriasi synkronoidaan tiliisi.</p>
+  <p>Kaikista olennaisista muutoksista kerrotaan sovelluksen Julkaisutiedoissa. 14.9.2026 päivätty versio lisää: edistymisen kursseilla, harjoituksissa, tarinoissa ja peleissä; synkronoidut asetukset; ilmoitukset; offline-käännöksen Google ML Kitillä; käsittelyn oikeusperusteet ja oikeuden tehdä valitus; tulevan julkisen profiilin ja tulostaulukon. Lisäksi se täsmentää, että vastaushistoriasi synkronoidaan tiliisi. Samana päivänä toinen päivitys ottaa käyttöön julkisen profiilin, saavutukset ja Aikakilpailun tulostaulukon sekä rankingpelien tuomarin.</p>
 
   <h2>12. Yhteystiedot</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

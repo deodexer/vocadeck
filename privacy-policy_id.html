@@ -88,7 +88,7 @@
       <tr>
         <td>Alamat email, nama, dan foto profil</td>
         <td>Masuk dengan Google (opsional)</td>
-        <td>Mengidentifikasi akun Anda. Saat ini foto tersebut tidak ditampilkan di mana pun (lihat bagian 7 tentang profil yang akan datang).</td>
+        <td>Mengidentifikasi akun Anda. Foto tersebut hanya muncul di profil publik Anda jika Anda memilihnya sebagai avatar (bagian 7). Email dan nama Anda tidak pernah muncul di sana.</td>
       </tr>
       <tr>
         <td>Kartu dan dek, beserta isinya</td>
@@ -111,9 +111,19 @@
         <td>Menampilkan tonggak pencapaian, rekor, dan penghargaan Anda. Penghitung ronde disimpan dengan pengenal perangkat yang dibuat secara acak, tanpa kaitan apa pun dengan perangkat keras, yang hanya berfungsi untuk menjumlahkan dengan benar ronde yang dimainkan di beberapa perangkat.</td>
       </tr>
       <tr>
-        <td>Pengaturan yang disinkronkan (misalnya gambar yang dipilih untuk bilah bawah) dan lencana rahasia yang ditemukan</td>
+        <td>Pengaturan yang disinkronkan (misalnya gambar yang dipilih untuk bilah bawah), lencana rahasia yang ditemukan, dan pencapaian yang diraih, beserta tanggalnya</td>
         <td>Pilihan Anda di aplikasi</td>
         <td>Mendapati aplikasi Anda tampil persis sama dari satu perangkat ke perangkat lain</td>
+      </tr>
+      <tr>
+        <td>Profil publik: nama samaran, avatar (atau foto akun Google Anda jika Anda memilihnya), lencana di etalase Anda, angka penting (runtunan hari, kata yang dipelajari, rekor Balapan melawan waktu, cerita yang dibaca), bahasa dan tingkat, bulan Anda bergabung, serta level pemain Anda</td>
+        <td>Profil Anda (hanya akun Google)</td>
+        <td>Menampilkan Anda kepada pemain lain, dari papan peringkat (bagian 7)</td>
+      </tr>
+      <tr>
+        <td>Permainan berperingkat Balapan melawan waktu: kata-kata yang dibagikan, setiap jawaban Anda dan waktunya (dalam milidetik), skor yang dihitung, skor terbaik Anda minggu ini dan sepanjang masa</td>
+        <td>Permainan berperingkat Anda</td>
+        <td>Memeriksa bahwa permainan mematuhi aturan dan menentukan peringkat Anda (bagian 7)</td>
       </tr>
       <tr>
         <td>Laporan kesalahan terjemahan: kartu yang bersangkutan (kedua sisinya, bahasanya, nama deknya), alasan yang dipilih, komentar opsional, dan versi aplikasi</td>
@@ -152,8 +162,8 @@
   <h2>3. Mengapa kami memproses data ini (dasar hukum)</h2>
   <ul>
     <li><strong>Untuk menyediakan layanan yang Anda gunakan</strong> (pelaksanaan kontrak): akun Anda, kartu Anda, sinkronisasinya, kemajuan Anda, dan statistik Anda.</li>
-    <li><strong>Untuk menjaga aplikasi tetap andal dan jujur</strong> (kepentingan yang sah): laporan kesalahan teknis, pemeriksaan bahwa permintaan benar-benar berasal dari aplikasi resmi, dan, ke depannya, pemeriksaan anti-kecurangan di papan peringkat.</li>
-    <li><strong>Dengan persetujuan Anda</strong> (persetujuan): laporan yang Anda pilih untuk dikirim dan, ke depannya, apa yang Anda pilih untuk ditampilkan di profil publik Anda. Anda dapat menarik persetujuan ini kapan saja.</li>
+    <li><strong>Untuk menjaga aplikasi tetap andal dan jujur</strong> (kepentingan yang sah): laporan kesalahan teknis, pemeriksaan bahwa permintaan benar-benar berasal dari aplikasi resmi, dan pemeriksaan anti-kecurangan di papan peringkat.</li>
+    <li><strong>Dengan persetujuan Anda</strong> (persetujuan): laporan yang Anda pilih untuk dikirim dan apa yang Anda pilih untuk ditampilkan di profil publik Anda. Anda dapat menarik persetujuan ini kapan saja.</li>
   </ul>
 
   <h2>4. Pemroses teknis</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> dan <strong>Pixabay</strong> — pencarian ilustrasi untuk kartu Anda (hanya kata yang dicari, tanpa identifikasi). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting paket bahasa yang dapat diunduh untuk penggunaan offline (hanya berkas statis, tidak ada data akun yang dikirim). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> dan <strong>Cloudflare Access</strong> — hosting versi web (PWA) dan kontrol akses selama tahap pengujian. Cloudflare melihat alamat halaman yang dimuat dan, untuk beta tertutup, alamat email yang diundang untuk mengaksesnya. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> dan <strong>Cloudflare D1</strong> — wasit permainan berperingkat: membagikan kata-kata, menerima jawaban Anda beserta waktunya, menghitung sendiri skornya, dan mengelola papan peringkat (nama samaran, avatar, foto jika Anda memilihnya, skor terbaik). Wasit ini mengenali akun Anda dari token masuknya, tanpa menerima email atau nama Anda. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — laporan teknis yang dikirim saat aplikasi mengalami kesalahan: versi aplikasi, model perangkat, sistem operasi, dan lokasi kesalahan di dalam kode. Tidak ada isi kartu Anda di dalamnya. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (melalui Firebase App Check) — memverifikasi bahwa permintaan benar-benar berasal dari aplikasi resmi, untuk tujuan anti-penipuan, tanpa data pribadi. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Mesin suara sistem operasi</strong> — pengenalan suara hanya digunakan untuk memeriksa pelafalan Anda (tombol mikrofon pada kartu), dan audionya diproses oleh perangkat Anda; sintesis suara membacakan kata dan kalimat di kartu Anda, yang diproses oleh mesin ponsel Anda sesuai aturannya sendiri. <span class="badge">Google / Apple / produsen perangkat</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Penyimpanan dan keamanan</h2>
   <p>
-    Data Anda disimpan <strong>secara lokal di perangkat Anda</strong> (basis data SQLite, atau penyimpanan browser Anda untuk versi web) dan, jika Anda masuk, <strong>di Google Firestore</strong> (server Google di Eropa atau Amerika Serikat). Data yang sedang dikirim dienkripsi dengan TLS. Aturan keamanan Firestore menjamin bahwa tidak ada orang lain yang dapat membaca data Anda; hanya apa yang Anda pilih untuk ditampilkan di profil publik Anda yang akan terlihat, setelah fitur tersebut tersedia (bagian 7).
+    Data Anda disimpan <strong>secara lokal di perangkat Anda</strong> (basis data SQLite, atau penyimpanan browser Anda untuk versi web) dan, jika Anda masuk, <strong>di Google Firestore</strong> (server Google di Eropa atau Amerika Serikat). Data yang sedang dikirim dienkripsi dengan TLS. Aturan keamanan Firestore menjamin bahwa tidak ada orang lain yang dapat membaca data Anda; hanya apa yang Anda tampilkan di profil publik Anda yang terlihat (bagian 7). Papan peringkat itu sendiri dikelola oleh wasit permainan berperingkat, di Cloudflare (bagian 4).
   </p>
   <p>
     Riwayat jawaban Anda disinkronkan dengan akun Anda, agar statistik Anda mengikuti Anda dari satu perangkat ke perangkat lain. Sebaliknya, log teknis yang digunakan untuk menyesuaikan algoritma ulasan dengan ingatan Anda tetap berada <strong>hanya di perangkat Anda</strong> dan tidak pernah disinkronkan.
@@ -193,17 +204,14 @@
     Agar basis data dapat diperbaiki jika terjadi masalah, aplikasi menyimpan hingga tiga salinan cadangan di perangkat Anda. Salinan ini tidak pernah keluar dari perangkat.
   </p>
 
-  <h2>7. Profil publik dan papan peringkat (segera hadir)</h2>
-  <div class="a-venir">
-    <strong>Belum tersedia.</strong> Bagian ini menjelaskan terlebih dahulu fitur yang sedang disiapkan, agar Anda tahu apa yang akan ditampilkannya sebelum fitur itu hadir. Bagian ini baru berlaku sejak fitur tersebut diluncurkan, yang akan diumumkan di Catatan Rilis.
-  </div>
+  <h2>7. Profil publik dan papan peringkat</h2>
   <ul>
-    <li><strong>Profil</strong>, yang dibuka dari menu aplikasi: nama samaran (diberikan secara acak, seperti user#12345678, yang dapat Anda ubah), avatar gambar atau, jika Anda mengaktifkannya, foto akun Google Anda, lencana yang Anda pilih untuk ditampilkan, beberapa angka (runtunan hari, kata yang dipelajari, rekor di Balapan melawan waktu, cerita yang dibaca), bahasa dan tingkat Anda, serta bulan Anda bergabung.</li>
-    <li><strong>Papan peringkat dunia Balapan melawan waktu</strong>, mingguan dan sepanjang masa, yang menampilkan nama samaran, avatar, skor terbaik, dan peringkat Anda. Hanya akun yang masuk dengan Google yang akan tercantum di sana.</li>
-    <li><strong>Siapa yang dapat melihatnya</strong>: pengguna Vocadeck lain yang sudah masuk. Tidak pernah alamat email, nama Google, atau kartu Anda.</li>
-    <li><strong>Pilihan Anda</strong>: Anda dapat menyembunyikan profil dan keluar dari papan peringkat kapan saja. Satu nama samaran hanya dapat dipakai oleh satu orang, dan nama samaran yang menyinggung dapat ditolak.</li>
-    <li><strong>Melawan kecurangan</strong>: skor yang dikirim ke papan peringkat dapat diperiksa secara otomatis (waktu menjawab, kewajaran skor), dan skor yang mustahil akan disingkirkan. Pemeriksaan ini tidak menggunakan data lain apa pun.</li>
-    <li><strong>Penghapusan</strong>: menghapus akun Anda akan menghapus profil, nama samaran, dan baris Anda di papan peringkat.</li>
+    <li><strong>Profil</strong>, yang dibuka dari menu aplikasi: nama samaran (diberikan secara acak, seperti user#12345678, yang dapat Anda ubah), avatar gambar atau, jika Anda mengaktifkannya, foto akun Google Anda, lencana yang Anda pilih untuk ditampilkan, beberapa angka (runtunan hari, kata yang dipelajari, rekor di Balapan melawan waktu, cerita yang dibaca), bahasa dan tingkat Anda, level pemain Anda, serta bulan Anda bergabung. Hanya akun yang masuk dengan Google yang memiliki profil publik.</li>
+    <li><strong>Papan peringkat dunia Balapan melawan waktu</strong>, mingguan dan sepanjang masa, yang menampilkan nama samaran, avatar, skor terbaik Anda dalam permainan berperingkat, dan peringkat Anda. Hanya permainan berperingkat yang dihitung: kata-katanya diambil secara acak dari dek yang siap pakai, sama untuk semua orang.</li>
+    <li><strong>Siapa yang dapat melihatnya</strong>: pengguna Vocadeck lain, dari papan peringkat. Tidak pernah alamat email, nama Google, atau kartu Anda.</li>
+    <li><strong>Pilihan Anda</strong>: Anda dapat menyembunyikan profil dan keluar dari papan peringkat kapan saja (<strong>Profil › Profil publik dan papan peringkat</strong>). Satu nama samaran hanya dapat dipakai oleh satu orang, hanya dapat diganti paling banyak sekali sehari, dan nama samaran yang menyinggung akan ditolak.</li>
+    <li><strong>Melawan kecurangan</strong>: wasit memutar ulang setiap permainan berperingkat dengan aturan permainan — waktu yang benar-benar berlalu, waktu setiap jawaban, skornya. Permainan yang mustahil ditolak; permainan yang terlalu cepat atau terlalu teratur untuk tangan manusia disisihkan untuk diperiksa dan tidak masuk ke papan peringkat. Pemeriksaan ini tidak menggunakan data lain apa pun.</li>
+    <li><strong>Penghapusan</strong>: menghapus akun Anda akan menghapus profil, nama samaran, permainan berperingkat, dan baris Anda di papan peringkat.</li>
   </ul>
 
   <h2>8. Masa penyimpanan</h2>
@@ -217,7 +225,7 @@
     <li><strong>Hak perbaikan</strong> — ubah kartu dan pengaturan Anda kapan saja.</li>
     <li><strong>Hak penghapusan</strong> — dua tingkat di Pengaturan: “Hapus semua data” menghapus kartu, dek, dan kemajuan Anda tanpa menutup akun; “Hapus akun saya” menghapus akun Anda secara permanen beserta semua data terkait (penghapusan penuh sesuai GDPR).</li>
     <li><strong>Hak portabilitas data</strong> — kartu Anda dapat diekspor dalam format terbuka dari <strong>Pengaturan › Mengimpor atau mengekspor</strong>.</li>
-    <li><strong>Hak untuk menolak</strong> — keluar dari akun kapan saja; ke depannya, Anda juga dapat menyembunyikan profil publik dan keluar dari papan peringkat.</li>
+    <li><strong>Hak untuk menolak</strong> — keluar dari akun kapan saja, sembunyikan profil publik Anda, dan keluar dari papan peringkat (<strong>Profil › Profil publik dan papan peringkat</strong>).</li>
     <li><strong>Pengaduan</strong> — Anda dapat mengajukan pengaduan ke CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) atau ke otoritas perlindungan data di negara Anda.</li>
   </ul>
   <p>Untuk menggunakan hak-hak ini: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck tidak ditujukan untuk anak-anak di bawah 13 tahun dan tidak dengan sengaja mengumpulkan data tentang mereka.</p>
 
   <h2>11. Perubahan</h2>
-  <p>Setiap perubahan penting diumumkan di Catatan Rilis aplikasi. Versi 14 September 2026 menambahkan: kemajuan di kelas, latihan, cerita, dan permainan; pengaturan yang disinkronkan; laporan; terjemahan offline dengan Google ML Kit; dasar hukum dan hak untuk mengajukan pengaduan; profil publik dan papan peringkat yang akan datang. Versi ini juga menegaskan bahwa riwayat jawaban Anda disinkronkan dengan akun Anda.</p>
+  <p>Setiap perubahan penting diumumkan di Catatan Rilis aplikasi. Versi 14 September 2026 menambahkan: kemajuan di kelas, latihan, cerita, dan permainan; pengaturan yang disinkronkan; laporan; terjemahan offline dengan Google ML Kit; dasar hukum dan hak untuk mengajukan pengaduan; profil publik dan papan peringkat yang akan datang. Versi ini juga menegaskan bahwa riwayat jawaban Anda disinkronkan dengan akun Anda. Pada hari yang sama, pembaruan kedua mulai menjalankan profil publik, pencapaian, dan papan peringkat Balapan melawan waktu, beserta wasit permainan berperingkat.</p>
 
   <h2>12. Kontak</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

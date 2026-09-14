@@ -88,7 +88,7 @@
       <tr>
         <td>E-mailadres, naam en profielfoto</td>
         <td>Inloggen met Google (optioneel)</td>
-        <td>Je account identificeren. De foto wordt momenteel nergens getoond (zie sectie 7 voor het toekomstige profiel).</td>
+        <td>Je account identificeren. De foto verschijnt alleen op je openbare profiel als je hem als avatar kiest (sectie 7). Je e-mailadres en je naam verschijnen daar nooit.</td>
       </tr>
       <tr>
         <td>Kaarten en decks, met hun inhoud</td>
@@ -111,9 +111,19 @@
         <td>Je mijlpalen, je record en je beloningen tonen. De spellentellers worden opgeslagen onder een willekeurig gegenereerde apparaat-ID, zonder enige koppeling met de hardware, die alleen dient om de op meerdere apparaten gespeelde spellen correct op te tellen.</td>
       </tr>
       <tr>
-        <td>Gesynchroniseerde instellingen (bijvoorbeeld de gekozen tekeningen voor de onderste balk) en gevonden geheime badges</td>
+        <td>Gesynchroniseerde instellingen (bijvoorbeeld de gekozen tekeningen voor de onderste balk), gevonden geheime badges en behaalde prestaties, met hun datum</td>
         <td>Je keuzes in de app</td>
         <td>Je app op elk apparaat precies zo terugvinden als je hem had ingesteld</td>
+      </tr>
+      <tr>
+        <td>Openbaar profiel: pseudoniem, avatar (of de foto van je Google-account als je die kiest), de badges in je vitrine, kerncijfers (dagenreeks, geleerde woorden, record bij Tegen de klok, gelezen verhalen), talen en niveaus, de maand waarin je bent begonnen en je spelersniveau</td>
+        <td>Je profiel (alleen Google-accounts)</td>
+        <td>Je aan andere spelers laten zien, vanuit het klassement (sectie 7)</td>
+      </tr>
+      <tr>
+        <td>Ranglijstpotjes van Tegen de klok: de uitgedeelde woorden, elk van je antwoorden en het moment ervan (in milliseconden), de berekende score, je beste scores van de week en aller tijden</td>
+        <td>Je ranglijstpotjes</td>
+        <td>Controleren dat het potje de spelregels volgt en je rangschikken (sectie 7)</td>
       </tr>
       <tr>
         <td>Melding van een vertaalfout: de betreffende kaart (beide zijden, hun talen, de naam van het deck), de gekozen reden, een optionele opmerking en de versie van de app</td>
@@ -152,8 +162,8 @@
   <h2>3. Waarom we deze gegevens verwerken (rechtsgronden)</h2>
   <ul>
     <li><strong>Om je de dienst te leveren die je gebruikt</strong> (uitvoering van een overeenkomst): je account, je kaarten, de synchronisatie ervan, je voortgang en je statistieken.</li>
-    <li><strong>Om de app betrouwbaar en eerlijk te houden</strong> (gerechtvaardigd belang): technische foutrapporten, de controle dat verzoeken echt van de officiële app komen en, binnenkort, controles tegen valsspelen in het klassement.</li>
-    <li><strong>Met jouw instemming</strong> (toestemming): de meldingen die je besluit te versturen en, binnenkort, wat je besluit te tonen op je openbare profiel. Je kunt deze toestemming op elk moment intrekken.</li>
+    <li><strong>Om de app betrouwbaar en eerlijk te houden</strong> (gerechtvaardigd belang): technische foutrapporten, de controle dat verzoeken echt van de officiële app komen en controles tegen valsspelen in het klassement.</li>
+    <li><strong>Met jouw instemming</strong> (toestemming): de meldingen die je besluit te versturen en wat je besluit te tonen op je openbare profiel. Je kunt deze toestemming op elk moment intrekken.</li>
   </ul>
 
   <h2>4. Technische verwerkers</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> en <strong>Pixabay</strong> — zoeken naar illustraties voor je kaarten (alleen het gezochte woord, zonder identificatie). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting van de taalpakketten die je kunt downloaden voor offline gebruik (alleen statische bestanden, er worden geen accountgegevens verstuurd). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> en <strong>Cloudflare Access</strong> — hosting van de webversie (PWA) en toegangscontrole tijdens de testfase. Cloudflare ziet de adressen van de geladen pagina's en, voor de gesloten bèta, het e-mailadres dat is uitgenodigd om toegang te krijgen. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> en <strong>Cloudflare D1</strong> — de scheidsrechter van de ranglijstpotjes: hij deelt de woorden uit, ontvangt je antwoorden en het moment ervan, berekent zelf de score en houdt het klassement bij (pseudoniem, avatar, foto als je die hebt gekozen, beste scores). Hij herkent je account aan het inlogtoken, zonder je e-mailadres of je naam te ontvangen. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — technische rapporten die worden verstuurd wanneer de app een fout tegenkomt: versie van de app, apparaatmodel, besturingssysteem en plaats van de fout in de code. Er staat geen enkele inhoud van je kaarten in. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (via Firebase App Check) — controleert of verzoeken echt van de officiële app komen, ter voorkoming van fraude, zonder persoonsgegevens. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Spraakengines van het besturingssysteem</strong> — spraakherkenning wordt alleen gebruikt om je uitspraak te controleren (de microfoonknop op een kaart) en het geluid wordt door je apparaat verwerkt; spraaksynthese leest de woorden en zinnen van je kaarten hardop voor, verwerkt door de engine van je telefoon volgens diens eigen regels. <span class="badge">Google / Apple / fabrikant van het apparaat</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Opslag en beveiliging</h2>
   <p>
-    Je gegevens worden <strong>lokaal op je apparaat</strong> opgeslagen (SQLite-database, of de opslag van je browser voor de webversie) en, als je bent ingelogd, <strong>in Google Firestore</strong> (servers van Google in Europa of de Verenigde Staten). Gegevens worden tijdens de overdracht versleuteld met TLS. De beveiligingsregels van Firestore garanderen dat niemand anders je gegevens kan lezen; alleen wat je besluit te tonen op je openbare profiel wordt zichtbaar, zodra die functie bestaat (sectie 7).
+    Je gegevens worden <strong>lokaal op je apparaat</strong> opgeslagen (SQLite-database, of de opslag van je browser voor de webversie) en, als je bent ingelogd, <strong>in Google Firestore</strong> (servers van Google in Europa of de Verenigde Staten). Gegevens worden tijdens de overdracht versleuteld met TLS. De beveiligingsregels van Firestore garanderen dat niemand anders je gegevens kan lezen; alleen wat je op je openbare profiel toont, is zichtbaar (sectie 7). Het klassement zelf wordt bijgehouden door de scheidsrechter van de ranglijstpotjes, bij Cloudflare (sectie 4).
   </p>
   <p>
     De geschiedenis van je antwoorden wordt gesynchroniseerd met je account, zodat je statistieken je van het ene apparaat naar het andere volgen. Het technische logboek waarmee het herhalingsalgoritme op je geheugen wordt afgestemd, blijft daarentegen <strong>uitsluitend op je apparaat</strong> en wordt nooit gesynchroniseerd.
@@ -193,17 +204,14 @@
     Om de database bij een probleem te kunnen herstellen, bewaart de app op je apparaat maximaal drie reservekopieën. Die verlaten het apparaat nooit.
   </p>
 
-  <h2>7. Openbaar profiel en klassement (binnenkort)</h2>
-  <div class="a-venir">
-    <strong>Nog niet beschikbaar.</strong> Deze sectie beschrijft vooraf een functie die in voorbereiding is, zodat je weet wat ze zichtbaar zal maken voordat ze er is. Ze geldt pas vanaf de lancering, die wordt aangekondigd in de Versie-informatie.
-  </div>
+  <h2>7. Openbaar profiel en klassement</h2>
   <ul>
-    <li><strong>Een profiel</strong>, te openen via het menu van de app: een pseudoniem (willekeurig toegekend, zoals user#12345678, dat je kunt wijzigen), een getekende avatar of, als je dat inschakelt, de foto van je Google-account, de badges die je wilt tonen, enkele cijfers (dagenreeks, geleerde woorden, record bij Tegen de klok, gelezen verhalen), je talen en niveaus, en de maand waarin je bent begonnen.</li>
-    <li><strong>Een wereldwijd klassement voor Tegen de klok</strong>, van de week en aller tijden, met je pseudoniem, je avatar, je beste score en je positie. Alleen accounts die met Google zijn ingelogd, komen erin voor.</li>
-    <li><strong>Wie het ziet</strong>: andere ingelogde gebruikers van Vocadeck. Nooit je e-mailadres, je Google-naam of je kaarten.</li>
-    <li><strong>Jouw keuzes</strong>: je kunt je profiel op elk moment verbergen en je terugtrekken uit het klassement. Een pseudoniem kan maar door één persoon worden gebruikt, en een beledigend pseudoniem kan worden geweigerd.</li>
-    <li><strong>Tegen valsspelen</strong>: de scores die naar het klassement worden gestuurd, kunnen automatisch worden gecontroleerd (antwoordtijden, samenhang van de score) en een onmogelijke score wordt geweerd. Deze controles gebruiken geen andere gegevens.</li>
-    <li><strong>Verwijdering</strong>: als je je account verwijdert, worden je profiel, je pseudoniem en je regels in het klassement gewist.</li>
+    <li><strong>Een profiel</strong>, te openen via het menu van de app: een pseudoniem (willekeurig toegekend, zoals user#12345678, dat je kunt wijzigen), een getekende avatar of, als je dat inschakelt, de foto van je Google-account, de badges die je wilt tonen, enkele cijfers (dagenreeks, geleerde woorden, record bij Tegen de klok, gelezen verhalen), je talen en niveaus, je spelersniveau en de maand waarin je bent begonnen. Alleen accounts die met Google zijn ingelogd, hebben een openbaar profiel.</li>
+    <li><strong>Een wereldwijd klassement voor Tegen de klok</strong>, van de week en aller tijden, met je pseudoniem, je avatar, je beste score in een ranglijstpotje en je positie. Alleen ranglijstpotjes tellen mee: hun woorden worden willekeurig getrokken uit de kant-en-klare decks, voor iedereen dezelfde.</li>
+    <li><strong>Wie het ziet</strong>: andere gebruikers van Vocadeck, vanuit het klassement. Nooit je e-mailadres, je Google-naam of je kaarten.</li>
+    <li><strong>Jouw keuzes</strong>: je kunt je profiel op elk moment verbergen en je terugtrekken uit het klassement (<strong>Profiel › Openbaar profiel en ranglijst</strong>). Een pseudoniem kan maar door één persoon worden gebruikt, kan hoogstens één keer per dag worden gewijzigd, en een beledigend pseudoniem wordt geweigerd.</li>
+    <li><strong>Tegen valsspelen</strong>: de scheidsrechter speelt elk ranglijstpotje na met de spelregels — de werkelijk verstreken tijd, de tijd van elk antwoord, de score. Een onmogelijk potje wordt geweigerd; een potje dat te snel of te regelmatig is voor een mensenhand, wordt apart gezet ter controle en komt niet in het klassement. Deze controles gebruiken geen andere gegevens.</li>
+    <li><strong>Verwijdering</strong>: als je je account verwijdert, worden je profiel, je pseudoniem, je ranglijstpotjes en je regels in het klassement gewist.</li>
   </ul>
 
   <h2>8. Bewaartermijn</h2>
@@ -217,7 +225,7 @@
     <li><strong>Recht op rectificatie</strong> — pas je kaarten en instellingen op elk moment aan.</li>
     <li><strong>Recht op gegevenswissing</strong> — twee niveaus in de Instellingen: “Alle gegevens verwijderen” wist je kaarten, je decks en je voortgang zonder je account te sluiten; “Mijn account verwijderen” verwijdert je account en alle bijbehorende gegevens definitief (volledige verwijdering volgens de AVG).</li>
     <li><strong>Recht op overdraagbaarheid van gegevens</strong> — je kaarten kunnen in open formaten worden geëxporteerd via <strong>Instellingen › Importeren of exporteren</strong>.</li>
-    <li><strong>Recht van bezwaar</strong> — log op elk moment uit; binnenkort kun je ook je openbare profiel verbergen en het klassement verlaten.</li>
+    <li><strong>Recht van bezwaar</strong> — log op elk moment uit, verberg je openbare profiel en verlaat het klassement (<strong>Profiel › Openbaar profiel en ranglijst</strong>).</li>
     <li><strong>Klacht</strong> — je kunt een klacht indienen bij de CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) of bij de gegevensbeschermingsautoriteit van je land.</li>
   </ul>
   <p>Om deze rechten uit te oefenen: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck is niet gericht op kinderen jonger dan 13 jaar en verzamelt niet bewust gegevens over hen.</p>
 
   <h2>11. Wijzigingen</h2>
-  <p>Elke ingrijpende wijziging wordt vermeld in de Versie-informatie van de app. De versie van 14 september 2026 voegt toe: de voortgang in cursussen, oefeningen, verhalen en games; de gesynchroniseerde instellingen; de meldingen; offline vertaling met Google ML Kit; de rechtsgronden en het recht om een klacht in te dienen; het toekomstige openbare profiel en het klassement. Ze verduidelijkt ook dat de geschiedenis van je antwoorden met je account wordt gesynchroniseerd.</p>
+  <p>Elke ingrijpende wijziging wordt vermeld in de Versie-informatie van de app. De versie van 14 september 2026 voegt toe: de voortgang in cursussen, oefeningen, verhalen en games; de gesynchroniseerde instellingen; de meldingen; offline vertaling met Google ML Kit; de rechtsgronden en het recht om een klacht in te dienen; het toekomstige openbare profiel en het klassement. Ze verduidelijkt ook dat de geschiedenis van je antwoorden met je account wordt gesynchroniseerd. Op dezelfde dag neemt een tweede update het openbare profiel, de prestaties en het klassement van Tegen de klok in gebruik, met de scheidsrechter van de ranglijstpotjes.</p>
 
   <h2>12. Contact</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

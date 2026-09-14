@@ -88,7 +88,7 @@
       <tr>
         <td>E-posta adresi, ad ve profil fotoğrafı</td>
         <td>Google ile oturum açma (isteğe bağlı)</td>
-        <td>Hesabınızı tanımlamak. Fotoğraf şu an hiçbir yerde gösterilmiyor (gelecekteki profil için 7. bölüme bakın).</td>
+        <td>Hesabınızı tanımlamak. Fotoğraf, herkese açık profilinizde yalnızca onu avatar olarak seçerseniz görünür (7. bölüm). E-posta adresiniz ve adınız orada asla görünmez.</td>
       </tr>
       <tr>
         <td>Kartlar ve desteler, içerikleriyle birlikte</td>
@@ -111,9 +111,19 @@
         <td>Kilometre taşlarınızı, rekorunuzu ve ödüllerinizi göstermek. Oyun sayaçları, donanımla hiçbir bağlantısı olmayan, rastgele üretilmiş bir cihaz tanımlayıcısı altında saklanır; bu tanımlayıcı yalnızca birden fazla cihazda oynanan oyunları doğru biçimde toplamaya yarar.</td>
       </tr>
       <tr>
-        <td>Eşitlenen ayarlar (örneğin alt çubuk için seçilen çizimler) ve bulunan gizli rozetler</td>
+        <td>Eşitlenen ayarlar (örneğin alt çubuk için seçilen çizimler), bulunan gizli rozetler ve kazanılan başarımlar, tarihleriyle birlikte</td>
         <td>Uygulamadaki seçimleriniz</td>
         <td>Uygulamanızı bir cihazdan diğerine birebir aynı şekilde bulmak</td>
+      </tr>
+      <tr>
+        <td>Herkese açık profil: takma ad, avatar (ya da seçerseniz Google hesabınızın fotoğrafı), vitrininizdeki rozetler, önemli rakamlar (gün serisi, öğrenilen kelimeler, Zamana karşı rekoru, okunan hikâyeler), diller ve seviyeler, katıldığınız ay ve oyuncu seviyeniz</td>
+        <td>Profiliniz (yalnızca Google hesapları)</td>
+        <td>Sizi sıralama üzerinden diğer oyunculara göstermek (7. bölüm)</td>
+      </tr>
+      <tr>
+        <td>Zamana karşı oyununun dereceli oyunları: dağıtılan kelimeler, yanıtlarınızın her biri ve verildiği an (milisaniye cinsinden), hesaplanan puan, haftalık ve tüm zamanlardaki en iyi puanlarınız</td>
+        <td>Dereceli oyunlarınız</td>
+        <td>Oyunun kurallara uyduğunu doğrulamak ve sizi sıralamaya yerleştirmek (7. bölüm)</td>
       </tr>
       <tr>
         <td>Çeviri hatası bildirimi: ilgili kart (iki yüzü, dilleri, destenin adı), seçilen neden, isteğe bağlı bir yorum ve uygulama sürümü</td>
@@ -152,8 +162,8 @@
   <h2>3. Bu verileri neden işliyoruz (hukuki sebepler)</h2>
   <ul>
     <li><strong>Kullandığınız hizmeti size sunmak için</strong> (sözleşmenin ifası): hesabınız, kartlarınız, bunların eşitlenmesi, ilerlemeniz ve istatistikleriniz.</li>
-    <li><strong>Uygulamayı güvenilir ve dürüst tutmak için</strong> (meşru menfaat): teknik hata raporları, isteklerin gerçekten resmî uygulamadan geldiğinin doğrulanması ve yakında, sıralamada hileye karşı kontroller.</li>
-    <li><strong>İzninizle</strong> (rıza): göndermeyi seçtiğiniz bildirimler ve yakında, herkese açık profilinizde göstermeyi seçeceğiniz bilgiler. Bu rızanızı istediğiniz zaman geri çekebilirsiniz.</li>
+    <li><strong>Uygulamayı güvenilir ve dürüst tutmak için</strong> (meşru menfaat): teknik hata raporları, isteklerin gerçekten resmî uygulamadan geldiğinin doğrulanması ve sıralamada hileye karşı kontroller.</li>
+    <li><strong>İzninizle</strong> (rıza): göndermeyi seçtiğiniz bildirimler ve herkese açık profilinizde göstermeyi seçtiğiniz bilgiler. Bu rızanızı istediğiniz zaman geri çekebilirsiniz.</li>
   </ul>
 
   <h2>4. Teknik veri işleyenler</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> ve <strong>Pixabay</strong> — kartlarınız için görsel arama (yalnızca aranan kelime, kimlik bilgisi olmadan). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — çevrimdışı kullanım için indirilebilen dil paketlerinin barındırılması (yalnızca statik dosyalar, hiçbir hesap verisi aktarılmaz). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> ve <strong>Cloudflare Access</strong> — web sürümünün (PWA) barındırılması ve test aşamasında erişim denetimi. Cloudflare yüklenen sayfaların adreslerini ve kapalı beta için erişime davet edilen e-posta adresini görür. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> ve <strong>Cloudflare D1</strong> — dereceli oyunların hakemi: kelimeleri dağıtır, yanıtlarınızı ve verildikleri anı alır, puanı kendisi hesaplar ve sıralamayı tutar (takma ad, avatar, seçtiyseniz fotoğraf, en iyi puanlar). Hesabınızı oturum açma belirteciyle tanır; e-posta adresinizi veya adınızı almaz. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — uygulama bir hatayla karşılaştığında gönderilen teknik raporlar: uygulama sürümü, cihaz modeli, işletim sistemi ve hatanın koddaki yeri. Kartlarınızın içeriği bu raporlarda yer almaz. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (Firebase App Check aracılığıyla) — isteklerin gerçekten resmî uygulamadan geldiğini, dolandırıcılığı önleme amacıyla ve kişisel veri kullanmadan doğrular. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>İşletim sisteminin ses motorları</strong> — ses tanıma yalnızca telaffuzunuzu kontrol etmeye yarar (bir kartın mikrofon düğmesi) ve ses cihazınız tarafından işlenir; metin okuma, kartlarınızdaki kelimeleri ve cümleleri sesli okur ve bunlar telefonunuzun motoru tarafından kendi kurallarına göre işlenir. <span class="badge">Google / Apple / cihaz üreticisi</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Saklama ve güvenlik</h2>
   <p>
-    Verileriniz <strong>cihazınızda yerel olarak</strong> (SQLite veritabanında ya da web sürümünde tarayıcınızın depolama alanında) ve oturum açtıysanız <strong>Google Firestore'da</strong> (Avrupa'daki veya Amerika Birleşik Devletleri'ndeki Google sunucuları) saklanır. Aktarım sırasındaki veriler TLS ile şifrelenir. Firestore güvenlik kuralları, verilerinizi başka hiç kimsenin okuyamamasını sağlar; bu özellik kullanıma sunulduğunda yalnızca herkese açık profilinizde göstermeyi seçtiğiniz bilgiler görünür olacaktır (7. bölüm).
+    Verileriniz <strong>cihazınızda yerel olarak</strong> (SQLite veritabanında ya da web sürümünde tarayıcınızın depolama alanında) ve oturum açtıysanız <strong>Google Firestore'da</strong> (Avrupa'daki veya Amerika Birleşik Devletleri'ndeki Google sunucuları) saklanır. Aktarım sırasındaki veriler TLS ile şifrelenir. Firestore güvenlik kuralları, verilerinizi başka hiç kimsenin okuyamamasını sağlar; yalnızca herkese açık profilinizde gösterdiğiniz bilgiler görünür (7. bölüm). Sıralamayı ise dereceli oyunların hakemi Cloudflare'da tutar (4. bölüm).
   </p>
   <p>
     İstatistikleriniz bir cihazdan diğerine sizinle gelsin diye yanıt geçmişiniz hesabınızla eşitlenir. Buna karşılık, tekrar algoritmasını hafızanıza göre ayarlamaya yarayan teknik günlük <strong>yalnızca cihazınızda</strong> kalır ve asla eşitlenmez.
@@ -193,17 +204,14 @@
     Bir sorun olması durumunda veritabanını onarabilmek için uygulama, cihazınızda en fazla üç yedek kopya tutar. Bu kopyalar cihazdan asla çıkmaz.
   </p>
 
-  <h2>7. Herkese açık profil ve sıralama (yakında)</h2>
-  <div class="a-venir">
-    <strong>Henüz kullanılamıyor.</strong> Bu bölüm, hazırlanmakta olan bir özelliği önceden anlatır; böylece özellik gelmeden neyi görünür kılacağını bilirsiniz. Bu bölüm yalnızca özelliğin Sürüm Notları'nda duyurulacak kullanıma sunuluşundan itibaren geçerli olacaktır.
-  </div>
+  <h2>7. Herkese açık profil ve sıralama</h2>
   <ul>
-    <li><strong>Bir profil</strong>, uygulama menüsünden açılır: bir takma ad (rastgele atanan, user#12345678 gibi, değiştirebileceğiniz), çizilmiş bir avatar ya da etkinleştirirseniz Google hesabınızın fotoğrafı, göstermeyi seçeceğiniz rozetler, birkaç rakam (gün serisi, öğrenilen kelimeler, Zamana karşı rekoru, okunan hikâyeler), dilleriniz ve seviyeleriniz ve katıldığınız ay.</li>
-    <li><strong>Zamana karşı oyunu için dünya sıralaması</strong>, haftalık ve tüm zamanlar; burada takma adınız, avatarınız, en iyi puanınız ve sıranız yer alacak. Sıralamada yalnızca Google ile oturum açmış hesaplar yer alacak.</li>
-    <li><strong>Kimler görecek</strong>: Vocadeck'in oturum açmış diğer kullanıcıları. E-posta adresiniz, Google adınız veya kartlarınız asla gösterilmez.</li>
-    <li><strong>Seçimleriniz</strong>: profilinizi istediğiniz zaman gizleyebilecek ve sıralamadan çekilebileceksiniz. Bir takma ad yalnızca tek bir kişiye ait olabilir ve hakaret içeren bir takma ad reddedilebilir.</li>
-    <li><strong>Hileye karşı</strong>: sıralamaya gönderilen puanlar otomatik olarak doğrulanabilir (yanıt süreleri, puanın tutarlılığı) ve imkânsız bir puan elenir. Bu kontroller başka hiçbir veri kullanmaz.</li>
-    <li><strong>Silme</strong>: hesabınızı silmek; profilinizi, takma adınızı ve sıralamadaki satırlarınızı siler.</li>
+    <li><strong>Bir profil</strong>, uygulama menüsünden açılır: bir takma ad (rastgele atanan, user#12345678 gibi, değiştirebileceğiniz), çizilmiş bir avatar ya da etkinleştirirseniz Google hesabınızın fotoğrafı, göstermeyi seçtiğiniz rozetler, birkaç rakam (gün serisi, öğrenilen kelimeler, Zamana karşı rekoru, okunan hikâyeler), dilleriniz ve seviyeleriniz, oyuncu seviyeniz ve katıldığınız ay. Yalnızca Google ile oturum açmış hesapların herkese açık profili vardır.</li>
+    <li><strong>Zamana karşı oyunu için dünya sıralaması</strong>, haftalık ve tüm zamanlar; burada takma adınız, avatarınız, dereceli bir oyundaki en iyi puanınız ve sıranız yer alır. Yalnızca dereceli oyunlar sayılır: bunların kelimeleri kullanıma hazır destelerden rastgele seçilir ve herkes için aynıdır.</li>
+    <li><strong>Kimler görür</strong>: Vocadeck'in diğer kullanıcıları, sıralama üzerinden. E-posta adresiniz, Google adınız veya kartlarınız asla gösterilmez.</li>
+    <li><strong>Seçimleriniz</strong>: profilinizi istediğiniz zaman gizleyebilir ve sıralamadan çekilebilirsiniz (<strong>Profil › Herkese açık profil ve sıralama</strong>). Bir takma ad yalnızca tek bir kişiye ait olabilir, günde en fazla bir kez değiştirilebilir ve hakaret içeren bir takma ad reddedilir.</li>
+    <li><strong>Hileye karşı</strong>: hakem her dereceli oyunu oyunun kurallarıyla yeniden oynatır — gerçekte geçen süre, her yanıtın süresi, puan. İmkânsız bir oyun reddedilir; bir insan eli için fazla hızlı ya da fazla düzenli olan bir oyun incelenmek üzere bir kenara ayrılır ve sıralamaya girmez. Bu kontroller başka hiçbir veri kullanmaz.</li>
+    <li><strong>Silme</strong>: hesabınızı silmek; profilinizi, takma adınızı, dereceli oyunlarınızı ve sıralamadaki satırlarınızı siler.</li>
   </ul>
 
   <h2>8. Saklama süresi</h2>
@@ -217,7 +225,7 @@
     <li><strong>Düzeltme hakkı</strong> — kartlarınızı ve ayarlarınızı istediğiniz zaman değiştirin.</li>
     <li><strong>Silme hakkı</strong> — Ayarlar'da iki seviye: “Tüm verileri sil” hesabınızı kapatmadan kartlarınızı, destelerinizi ve ilerlemenizi siler; “Hesabımı sil” hesabınızı ve ilişkili tüm verileri kalıcı olarak siler (GDPR kapsamında tam silme).</li>
     <li><strong>Veri taşınabilirliği hakkı</strong> — kartlarınız <strong>Ayarlar › İçe veya dışa aktar</strong> bölümünden açık biçimlerde dışa aktarılabilir.</li>
-    <li><strong>İtiraz hakkı</strong> — istediğiniz zaman oturumu kapatın; yakında herkese açık profilinizi gizleyebilecek ve sıralamadan çıkabileceksiniz.</li>
+    <li><strong>İtiraz hakkı</strong> — istediğiniz zaman oturumu kapatın, herkese açık profilinizi gizleyin ve sıralamadan çıkın (<strong>Profil › Herkese açık profil ve sıralama</strong>).</li>
     <li><strong>Şikâyet</strong> — CNIL'e (<a href="https://www.cnil.fr">www.cnil.fr</a>) veya ülkenizin veri koruma otoritesine şikâyette bulunabilirsiniz.</li>
   </ul>
   <p>Bu haklarınızı kullanmak için: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck 13 yaşın altındaki çocuklara yönelik değildir ve onlara ilişkin verileri bilerek toplamaz.</p>
 
   <h2>11. Değişiklikler</h2>
-  <p>Her önemli değişiklik uygulamanın Sürüm Notları'nda belirtilir. 14 Eylül 2026 tarihli sürüm şunları ekler: kurslarda, alıştırmalarda, hikâyelerde ve oyunlardaki ilerleme; eşitlenen ayarlar; bildirimler; Google ML Kit ile çevrimdışı çeviri; hukuki sebepler ve şikâyet hakkı; yakında gelecek herkese açık profil ve sıralama. Ayrıca yanıt geçmişinizin hesabınızla eşitlendiğini de açıkça belirtir.</p>
+  <p>Her önemli değişiklik uygulamanın Sürüm Notları'nda belirtilir. 14 Eylül 2026 tarihli sürüm şunları ekler: kurslarda, alıştırmalarda, hikâyelerde ve oyunlardaki ilerleme; eşitlenen ayarlar; bildirimler; Google ML Kit ile çevrimdışı çeviri; hukuki sebepler ve şikâyet hakkı; yakında gelecek herkese açık profil ve sıralama. Ayrıca yanıt geçmişinizin hesabınızla eşitlendiğini de açıkça belirtir. Aynı gün ikinci bir güncelleme herkese açık profili, başarımları ve Zamana karşı sıralamasını dereceli oyunların hakemiyle birlikte kullanıma sunar.</p>
 
   <h2>12. İletişim</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>

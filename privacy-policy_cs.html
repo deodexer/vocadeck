@@ -88,7 +88,7 @@
       <tr>
         <td>E-mailová adresa, jméno a profilová fotka</td>
         <td>Přihlášení přes Google (volitelné)</td>
-        <td>Identifikace vašeho účtu. Fotka se zatím nikde nezobrazuje (o připravovaném profilu viz oddíl 7).</td>
+        <td>Identifikace vašeho účtu. Fotka se na vašem veřejném profilu zobrazí jen tehdy, pokud si ji zvolíte jako avatar (oddíl 7). Váš e-mail a vaše jméno se tam nikdy nezobrazují.</td>
       </tr>
       <tr>
         <td>Karty a balíčky včetně jejich obsahu</td>
@@ -111,9 +111,19 @@
         <td>Zobrazení vašich milníků, rekordu a ocenění. Počítadla kol se ukládají pod náhodně vygenerovaným identifikátorem zařízení, který nemá žádnou vazbu na hardware a slouží pouze ke správnému sečtení kol odehraných na více zařízeních.</td>
       </tr>
       <tr>
-        <td>Synchronizovaná nastavení (například obrázky zvolené pro spodní lištu) a nalezené tajné odznaky</td>
+        <td>Synchronizovaná nastavení (například obrázky zvolené pro spodní lištu), nalezené tajné odznaky a získané úspěchy, včetně jejich data</td>
         <td>Vaše volby v aplikaci</td>
         <td>Stejná podoba aplikace na všech vašich zařízeních</td>
+      </tr>
+      <tr>
+        <td>Veřejný profil: přezdívka, avatar (nebo fotka vašeho účtu Google, pokud si ji zvolíte), odznaky ve vaší vitríně, klíčová čísla (série dnů, naučená slova, rekord ve hře Závod s časem, přečtené příběhy), jazyky a úrovně, měsíc, kdy jste se připojili, a vaše hráčská úroveň</td>
+        <td>Váš profil (pouze účty Google)</td>
+        <td>Zobrazení vašeho profilu ostatním hráčům, ze žebříčku (oddíl 7)</td>
+      </tr>
+      <tr>
+        <td>Hodnocené hry v režimu Závod s časem: rozdaná slova, každá vaše odpověď a její okamžik (v milisekundách), vypočtené skóre, vaše nejlepší skóre týdne a všech dob</td>
+        <td>Vaše hodnocené hry</td>
+        <td>Ověření, že hra proběhla podle pravidel, a vaše zařazení do žebříčku (oddíl 7)</td>
       </tr>
       <tr>
         <td>Nahlášení chyby v překladu: dotčená karta (obě její strany, jejich jazyky, název balíčku), zvolený důvod, nepovinný komentář a verze aplikace</td>
@@ -152,8 +162,8 @@
   <h2>3. Proč tyto údaje zpracováváme (právní základy)</h2>
   <ul>
     <li><strong>Abychom vám poskytli službu, kterou používáte</strong> (plnění smlouvy): váš účet, vaše karty, jejich synchronizace, váš pokrok a vaše statistiky.</li>
-    <li><strong>Abychom udrželi aplikaci spolehlivou a poctivou</strong> (oprávněný zájem): technická hlášení o chybách, ověřování, že požadavky skutečně pocházejí z oficiální aplikace, a v budoucnu kontroly proti podvádění v žebříčku.</li>
-    <li><strong>S vaším svolením</strong> (souhlas): hlášení, která se rozhodnete odeslat, a v budoucnu to, co se rozhodnete zobrazit na svém veřejném profilu. Tento souhlas můžete kdykoli odvolat.</li>
+    <li><strong>Abychom udrželi aplikaci spolehlivou a poctivou</strong> (oprávněný zájem): technická hlášení o chybách, ověřování, že požadavky skutečně pocházejí z oficiální aplikace, a kontroly proti podvádění v žebříčku.</li>
+    <li><strong>S vaším svolením</strong> (souhlas): hlášení, která se rozhodnete odeslat, a to, co se rozhodnete zobrazit na svém veřejném profilu. Tento souhlas můžete kdykoli odvolat.</li>
   </ul>
 
   <h2>4. Techničtí zpracovatelé</h2>
@@ -165,6 +175,7 @@
     <li><strong>Pexels</strong> a <strong>Pixabay</strong> — vyhledávání ilustrací pro vaše karty (pouze hledané slovo, bez identifikace). <span class="badge">Canva / Pixabay</span></li>
     <li><strong>Cloudflare R2</strong> — hosting jazykových balíčků ke stažení pro offline použití (pouze statické soubory, nepředávají se žádné údaje o účtu). <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Cloudflare Pages</strong> a <strong>Cloudflare Access</strong> — hosting webové verze (PWA) a kontrola přístupu během testovací fáze. Cloudflare vidí adresy načtených stránek a u uzavřené bety e-mailovou adresu pozvanou k přístupu. <span class="badge">Cloudflare, Inc.</span></li>
+    <li><strong>Cloudflare Workers</strong> a <strong>Cloudflare D1</strong> — rozhodčí hodnocených her: rozdává slova, přijímá vaše odpovědi a jejich okamžik, sám vypočítává skóre a vede žebříček (přezdívka, avatar, fotka, pokud jste si ji zvolili, nejlepší skóre). Váš účet rozpozná podle jeho přihlašovacího tokenu, aniž by dostal váš e-mail nebo vaše jméno. <span class="badge">Cloudflare, Inc.</span></li>
     <li><strong>Sentry</strong> — technická hlášení odesílaná, když aplikace narazí na chybu: verze aplikace, model zařízení, operační systém a místo chyby v kódu. Neobsahují žádný obsah vašich karet. <span class="badge">Functional Software, Inc.</span></li>
     <li><strong>Google Play Integrity</strong> / <strong>Apple App Attest</strong> (prostřednictvím Firebase App Check) — ověřuje, že požadavky skutečně pocházejí z oficiální aplikace, za účelem prevence podvodů, bez osobních údajů. <span class="badge">Google LLC / Apple Inc.</span></li>
     <li><strong>Hlasové moduly operačního systému</strong> — rozpoznávání řeči slouží pouze ke kontrole vaší výslovnosti (tlačítko mikrofonu na kartě) a zvuk zpracovává vaše zařízení; syntéza řeči předčítá slova a věty z vašich karet, které zpracovává modul vašeho telefonu podle vlastních pravidel. <span class="badge">Google / Apple / výrobce zařízení</span></li>
@@ -184,7 +195,7 @@
 
   <h2>6. Uložení a zabezpečení</h2>
   <p>
-    Vaše údaje jsou uloženy <strong>lokálně ve vašem zařízení</strong> (databáze SQLite nebo úložiště vašeho prohlížeče u webové verze) a, pokud jste přihlášeni, také <strong>v Google Firestore</strong> (servery Googlu v Evropě nebo ve Spojených státech). Údaje při přenosu jsou šifrovány pomocí TLS. Bezpečnostní pravidla Firestore zaručují, že vaše údaje nemůže číst nikdo jiný; viditelné bude pouze to, co se rozhodnete zobrazit na svém veřejném profilu, až tato funkce bude existovat (oddíl 7).
+    Vaše údaje jsou uloženy <strong>lokálně ve vašem zařízení</strong> (databáze SQLite nebo úložiště vašeho prohlížeče u webové verze) a, pokud jste přihlášeni, také <strong>v Google Firestore</strong> (servery Googlu v Evropě nebo ve Spojených státech). Údaje při přenosu jsou šifrovány pomocí TLS. Bezpečnostní pravidla Firestore zaručují, že vaše údaje nemůže číst nikdo jiný; viditelné je pouze to, co zobrazujete na svém veřejném profilu (oddíl 7). Samotný žebříček vede rozhodčí hodnocených her u společnosti Cloudflare (oddíl 4).
   </p>
   <p>
     Historie vašich odpovědí se synchronizuje s vaším účtem, aby vás vaše statistiky provázely z jednoho zařízení na druhé. Technický protokol, který slouží k přizpůsobení algoritmu opakování vaší paměti, naopak zůstává <strong>výhradně ve vašem zařízení</strong> a nikdy se nesynchronizuje.
@@ -193,17 +204,14 @@
     Aby bylo možné databázi v případě problému opravit, uchovává aplikace ve vašem zařízení až tři záložní kopie. Nikdy zařízení neopouštějí.
   </p>
 
-  <h2>7. Veřejný profil a žebříček (připravujeme)</h2>
-  <div class="a-venir">
-    <strong>Zatím není k dispozici.</strong> Tento oddíl předem popisuje připravovanou funkci, abyste věděli, co zviditelní, ještě než bude spuštěna. Uplatní se až od jejího spuštění, které oznámíme v části „Poznámky k verzi“.
-  </div>
+  <h2>7. Veřejný profil a žebříček</h2>
   <ul>
-    <li><strong>Profil</strong>, otevíraný z nabídky aplikace: přezdívka (přidělená náhodně, například user#12345678, kterou budete moci změnit), kreslený avatar nebo, pokud to zapnete, fotka vašeho účtu Google, odznaky, které se rozhodnete zobrazit, několik čísel (série dnů, naučená slova, rekord ve hře Závod s časem, přečtené příběhy), vaše jazyky a úrovně a měsíc, kdy jste se připojili.</li>
-    <li><strong>Celosvětový žebříček hry Závod s časem</strong>, týdenní a všech dob, ve kterém se zobrazí vaše přezdívka, váš avatar, vaše nejlepší skóre a vaše umístění. Budou v něm pouze účty přihlášené přes Google.</li>
-    <li><strong>Kdo to uvidí</strong>: ostatní přihlášení uživatelé aplikace Vocadeck. Nikdy vaši e-mailovou adresu, vaše jméno z Googlu ani vaše karty.</li>
-    <li><strong>Vaše volby</strong>: svůj profil budete moci kdykoli skrýt a vystoupit ze žebříčku. Jednu přezdívku může používat pouze jedna osoba a urážlivá přezdívka může být odmítnuta.</li>
-    <li><strong>Proti podvádění</strong>: skóre odeslaná do žebříčku mohou být automaticky ověřována (doby odpovědí, věrohodnost skóre) a nemožné skóre bude vyřazeno. Tyto kontroly nepoužívají žádné jiné údaje.</li>
-    <li><strong>Smazání</strong>: smazáním účtu se vymaže váš profil, vaše přezdívka a vaše řádky v žebříčku.</li>
+    <li><strong>Profil</strong>, otevíraný z nabídky aplikace: přezdívka (přidělená náhodně, například user#12345678, kterou můžete změnit), kreslený avatar nebo, pokud to zapnete, fotka vašeho účtu Google, odznaky, které se rozhodnete zobrazit, několik čísel (série dnů, naučená slova, rekord ve hře Závod s časem, přečtené příběhy), vaše jazyky a úrovně, vaše hráčská úroveň a měsíc, kdy jste se připojili. Veřejný profil mají pouze účty přihlášené přes Google.</li>
+    <li><strong>Celosvětový žebříček hry Závod s časem</strong>, týdenní a všech dob, ve kterém se zobrazuje vaše přezdívka, váš avatar, vaše nejlepší skóre v hodnocené hře a vaše umístění. Počítají se pouze hodnocené hry: jejich slova se losují náhodně z hotových balíčků karet a jsou pro všechny stejná.</li>
+    <li><strong>Kdo to vidí</strong>: ostatní uživatelé aplikace Vocadeck, ze žebříčku. Nikdy vaši e-mailovou adresu, vaše jméno z Googlu ani vaše karty.</li>
+    <li><strong>Vaše volby</strong>: svůj profil můžete kdykoli skrýt a vystoupit ze žebříčku (<strong>Profil › Veřejný profil a žebříček</strong>). Jednu přezdívku může používat pouze jedna osoba, lze ji změnit nejvýše jednou denně a urážlivá přezdívka je odmítnuta.</li>
+    <li><strong>Proti podvádění</strong>: rozhodčí přehraje každou hodnocenou hru podle pravidel hry — skutečně uplynulý čas, čas každé odpovědi, skóre. Nemožná hra je odmítnuta; hra, která je na lidskou ruku příliš rychlá nebo příliš pravidelná, je odložena k přezkoumání a do žebříčku se nedostane. Tyto kontroly nepoužívají žádné jiné údaje.</li>
+    <li><strong>Smazání</strong>: smazáním účtu se vymaže váš profil, vaše přezdívka, vaše hodnocené hry a vaše řádky v žebříčku.</li>
   </ul>
 
   <h2>8. Doba uchování</h2>
@@ -217,7 +225,7 @@
     <li><strong>Právo na opravu</strong> — upravujte své karty a nastavení kdykoli.</li>
     <li><strong>Právo na výmaz</strong> — dvě úrovně v části Nastavení: „Odstranit všechna data“ vymaže vaše karty, balíčky a pokrok, aniž by zrušilo váš účet; „Smazat můj účet“ trvale smaže váš účet a všechny související údaje (úplný výmaz podle GDPR).</li>
     <li><strong>Právo na přenositelnost</strong> — vaše karty lze exportovat v otevřených formátech v <strong>Nastavení › Importovat nebo exportovat</strong>.</li>
-    <li><strong>Právo vznést námitku</strong> — kdykoli se odhlaste; v budoucnu budete moci také skrýt svůj veřejný profil a opustit žebříček.</li>
+    <li><strong>Právo vznést námitku</strong> — kdykoli se odhlaste, skryjte svůj veřejný profil a opusťte žebříček (<strong>Profil › Veřejný profil a žebříček</strong>).</li>
     <li><strong>Stížnost</strong> — můžete podat stížnost u CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>) nebo u úřadu pro ochranu osobních údajů ve vaší zemi.</li>
   </ul>
   <p>K uplatnění těchto práv: <a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
@@ -226,7 +234,7 @@
   <p>Vocadeck není určen dětem mladším 13 let a vědomě neshromažďuje údaje, které se jich týkají.</p>
 
   <h2>11. Změny</h2>
-  <p>Každá podstatná změna je uvedena v části „Poznámky k verzi“ aplikace. Verze ze 14. září 2026 přidává: pokrok v kurzech, cvičeních, příbězích a hrách; synchronizovaná nastavení; hlášení; offline překlad pomocí Google ML Kit; právní základy a právo podat stížnost; připravovaný veřejný profil a žebříček. Také upřesňuje, že historie vašich odpovědí se synchronizuje s vaším účtem.</p>
+  <p>Každá podstatná změna je uvedena v části „Poznámky k verzi“ aplikace. Verze ze 14. září 2026 přidává: pokrok v kurzech, cvičeních, příbězích a hrách; synchronizovaná nastavení; hlášení; offline překlad pomocí Google ML Kit; právní základy a právo podat stížnost; připravovaný veřejný profil a žebříček. Také upřesňuje, že historie vašich odpovědí se synchronizuje s vaším účtem. Téhož dne druhá aktualizace spouští veřejný profil, úspěchy a žebříček hry Závod s časem, spolu s rozhodčím hodnocených her.</p>
 
   <h2>12. Kontakt</h2>
   <p><a href="mailto:vocadeck.support@gmail.com">vocadeck.support@gmail.com</a></p>
